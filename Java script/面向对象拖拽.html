@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>面向对象拖拽</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	</style>
+	<script>
+		window.onload=function(){
+			new gouzaohanshu({width:400,height:400,background:'blue'})
+			new gouzaohanshu({width:200,height:200,background:'pink'})
+			new Gouzaohanshu1({width:200,height:200,background:'#ccc'})
+		}
+		function gouzaohanshu(option){
+			/*属性的罗列*/
+			this.disY=0;
+			this.disX=0;
+			// console.log(this)
+			this.width=option.width;
+			this.height=option.height;
+			this.background=option.background;
+			this.chouli();
+			this.anxia();
+		}
+		gouzaohanshu.prototype.anxia=function(){
+			this.oDiv.onmousedown=function(ev){
+			// console.log(this)
+			var oEvent=ev||event;
+			this.disX=oEvent.clientX- this.oDiv.offsetLeft;
+			this.disY=oEvent.clientY- this.oDiv.offsetTop;
+				document.onmousemove=this.fnmove.bind(this);
+				document.onmouseup=this.fnup;
+			}.bind(this);
+		}
+		gouzaohanshu.prototype.chouli=function(){
+			this.oDiv=document.createElement('div');
+			/*创建一个DIV*/
+			console.log(this)
+			this.oDiv.style.position='absolute';
+			this.oDiv.style.width=this.width+'px';
+			this.oDiv.style.height=this.height+'px';
+			this.oDiv.style.background=this.background;
+			/*给创建的DIV设置宽高和绝对定位*/
+			document.body.appendChild(this.oDiv);
+			/*插入DIV到页面*/
+		}
+		gouzaohanshu.prototype.fnmove=function(ev){
+				console.log("father")
+					var oEvent=ev||event;
+					var zuo=oEvent.clientX-this.disX;
+					var shang=oEvent.clientY-this.disY;
+					this.oDiv.style.left=zuo+'px';
+					this.oDiv.style.top=shang+'px';
+		}
+		gouzaohanshu.prototype.fnup=function(ev){
+			document.onmousemove=null;
+			document.onmouseup=null;
+		}
+		function Gouzaohanshu1(option){
+			gouzaohanshu.call(this,option);
+			/*继承属性*/
+			console.log(this);
+			// this.biankuang()	
+		}
+		Gouzaohanshu1.prototype=Object.create(gouzaohanshu.prototype);
+		/*Object。create里面的参数是为了让这个空对象指向gouzaohanshu*/
+		Gouzaohanshu1.prototype.constructor=Gouzaohanshu1;
+		Gouzaohanshu1.prototype.fnmove=function(ev){
+			console.log("son")
+			var oEvent=ev||event;
+			var disX=oEvent.clientX- this.oDiv.offsetLeft;
+			var disY=oEvent.clientY - this.oDiv.offsetTop;
+			var zuo=oEvent.clientX-this.disX;
+			var shang=oEvent.clientY-this.disY;	
+			// console.log(disX)		
+			if(zuo<0){
+				zuo=0;
+			}
+			if(shang<0){
+				shang=0;
+			}
+			if(zuo>window.innerWidth-this.oDiv.offsetWidth){
+				zuo=window.innerWidth-this.oDiv.offsetWidth;
+			}
+			if(shang>window.innerHeight-this.oDiv.offsetHeight){
+				shang=window.innerHeight-this.oDiv.offsetHeight;
+			}
+			this.oDiv.style.left=zuo+'px';
+			this.oDiv.style.top=shang+'px';
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

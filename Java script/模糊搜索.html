@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模糊搜索</title>
+	<script>
+		window.onload=function(){
+			var oTxt=document.getElementById('txt');
+			var oBtn=document.getElementById('btn');
+			var oUl=document.getElementById('ul1');
+			var oLi=oUl.children;
+			oBtn.onclick=function(){
+					var aTxt=oTxt.value.toLowerCase();
+					var sTxt=aTxt.split(' ');
+					for(var k=0;k<oLi.length;k++){
+						oLi[k].style.background=''
+					}				
+				for(var i=0;i<oLi.length;i++){
+					var aLi=oLi[i].innerHTML.toLowerCase();
+					for(var j=0;j<sTxt.length;
+						j++){
+						if(aLi.search(sTxt[j]) !=-1){
+						oLi[i].style.background='red'
+					}
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="搜索">
+	<ul id="ul1">
+		<li>Tom</li>
+		<li>Arry</li>
+		<li>Camy</li>
+		<li>Sary</li>
+		<li>Kobe</li>
+		<li>Lebro</li>
+		<li>刘阳</li>
+	</ul>
+</body>
+</html>

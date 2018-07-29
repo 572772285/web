@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>json和对象的区别</title>
+	<script>
+			var json='{"name":"tom","age":18}'
+			console.log(json.name);
+			var jsonObj=JSON.parse(json);
+			console.log(typeof jsonObj);
+			console.log(jsonObj.age);
+			var js={
+				name:"tony",
+				age:28,
+			}
+			var jsJson=JSON.stringify(js);
+			console.log(jsJson)
+			console.log(jsonObj)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas画布</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		canvas{
+			border:1px solid black;
+			/*background: url(../src/风景2.jpg) no-repeat;*/
+		}
+		#canvas1{
+			width:300px;
+			height:100px;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="600" height="300" id="canvas">
+		你的浏览器不支持，请更换高版本浏览器
+	</canvas>
+</body>
+<script>
+
+	//要想改变canvas画布的大小要用JS控制它的大小
+	var oCanvas=document.getElementById('canvas')
+	oCanvas.width="600"
+	oCanvas.height="600"
+	//获取上下文环境
+	var ctx=oCanvas.getContext('2d');
+	var str="hello ni hao";
+	//设置文字
+	ctx.fillText(str,0,200);
+	//文字描边
+	ctx.strokeText(str,0,300)
+	//文字大小
+	ctx.font="50px "
+
+
+</script>
+</html>

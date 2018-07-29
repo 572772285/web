@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>面向对象拖拽2</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			position: absolute;
+			top:0;
+			left:0;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			new gouzaohanshu();
+		}
+		function gouzaohanshu(){
+			this.oDiv=document.getElementById('div1');
+			this.disY=0;
+			this.disX=0;
+			var _self=this;
+			
+			this.oDiv.onmousedown=function(){
+				_self.fndown()
+			}
+			// this.oDiv.onmousedown=this.fndown.bind(this);
+		}
+		gouzaohanshu.prototype.fndown=function(ev){
+			
+			var oEvent=ev||event;
+			var _self1=this;
+			console.log(this)
+			this.disX=oEvent.clientX- this.oDiv.offsetLeft;
+			this.disY=oEvent.clientY- this.oDiv.offsetTop;
+				document.onmousemove=function(){
+					_self1.fnmove()
+				}
+				document.onmouseup=this.fnup;
+			}
+		gouzaohanshu.prototype.fnmove=function(ev){
+					var oEvent=ev||event;
+					this.oDiv.style.left=oEvent.clientX-this.disX+'px';
+					this.oDiv.style.top=oEvent.clientY-this.disY+'px';
+		}
+		gouzaohanshu.prototype.fnup=function(ev){
+			document.onmousemove=null;
+			document.onmouseup=null;
+		}
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>

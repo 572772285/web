@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>面向对象选项卡、</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		#div1 li{
+			width: 300px;
+			height: 300px;
+			background-color: red;
+			display: none;
+
+		}
+		.active{
+			color: #000;
+			background-color: #fa6700;
+		}
+		#btn{
+			overflow: hidden;
+
+		}
+		.btn li{
+			float: left;
+			width: 100px;
+			height: 20px;
+			border:1px solid black;
+			list-style: none;
+			border-radius: 10px 10px;
+			text-align: center;
+			line-height: 20px;
+			cursor: pointer;
+			/*background-color: #000;*/
+		}
+		
+	</style>
+	<script>
+		// var oBtn=null;
+		// var aDiv=null;
+		window.onload=function(){
+			new gouzaohanshu();
+		}
+		function gouzaohanshu(){
+				this.oBtn=document.getElementById('btn').children;
+				this.aDiv=document.getElementById('div1').children;
+				var _self=this;
+				/*定义一个构造函数的变量*/
+				for(var i=0;i<this.oBtn.length;i++){
+					this.oBtn[i].index=i;
+					this.oBtn[i].onclick=function(){
+						
+						_self.dianji(this);
+						/*让this的指向为构造函数*/
+						/*把obtn的this传过去给下面的index用，因为下面必须是obtn的index*/
+						console.log(this)
+					}
+				}
+		}
+		gouzaohanshu.prototype.dianji=function(xx){
+			for(var j=0;j<this.oBtn.length;j++){
+				this.oBtn[j].className='';
+				this.aDiv[j].style.display='none';
+			}
+			this.oBtn[xx.index].className='active'
+			this.aDiv[xx.index].style.display='block'
+		}
+	</script>
+</head>
+<body>
+	<ul id="btn" class="btn">
+		<li class="#btn.active">选项一</li>
+		<li>选项二</li>
+		<li>选项三</li>
+		<li>选项四</li>
+	</ul>
+	<ul id="div1">
+	<li style="display: block">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+</html>

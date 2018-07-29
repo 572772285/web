@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>指定图片开始显示区域</title>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		li{
+			width: 300px;
+			height: 300px;
+			border:10px dashed pink;
+			margin-bottom: 10px;
+			list-style: none;
+			margin: 20px auto;
+			background-image: url("../src/timg (1).jpg");
+			background-size:cover;
+			padding-top: 20px;
+			box-sizing: border-box;
+			background-repeat: no-repeat;
+		}
+		li:nth-child(2){
+			background-origin: padding-box;	
+		}
+		li:nth-child(3){
+			background-origin: border-box;
+		}
+		li:nth-child(4){
+			background-origin: content-box;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+</html>

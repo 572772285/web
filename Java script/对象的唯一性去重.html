@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象的唯一性去重</title>
+	<script>
+		window.onload=function(){
+			var arr=[2,36,66,26,54,53,2,52,26,53,36]
+			function quchong(){
+				var obj={};
+				/*建一个空对象*/
+				var kong=[];
+				for(i in arr){
+					obj[arr[i]]='';
+					/*给对空对象添加属性，利用对象属性的唯一性*/
+				}
+				for(j in obj){
+						kong.push(parseInt(j));
+					}
+					/*把对象里的属性添加到空数组里*/
+					// for(j in kong){
+					// 	parsetInt(obj[arr[i]]='');
+					// }
+				console.log(arr)
+				console.log(kong)
+			}
+			quchong();
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

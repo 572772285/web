@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播动画</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			width: 800px;
+			height: 500px;
+			/*border:5px solid white;*/
+			margin:50px auto;
+			overflow: hidden;
+			
+		}
+		.box1 ul{
+			width: 4000px;
+			height: 500px;
+			border:1px solid white;
+			animation:sport 10s ease infinite;
+
+		}
+		.box1 li{
+			list-style: none;
+			width: 800px;
+			height: 500px;
+			float: left;
+		}
+		.box1 img{
+			width: 800px;
+			height: 500px;
+		}
+		.box1:hover li{
+			opacity: 0.6;
+		}
+		.box1 li:hover{
+			opacity:1;
+		}
+		.box1 ul:hover{
+			animation-play-state: paused;
+		}
+		@keyframes sport{
+			0%{
+				margin-left: 0px;
+				animation-delay: 2s;
+			}
+			25%{
+				margin-left: -800px;
+				animation-delay: 2s;
+			}
+			50%{
+				margin-left: -1600px;
+				animation-delay: 2s;
+			}
+			75%{
+				margin-left: -2400px;
+				animation-delay: 2s;
+			}
+			100%{
+				margin-left: -3200px;
+				animation-delay: 2s;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<ul>
+			<li><img src="../src/nba10.jpg" alt=""></li>
+			<li><img src="../src/nba11.jpg" alt=""></li>
+			<li><img src="../src/nba9.jpg" alt=""></li>
+			<li><img src="../src/nba8.jpg" alt=""></li>
+			<li><img src="../src/nba10.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>

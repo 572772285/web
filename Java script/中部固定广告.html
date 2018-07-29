@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>中部固定广告</title>
+	<style>
+	body{
+		height: 2888px;
+	}
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#div{
+			width: 100px;
+			height: 100px;
+			background-color: gold;
+			position: absolute;
+			top: 0px;
+			text-align: center;
+			line-height: 100px;
+			display: none;
+		}
+	</style>
+	<script>
+		var timer=null;
+			function animation(obj,attr,value){
+				/*obj表示对象，attr表示什么属性，value表示目标值*/
+				var Speed=0;
+				/*定义一个速度*/
+				clearInterval(obj.timer);
+				/*先清除定时器*/
+				obj.timer=setInterval(function(){
+					var curr=parseFloat(getComputedStyle(obj,false)[attr]);
+					console.log(curr)
+					/*定义一个curr的变量表示当前对象的属性值*/
+					if(attr=='opacity'){
+						curr=curr*100;
+					}
+					if(curr<value){
+						sPeed=60;
+					}else{
+						sPeed=-60;
+					}
+					if(Math.abs(value-curr)<Math.abs(sPeed)){
+						
+						clearInterval(obj.timer);
+						if(attr=='opacity'){
+							obj.style[attr]=value/100;
+						}
+							obj.style[attr]=value+'px';
+					}else{
+						if(attr=='opacity'){
+							obj.style[attr]=(curr+sPeed)/100;
+						}
+							obj.style[attr]=curr+sPeed+'px';
+						
+					}
+					console.log(obj.style[attr])	
+				},30)
+			}
+		window.onresize=window.onscroll=window.onload=function(){
+			var oDiv=document.getElementById('div');
+			var iHeight=window.innerHeight;
+			/*可视区域的值*/
+			var iTop=document.body.scrollTop||document.documentElement.scrollTop;
+			var iTarget=(iHeight)/2+iTop-(oDiv.offsetHeight)/2;
+			animation(oDiv,'top',iTarget)
+		}
+	</script>
+</head>
+<body>
+	<div id="div">我是广告</div>
+</body>
+</html>

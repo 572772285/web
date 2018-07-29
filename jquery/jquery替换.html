@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery替换</title>
+	<script src="../js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$('button').on('click',function(){
+				var h1=$('<h1>我是大标题</h1>')
+				$('.div1').replaceWith(h1)
+				$(h1).replaceAll('div')
+			})
+		})
+	</script>
+</head>
+<body>
+	<button>替换</button>
+	<div class="div1">1</div>
+	<div>2</div>
+</body>
+</html>

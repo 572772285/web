@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过渡2D转换案例</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.reba{
+			width: 500px;
+			height: 348px;
+			perspective: 500px;
+			margin:20px auto;
+			border:1px solid black;
+		}
+		li{
+			list-style: none;
+		}
+		.reba li img{
+			transform-origin:center bottom;
+			transition-duration: 2s;
+		}
+		.reba li:hover img{
+			transform: rotateX(90deg);
+		}
+		.nba{
+			width: 300px;
+			height: 300px;
+			margin:0 auto;
+			position: relative;
+		}
+		.nba img{
+			width: 300px;
+			height: 300px;
+			position: absolute;
+			top:0px;
+		}
+		.box1{
+			height: 400px;
+			background-color: skyblue;
+			text-align: center;
+		}
+		.box1 li{
+			width: 300px;
+			height: 300px;
+			display: inline-block;
+			margin-top: 50px;
+			margin-right: 15px;
+			border:5px solid white;
+			box-sizing: border-box;
+			transition: all 1.5s;
+			position: relative;
+		}
+		.box1 li img{
+			width: 100%;
+			height: 100%;
+		}
+		.box1 li:nth-child(1){
+			transform: rotate(30deg);
+		}
+		.box1 li:nth-child(2){
+			transform: rotate(20deg);
+		}
+		.box1 li:nth-child(3){
+			transform: rotate(-20deg);
+		}
+		.box1 li:nth-child(4){
+			transform: rotate(44deg);
+		}
+		.box1:hover li{
+			opacity: 0.7;
+		}
+		.box1 li:hover{
+			transform: rotateY(0deg) scale(1.3);
+			z-index: 2;
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+	<ul class="reba">
+		<li><img src="../src/热巴1.jpg" alt=""></li>
+	</ul>
+	<ul class="nba">
+		<li><img src="../src/nba1.jpg" alt=""></li>
+		<li><img src="../src/nba2.jpg" alt=""></li>
+		<li><img src="../src/nba3.jpg" alt=""></li>
+		<li><img src="../src/nba4.jpg" alt=""></li>
+	</ul>
+	<div class="box1">
+		<ul>
+			<li><img src="../src/nba4.jpg" alt=""></li>
+			<li><img src="../src/nba5.jpg" alt=""></li>
+			<li><img src="../src/nba6.jpg" alt=""></li>
+			<li><img src="../src/nba7.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>

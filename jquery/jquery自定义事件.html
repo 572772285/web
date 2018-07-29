@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery自定义事件</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+	<script src="../js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$('div').on('myclick',function(){
+				$('div').css({
+					width:500,
+					height:500,
+					background:'blue'
+				})
+			})
+			$('div').trigger('myclick')
+		})
+	</script>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

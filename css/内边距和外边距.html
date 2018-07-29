@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>外边距和内边距</title>
+	<style>
+		div{
+			width:150px;
+			height:150px;
+		}
+/*		*{
+			padding: 0px;
+			margin:0px;
+		}*/
+
+		.father{
+			background-color: red;
+			/*border:1px solid red;*/
+			margin-left: 20px;
+			margin-bottom: 30px;
+			padding-top: 50px;
+			box-sizing: border-box;
+		}
+		.son{
+			background-color: green;
+		/*margin-top: 20px;*/
+		}
+		.class1{
+			background-color: pink;
+			padding: 20px 30px;
+			box-sizing: border-box;
+		}
+		.class2{
+			background-color:black;
+			width: 50px;
+			height:50px;
+			margin:auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="father"><div class="class2"></div>
+	</div>
+	<div class="son"></div>
+	<div class="class1">1111111111</div>
+</body>
+</html>

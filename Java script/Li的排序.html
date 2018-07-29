@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Li的排序</title>
+	<script>
+		window.onload=function(){
+			var oBtn=document.getElementById('btn');
+			var oUl=document.getElementById('ul1');
+			var oLi=oUl.children;
+			oBtn.onclick=function(){
+				var arr=[];
+				for(var i=0;i<oLi.length;i++){
+					arr.push(oLi[i])
+				}
+				// oLi是一个集合而不是数组，把oli的集合放在空数组里。
+				arr.sort(function(oLi1,oLi2){
+					var n1=oLi1.innerHTML
+					var n2=oLi2.innerHTML;
+					return n1-n2
+				})
+				// 把新定义的oli数组里的innerHTML排序
+				for(var j=0;j<arr.length;j++){
+					oUl.appendChild(arr[j])
+				}
+				// 把排好序的每一个arr[j]全部添加到ul里，因为添加会先删除再添加。
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="btn" value="排序">
+	<ul id="ul1">
+		<li>12</li>
+		<li>122</li>
+		<li>585</li>
+		<li>23</li>
+		<li>54</li>
+		<li>52</li>
+		<li>28</li>
+		<li>9</li>
+		<li>6</li>
+	</ul>
+</body>
+</html>

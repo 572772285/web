@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>New关键字</title>
+	<script>
+		function show(){
+			console.log(this)
+		}
+		new show();
+		var fanhuizhi=new show()
+		/*用new关键字调函数时系统会做两件事
+		1、在里面偷偷创建一个对象new Object给this
+		2、会把this返回
+		*/
+		console.log(fanhuizhi)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

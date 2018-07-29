@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>promise基本使用</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	let loadImg=(url,success,error)=>{
+		let img =new Image();
+		img.onload=()=>{
+			success();
+		}
+		img.onerror=()=>{
+			error();
+		}
+
+		img.src=url;
+	}
+	loadImg('../src/jd1.jpg',()=>{
+		console.log('chenggong')
+	},()=>{
+		console.log('shibai')
+	})
+	*/
+	let loadImgPromise=(url)=>{
+
+		let promise =new Promise((success,error)=>{
+			let img =new Image();
+			img.onload=()=>{
+				success(url);
+			}
+			img.onerror=()=>{
+				error(url);
+			}
+
+			img.src=url;
+
+		})
+		return promise
+	}
+	let promise=loadImgPromise('../src/jd1.jpg');
+	promise.
+	then((url)=>{
+		console.log(url,'chenggong....')
+	},(error)=>{
+		console.log(error)
+	})
+	.catch(()=>{
+		console.log('发生错误')
+	})
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>$解决冲突</title>
+	<script src="../js/"></script>
+	<script>
+		(function(w){
+			function test(){
+				alert('aa');
+			}
+			w.$=test;
+		})(window);
+	</script>
+	<script>
+		$();
+		var ly=jQuery.noConflict();
+		ly(function(){
+			alert('bb');
+		})
+	</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>淘宝案例</title>
+	<link rel="stylesheet" href="css/重置代码.css">
+	<link rel="stylesheet" href="../src/web-fonts-with-css/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="css/common.css">
+	<style>
+		#box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			display: none;
+			/*opacity: 0;*/
+		}
+		.fadeout{
+			opacity: 0;
+			visibility: hidden;
+		}
+	</style>
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<div id="box" class=""></div>
+	<p>我在这里啊</p>
+</body>
+	<script>
+
+			var $box=$('#box');
+
+			var css3={
+				fade:{
+					
+					init:function($elem){
+
+						$elem.addClass('transition');
+						if($elem.is(':hidden')){
+							$elem.data('status','hidden')
+							$elem.addClass('fadeout');
+						}else{
+							$elem.data('status','showhou')
+						}
+						console.log($elem.data('status'))
+					},
+					show:function($elem){
+						// $elem.show();//改变的是display
+						// $elem.css({
+						// 	opacity:1
+						// })//通过改变css里的opacity
+						if($elem.data('status')=='showhou') return;
+						if($elem.data('status')=='showqian') return;
+						$elem.data('status','showqian').trigger('showqian')
+						
+						$elem.show();//因为remove和show方法执行速度过快，造成removeclass的时候show方法的display还没有变成block。所以加一个定时器就可以解决这个问题
+						$elem.off('transitionend');
+						$elem.one('transitionend',function(){
+							$elem.trigger('showhou').data('status','showhou')
+						})
+						setTimeout(function(){
+							$elem.removeClass('fadeout');//通过添加一个class
+						},20)
+						
+					},
+					hide:function($elem){
+						// $elem.hide();
+						// $elem.css({
+						// 	opacity:0
+						// })
+						if($elem.data('status')=='hidden') return;
+						if($elem.data('status')=='hide') return;
+						$elem.data('status','hide').trigger('hide');
+						$elem.off('transitionend');
+						$elem.one('transitionend',function(){
+							$box.hide()
+							$elem.trigger('hidden').data('status','hidden')
+						})//这个事件是只要触发transition就会执行这个事件
+						$elem.addClass('fadeout');//通过添加一个class
+					}
+				}
+			}
+
+			$box.on('showqian showhou hide hidden',function(ev){
+				// console.log(ev.type)
+				/*用ev事件中的ev.type来判断是showqian还是showhou*/
+				if(ev.type=='showqian'){
+					console.log('show前...')
+				}else if(ev.type=='showhou'){
+					console.log('show后...')
+				}else if(ev.type=='hide'){
+					console.log('hide前...')
+				}else if(ev.type=='hidden'){
+					console.log('hidden后...')
+				}
+			})
+			css3.fade.init($box)
+		/*显示*/
+		$('button').eq(0).on('click',function(){
+			// slient.show($box);
+			css3.fade.show($box)
+		})
+		
+		$('button').eq(1).on('click',function(){
+			css3.fade.hide($box)
+		})
+	</script>
+</html>

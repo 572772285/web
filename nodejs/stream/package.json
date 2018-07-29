@@ -1,0 +1,15 @@
+{
+  "name": "liu",
+  "version": "1.0.0",
+  "main": "stream.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "yang",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "uuid": "^3.3.2"
+  }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件绑定与移除</title>
+	<style>
+		div{
+			width: 500px;
+			height: 500px;
+			background-color: red;
+		}
+	</style>
+	<script>
+		function show(nb){
+			alert(2);
+		}
+		window.onload=function(){
+			var oDiv=document.getElementById('div1');
+			oDiv.addEventListener('click',show,false);
+			oDiv.addEventListener('click',function(){
+				alert(5)
+			},false);
+			/*事件绑定*/
+			oDiv.removeEventListener('click',show,false);
+		}
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>

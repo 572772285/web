@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- <script src="jquery-1.12.4.js"></script> -->
+	<script src="kquery.js"></script>
+	<script>
+		$(function(){
+			function test1(){
+				alert('click1')
+			}
+			function test2(){
+				alert('click2')
+			}
+			function test3(){
+				alert('onmouseover')
+			}
+			function test4(){
+				alert('onmouseout')
+			}
+			// $('button').on('click',test2)
+			// $('button').on('click',test1)
+			// $('button').on('mouseover',test3)
+			// $('button').on('mouseout',test4)
+			// $('button').off()
+			$('button').off('click',test1);
+			// $('button').off('click')
+			// $('button').click(test2)
+		})
+	</script>
+	<title>事件测试</title>
+</head>
+<body>
+	<button>按钮1</button>
+	<button>按钮2</button>
+	<button>按钮3</button>
+	<button>按钮4</button>
+</body>
+</html>

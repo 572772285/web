@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>add和removeclass测试</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		.box1{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+		}
+		.box3{
+			border:1px solid #ccc;
+			border-radius: 50%;
+		}
+	</style>
+	<!-- <script src="jquery-1.12.4.js"></script> -->
+	<script src="kquery.js"></script>
+	<script>
+		$(function(){
+			$('button')[0].onclick=function(){
+				// console.log($('div').hasClass('box1'))
+				// $('div').addClass('box2 box3')
+				// $('div').remove('box2');
+				// $('div').empty();
+				// $('div').append('<p>我是P标签</p>')
+				// $('div').append('p')
+				// $('div').prepend('p')
+				$('div').prepend('<p>我是p标签</p>')
+			}
+
+		})
+	</script>
+</head>
+<body>
+	<button>点击</button>
+	<div class="box1" name="aaa"></div>
+	<div class="box2" name="ccc"></div>
+	<div class="box2" name="ccc"></div>
+	<p>asd</p>
+	<p>asd12213</p>
+</body>
+</html>

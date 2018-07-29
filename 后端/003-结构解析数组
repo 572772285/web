@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>003-结构解析数组</title>
+</head>
+<body>
+	
+</body>
+  <script>
+  	//按照结构对应关系赋值
+  	/*
+  	let [a,b,c]=[1,2,3];
+  	console.log(a,b,c);
+  	*/
+  	/*
+  	let [a,[b,c],d]=[1,[2,3],4];
+  	console.log(a,b,c,d);
+  	//数组关系可以嵌套
+  	*/
+  	let [a,[b,c],d]=[1,[2],3]
+  	console.log(a,b,c,d)
+  	//如果没有赋值则会显示对应undefined
+  </script>
+</html>

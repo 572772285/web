@@ -1,0 +1,79 @@
+.loading{
+	width: 4px;
+	height: 20px;
+	background-color: #fa6700;
+	position: relative;
+	margin:0 auto;
+	transform: scale(1,1);
+	animation: animation 0.5s linear infinite alternate-reverse;
+}
+.loading:after{
+	content: '';
+	width: 4px;
+	height: 20px;
+	background-color: #fa6700;
+	position: absolute;
+	transform: scale(1,0.5);
+	margin-left: 10px;
+	animation: animation 0.3s linear 0.5s infinite normal;
+}
+.loading:before{
+	content: '';
+	width: 4px;
+	height: 20px;
+	background-color: #fa6700;
+	position: absolute;
+	transform: scale(1,0.3);
+	margin-left: -10px;
+	animation: animation 0.3s linear 0.3s infinite normal;
+}
+
+@keyframes animation{
+	from{
+		opacity: 0.2;
+		transform: scale(1,0.5);
+	}
+	to{
+		opacity: 1;
+		transform: scale(1,1);
+	}
+}
+/* 小米轮播CSS */
+.leftBtn,.rightBtn{
+			width: 30px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			background: rgba(0,0,0,0.5);
+			color: #fff;
+			font-size: 30px;
+			position: absolute;
+			top:50%;
+			margin-top: -15px;
+			cursor: pointer;
+			font-weight: 100;
+		}
+		.leftBtn{
+			left: 230px;
+		}
+		.rightBtn{
+			right: 0;
+		}
+		.bottomBtn {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+		}
+		.bottomBtn li{
+			width: 15px;
+			height: 15px;
+		background: rgba(0,0,0,0.5);
+			float: left;
+			margin-right: 10px;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+		.bottomBtn li.active{
+			border:2px solid #000;
+			background: #fa6700;
+		}

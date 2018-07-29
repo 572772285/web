@@ -1,0 +1,5 @@
+// console.log(process.argv[0])
+// console.log(process.config)
+// console.log(process.cwd())
+// console.log(process.debugPort)
+console.log(process.env)

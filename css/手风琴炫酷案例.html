@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>炫酷手风琴案例</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		div{
+			width: 1000px;
+			height: 300px;
+			border:1px solid black;
+			margin:100px auto;
+		}
+		div ul li{
+			list-style: none;
+			width: 200px;
+			height: 300px;
+			float: left;
+			overflow: hidden;
+			transition:width 0.2s;
+		}
+		div ul li img{
+			width: 400px;
+			height: 300px;
+		}
+		ul:hover li{
+			width: 150px;
+		}
+		
+		ul li:hover{
+			width:400px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li><img src="../src/热巴3.jpg" alt=""></li>
+			<li><img src="../src/热巴3.jpg" alt=""></li>
+			<li><img src="../src/热巴3.jpg" alt=""></li>
+			<li><img src="../src/热巴3.jpg" alt=""></li>
+			<li><img src="../src/热巴3.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>

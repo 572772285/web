@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡插件</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		.btn{
+			overflow: hidden;
+		}
+		.btn li{
+			width: 60px;
+			height: 30px;
+			border:1px solid black;
+			float: left;
+			margin-right: 15px;
+			line-height: 30px;
+			text-align: center;
+		}
+		.btn li.active{
+			background-color: red;
+			box-shadow: 1px 1px 3px rgba(0,0,0,0.3)
+		}
+		.content li{
+			width: 300px;
+			height: 300px;
+			border:1px solid black;
+			display: none;
+		}
+		.content li.show{
+			display: block;
+		}
+		.active1{
+			background-color: yellow;
+			color:purple;
+		}
+	</style>
+</head>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	(function($){
+		$.fn.extend({
+			tab:function(options){
+				var peizhi={
+					btnclass:'active',
+					btns:'.btn>li',
+					contents:'.content>li',
+					eventTpye:'click'
+				}
+				options=$.extend(peizhi,options);
+				console.log(this)
+				this.each(function(){
+					// console.log(this)
+					var $tab=$(this);
+					console.log('1111',$tab)
+					/*获取btn*/
+					var $btns=$tab.find(options.btns);
+					// console.log($btns)
+					/*给btn添加事件*/
+					
+					$btns.on(options.eventTpye,function(){
+						$(this).addClass(options.btnclass);
+						$(this).siblings().removeClass(options.btnclass);
+						var xiabiao=$(this).index();
+						console.log(xiabiao)
+						var contents=$tab.find(options.contents);
+						// console.log(contents)
+						var now=contents.eq(xiabiao);
+						now.addClass('show');
+						now.siblings().removeClass('show')
+					})
+				})
+			}
+		})
+	})(jQuery);
+	
+</script>
+<script>
+	$(function(){
+		$('.tab').tab({
+			eventTpye:'mouseover',
+			btns:'ul.btn>li',
+			btnclass:'active1'
+		})
+	})
+</script>
+<body>
+	<div class="tab">
+		<ul class="btn">
+			<li class="active">按钮1</li>
+			<li>按钮2</li>
+			<li>按钮3</li>
+			<li>按钮4</li>
+		</ul>
+		<ul class="content">
+			<li class="show">内容1</li>
+			<li>内容2</li>
+			<li>内容3</li>
+			<li>内容4</li>
+		</ul>
+	</div>
+		<div class="tab">
+		<ul class="btn">
+			<li class="active">按钮1</li>
+			<li>按钮2</li>
+			<li>按钮3</li>
+			<li>按钮4</li>
+		</ul>
+		<ul class="content">
+			<li class="show">内容1</li>
+			<li>内容2</li>
+			<li>内容3</li>
+			<li>内容4</li>
+		</ul>
+	</div>
+		<div class="tab">
+		<ul class="btn">
+			<li class="active">按钮1</li>
+			<li>按钮2</li>
+			<li>按钮3</li>
+			<li>按钮4</li>
+		</ul>
+		<ul class="content">
+			<li class="show">内容1</li>
+			<li>内容2</li>
+			<li>内容3</li>
+			<li>内容4</li>
+		</ul>
+	</div>
+</body>
+</html>

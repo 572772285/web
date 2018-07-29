@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>外币汇率</title>
+</head>
+<body>
+	<!-- 人民币：<input type="text">
+	美元：<input type="text">
+	港币：<input type="text">
+	日元：<input type="text"> -->
+</body>
+<script>
+	(function(w){
+		function local(name){
+			this.oInput=null;
+			this.foreigns=[];
+			
+			this.oP=null;
+			this.init(name);
+		}
+		local.prototype={
+			constructor:local,
+			__proto__:Object.prototype,
+			init:function(name){
+				this.oP=document.createElement('p');
+				this.oP.innerHTML=name;
+				
+				this.oInput=document.createElement('input');
+				this.oP.appendChild(this.oInput);
+				document.body.appendChild(this.oP);
+			},
+			register:function(waibi){
+				this.foreigns.push(waibi);
+			},
+			publish:function(){
+				this.oInput.oninput=function(){
+					for(var i=0;i<this.foreigns.length;i++){
+						this.foreigns[i].listen(this.oInput.value);
+					}
+				}.bind(this);
+			}
+		}
+		w.local=local;
+	})(window);
+
+	(function(w){
+		function foreign(name,rete,local){
+			// this.oP=null;
+			this.rete=rete;
+			this.oInput=null;
+			local.register(this);
+			this.init(name);
+		}
+		foreign.prototype={
+			constructor:foreign,
+			__proto__:Object.prototype,
+			init:function(name){
+				this.oP=document.createElement('p');
+				this.oP.innerHTML=name;
+				this.oInput=document.createElement('input');
+				this.oP.appendChild(this.oInput);
+				document.body.appendChild(this.oP);
+			},
+			/*val是一个占位符，代表上面本币输入框的值传过来=val。val只是一个名字。
+			传过来之后，把val的值附给外币的输入框里，也就是this。oinput.value=val/this.rete*/
+			listen:function(val){
+				this.oInput.value=val/this.rete;
+			}
+		}
+		w.foreign=foreign;
+	})(window);
+	var cny=new local('人民币：');
+	var usa=new foreign('美元',6,cny);
+	var japen=new foreign('日元',0.1,cny);
+	var japen=new foreign('港币',0.7,cny);
+	/*可以通过new实例对象来增加换算*/
+	cny.publish();
+</script>
+</html>

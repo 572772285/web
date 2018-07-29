@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery操作css属性</title>
+	<style>
+		.class1{
+			width: 100px;
+			height: 100px;
+			background:red;
+		}
+		.class2{
+			width: 200px;
+			height: 200px;
+			background:blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="class1"></div>
+	<div class="class2"></div>
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		console.log($('div').css('width'));
+		$('div').css('width','500px').css('height','200px');
+		$('div').css({
+			width:50,
+			height:100,
+			background:'red'
+		})
+	})
+</script>
+</html>

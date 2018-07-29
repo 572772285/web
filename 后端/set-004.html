@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>set-004</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	let s=new Set();
+	// let arr=[11,22,33,44,11]
+	s.add(11)
+	s.add(11)
+	s.add(22)
+	s.add(33)
+	s.add(44)
+	s.delete(22)
+	console.log(s)
+	//set 值唯一
+	console.log(s.has(11))
+	//判断是否有
+	*/
+
+
+
+//重复数组去重
+let arr1=[11,22,33,44,55,22]
+let s=new Set(arr1)
+arr2=[...s]
+console.log(s)
+console.log(arr2)
+
+
+/*
+//set的key和value相等  
+let arr1=[11,22,33,44,55,22]
+let s=new Set(arr1)
+console.log(s)
+console.log(arr1)
+console.log(s.keys())
+for(key of s.keys()){
+	console.log(key)
+}
+*/
+</script>
+</html>

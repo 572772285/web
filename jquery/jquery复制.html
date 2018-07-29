@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery复制</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+	<script src="../js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$('button').on('click',function(){
+				var div=$('div').clone()
+				$('body').append(div)
+			})
+		})
+	</script>
+</head>
+<body>
+	<button>复制</button>
+	<div>1</div>
+</body>
+</html>

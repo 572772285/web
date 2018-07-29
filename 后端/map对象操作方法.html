@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>map对象操作方法</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let obj1={name:'tom'}
+	let map=new Map();
+	map[obj1]='hahah';
+	// map=obj1
+	map.set('name','ad')
+	console.log(map);
+	console.log(map.keys())
+	for(key of map.keys()){
+		console.log(key)
+	}
+</script>
+</html>

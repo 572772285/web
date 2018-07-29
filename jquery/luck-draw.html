@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Luck-draw</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		div{
+			width: 800px;
+			height: 600px;
+			font-size: 50px;
+			margin:0 auto;
+			color: red;
+			background: pink;
+			text-align: center;
+			line-height: 200px;
+			display: none;
+			background-image: url(timg.gif);
+		}
+		img{
+			width: 100%;
+			height: 100%;
+			display: none;
+		}
+	</style>
+	<script src="jquery-1.12.4.js"></script>
+	<!-- <script src="nodeserver.js"></script> -->
+	<script>
+		$(function(){
+			$('button').on('click',function(){
+				$.ajax({
+					url:'http://10.196.18.35:3000',
+					type:'GET',
+					dataType:'json',
+					data:{name:'leo',age:18},
+					success:function(data,statusMsg,jqXHR){
+						console.log(data,statusMsg,jqXHR)
+						console.log(data)
+						$('div').css('display','block')
+						$('div').html('<p>恭喜 中奖!</p>'+data.name+'!')
+					},
+					error:function(jqXHR,statusMsg){
+						console.log(jqXHR,statusMsg)
+						$('div').html('<p>手气有点背!</p>')
+					},
+					complete:function(jqXHR,statusMsg){
+						console.log(jqXHR,statusMsg)
+					},
+					/*完成后返回值，不管失败还是成功都会走这一步*/
+					timeout:2000,
+					/*根据服务器端返回的状态码不同做相应的处理*/
+					statusCode:{
+						404:function(){
+							alert('not found')
+						}
+					},
+					// headers:{
+					// 	'test':'liuruoyang'
+					// }
+					/*post请求才用*/
+				})
+			})
+			
+		})
+	</script>
+</head>
+<body>
+	<button>抽奖</button>
+	<div></div>
+	<img src="timg.gif" alt="">
+</body>
+</html>

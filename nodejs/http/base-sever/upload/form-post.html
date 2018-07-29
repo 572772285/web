@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>form</title>
+</head>
+<body>
+	<form action="http://127.0.0.1:3000" method="POST" enctype="multipart/form-data">
+		<div>
+			姓名<input type="text" name="name">
+		</div>
+		<div>
+			年龄<input type="text" name="age">
+		</div>
+		<div>
+			性别：
+			<input type="radio" name="sex" value="male">男
+			<input type="radio" name="sex" value="famale">女
+		</div>
+		<div>
+			爱好：
+			<input type="checkbox" name="hobby" value="football">足球
+			<input type="checkbox" name="hobby" value="basketball">篮球
+			<input type="checkbox" name="hobby" value="badminton">羽毛球
+		</div>
+		<div>
+			<input type="file" name="img">
+		</div>
+		<div>
+			<input type="submit" name="" value="提交">
+		</div>
+	</form>
+</body>
+</html>
+

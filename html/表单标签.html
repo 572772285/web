@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>表单标签</title>
+</head>
+<body>
+	<!-- <h1 align="center">登陆诺曼底</h1> -->
+	<form action="https://www.baidu.com" align="center">
+		<fieldset>
+			<legend><h1>登陆诺曼底</h1></legend>
+		<label for="name">用户名：</label>
+		<input type="text" name="username" id="name" list="mingzi">
+		<datalist id="mingzi">
+			<option>刘若阳</option>
+			<option>习近平</option>
+			<option>李克强</option>
+		</datalist>
+		<p>
+			<label for="password">密码：</label>
+		<input type="password" name="password" id="password">
+	</p>
+		性别：
+		男<input type="radio" name="sex" value="0" checked>
+		女<input type="radio" name="sex" value="1">
+		保密<input type="radio" name="sex" value="2">
+		<p>爱好:
+		游泳<input type="checkbox" name="hobbit" value="0">
+		爬山<input type="checkbox" name="hobbit" value="1">
+		打篮球<input type="checkbox" name="hobbit" value="2">
+				<p>
+				告诉我你最喜欢的网址:
+				<input type="url" name="url">
+			</p>
+			<p>
+				你的邮箱：
+				<input type="email" name="email">
+			</p>
+			<p>
+				年龄：
+				<input type="number" name="age">
+			</p>
+			<p>
+				出生日：
+				<input type="date">
+			</p>
+			<select name="address" id="">
+				<optgroup label="省份">
+				<option value="1">河南</option>
+				<option value="2">河北</option>
+				<option value="4">广东</option>
+				<option value="5">江苏</option>
+				<option value="6">浙江</option>
+			</optgroup>
+			</select>
+			<select name="address" id="">
+				<optgroup label="城市">
+				<option value="1">许昌</option>
+				<option value="2">石家庄</option>
+				<option value="3">惠州</option>
+			</optgroup>
+			</select>
+			<p>
+			介绍你自己:
+			<textarea name="intr" id="" cols="30" rows="10"></textarea>
+		</p>
+
+		<p>
+			<input type="button" value="点我">
+			<input type="submit">
+			<input type="reset" value="清空我咯">
+			</p>			
+		</fieldset>
+	</form>
+	
+</body>
+</html>

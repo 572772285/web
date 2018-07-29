@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery表单验证</title>
+	<style>
+		input.error{
+			outline-color: red;
+		}
+		.error{
+			color: red;
+		}
+	</style>
+	<script src="jquery-1.12.4.js"></script>
+	<script src="jquery.validate.min.js"></script>
+	<script>
+		$(function(){
+			$('#form1').validate({
+				/*建立验证规则*/
+				rules:{
+					username:{
+						required:true,
+						/*可以自己手动加CLASS改变样式*/
+						// minlength:2,
+						// maxlength:8,
+						rangelength:[2,8],
+						// remote:'/057-user.json'
+					},
+					password:{
+						required:true,
+						number:true
+					},
+					email:{
+						required:true,
+						email:true
+					},
+					homepage:{
+						required:true,
+						url:true
+					}
+				},
+				messages:{
+					username:{
+						required:'请输入用户名!',
+						// minlength:'用户名至少2位',
+						rangelength:'用户名为2-8位',
+						// remote:'用户名已存在'
+
+					},
+					password:{
+						required:'请输入密码',
+						number:'密码为纯数字'
+					},
+					email:{
+						required:'请输入邮箱',
+						email:'邮箱格式不正确'
+					},
+					homepage:{
+						required:'请输入网址',
+						url:'网络地址格式不对'
+					}
+				}
+			});
+		})
+	</script>
+</head>
+<body>
+	<form action="https:www.baidu.com" id="form1">
+		<div>
+			用户名：<input type="text" name="username">
+		</div>
+		<div>
+			密码：<input type="text" name="password">
+		</div>
+		<div>
+			邮箱：<input type="text" name="email">
+		</div>
+		<div>
+			个人主页：<input type="text" name="homepage">
+		</div>
+		<div>
+			登陆：<input type="submit" name="submit">
+		</div>
+	</form>
+</body>
+</html>

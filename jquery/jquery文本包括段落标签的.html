@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery文本包括段落标签的</title>
+	<script src="../js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			console.log($('li:has(span)'))
+		})	
+	</script>
+</head>
+<body>
+	<ul>
+		<li id="aa"></li>
+		<li></li>
+		<li></li>
+		<li><span>l4</span></li>
+		<li>l5</li>
+		<li><p>l6</p></li>
+		<li>l7</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单的拖拽验证</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.yanzheng{
+			width: 500px;
+			min-height: 500px;
+			float: left;
+		}
+		.target-list{
+			border-left: 1px solid black;
+			float: left;
+			width: 500px;
+			min-height: 500px;
+			padding: 20px;
+		}
+		.box{
+			border:1px dashed black;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<div class="yanzheng" id="yanzheng">
+			<h2>调查问卷</h2>
+		</div>
+		<div class="target-list" id="target-list">
+			<div class="box" draggable="true" id="box">
+				<label for="">姓名</label>
+				<input type="text" name="username">
+			</div>
+			<div class="box" draggable="true" id="box">
+				<label for="">年龄</label>
+				<input type="text" name="age">
+			</div>
+			<div class="box" draggable="true" id="box">
+				<label for="">爱好：</label>
+				篮球
+				<input type="checkbox" name="username">	
+				羽毛球
+				<input type="checkbox" name="username">
+				乒乓球
+				<input type="checkbox" name="username">			
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		var shuxing1=null;
+		$('#target-list')
+		.on('dragstart','#box',function(ev){
+			ev.originalEvent.dataTransfer.setData('targetId',ev.target.id)
+			shuxing1=this;
+
+		})
+		$('#yanzheng')
+		.on('drop',function(ev){
+			$('#yanzheng').append($(shuxing1).clone())
+			console.log($(shuxing1))
+
+		})
+		.on('dragover',function(ev){
+			ev.preventDefault()
+		})
+	})
+</script>
+</html>

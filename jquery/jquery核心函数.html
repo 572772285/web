@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery核心函数</title>
+	<script src="../js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			console.log($(null));
+			var $undefined=$(undefined);
+			console.log($undefined);
+			var $0=$(0);
+			console.log($0);
+			var $div=$('div');
+			console.log($div);
+			console.log($('.btn'));
+			console.log($('#btn'));
+		})
+	</script>
+</head>
+<body>
+	<div class="btn"></div>
+	<div id="btn"></div>
+	<div></div>
+</body>
+</html>

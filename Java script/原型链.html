@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象-原型链</title>
+	<script>
+		window.onload=function(){
+			function person(name,age){
+				this.name=name;
+				this.age=age;
+			}
+			person.prototype.showName=function(){
+				console.log('Im'+this.name)
+			}
+			person.prototype.showAge=function(){
+				console.log('Im'+this.age+'years old')
+			}
+			/*添加的两个方法*/
+			console.log('1:::',person.prototype)
+			console.log('2:::',person.prototype.constructor)
+			console.log('3:::',person.prototype.__proto__)
+			console.log('4:::',Object.__proto__)
+			var p1=new person('tom',20);
+			p2=p1
+			var p2=new person('yang',23);
+			/*NEW了1对象，给2对象赋值，给2对象改属性*/
+			p2.showAge();
+			p2.showName();
+			console.log('5:::',p2.__proto__)
+			/*调用2对象*/
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D正方形</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 200px;
+			height: 200px;
+			/*border:1px solid black;*/
+			margin:100px auto;
+			position: relative;
+			transform-style: preserve-3d;
+			transform:rotateX(0deg) rotateY(0deg);
+			animation: sport 5s linear infinite;
+		}
+		@keyframes sport{
+			from{
+				transform: rotateX(0deg);
+			}
+			to{
+				transform: rotateX(360deg);
+			}
+		}
+		ul li{
+			list-style: none;
+			width: 200px;
+			height: 200px;
+			position:absolute;
+			line-height: 200px;
+			text-align: center;
+		}
+		ul li:nth-child(1){
+			background-color: red;
+			transform:rotateX(90deg) translateZ(100px) scale(2,1) ;
+		}
+		ul li:nth-child(2){
+			background-color: yellow;
+			transform:rotateX(-90deg) translateZ(100px) scale(2,1);
+		}
+		ul li:nth-child(3){
+			background-color: pink;
+			transform:rotateY(-90deg) translateZ(200px);
+		}
+		ul li:nth-child(4){
+			background-color: purple;
+			transform:rotateY(90deg) translateZ(200px);
+		}
+		ul li:nth-child(5){
+			background-color: green;
+			transform:rotateX(180deg) translateZ(100px) scale(2,1); 
+		}
+		ul li:nth-child(6){
+			background-color: gray;
+			transform: translateZ(100px) scale(2,1);
+			
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>我</li>
+		<li>爱</li>
+		<li>写</li>
+		<li>代</li>
+		<li>码</li>
+		<li>啊</li>
+	</ul>
+</body>
+</html>

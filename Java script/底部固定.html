@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>底部固定</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		height: 2600px;
+	}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			position: absolute;
+			right: 0px;
+		}
+	</style>
+	<script>
+		var timer=null;
+			function animation(obj,attr,value){
+				/*obj表示对象，attr表示什么属性，value表示目标值*/
+				var Speed=0;
+				/*定义一个速度*/
+				clearInterval(obj.timer);
+				/*先清除定时器*/
+				obj.timer=setInterval(function(){
+					var curr=parseFloat(getComputedStyle(obj,false)[attr]);
+					console.log(curr)
+					/*定义一个curr的变量表示当前对象的属性值*/
+					if(attr=='opacity'){
+						curr=curr*100;
+					}
+					if(curr<value){
+						sPeed=50;
+					}else{
+						sPeed=-50;
+					}
+					if(Math.abs(value-curr)<Math.abs(sPeed)){
+						
+						clearInterval(obj.timer);
+						if(attr=='opacity'){
+							obj.style[attr]=value/100;
+						}
+							obj.style[attr]=value+'px';
+					}else{
+						if(attr=='opacity'){
+							obj.style[attr]=(curr+sPeed)/100;
+						}
+							obj.style[attr]=curr+sPeed+'px';
+						
+					}
+					console.log(obj.style[attr])	
+				},30)
+			}
+		window.onload=function(){
+			var oDiv=document.getElementById('div');
+			var iTop=document.body.scrollTop || document.documentElement.scrollTop;
+			var iHeight=window.innerHeight;
+			var iTarget=iTop+iHeight-oDiv.offsetHeight;
+			animation(oDiv,'top',iTarget)
+			// oDiv.style.top=iTop+iHeight-oDiv.offsetHeight+'px'
+		}
+		window.onscroll=function(){
+			var oDiv=document.getElementById('div');
+			var iTop=document.body.scrollTop || document.documentElement.scrollTop;
+			var iHeight=window.innerHeight;
+			var iTarget=iTop+iHeight-oDiv.offsetHeight;
+			animation(oDiv,'top',iTarget)
+		}
+	</script>
+</head>
+<body>
+	<div id="div"></div>
+</body>
+</html>

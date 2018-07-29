@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>校验邮箱</title>
+	<script>
+		window.onload=function(){
+			var oTxt=document.getElementById('txt');
+			var oBtn=document.getElementById('btn');
+			var oSpan=document.createElement('span');
+			document.body.insertBefore(oSpan,document.body.children[2]);
+			console.log(document.body.children[2])
+			oTxt.onblur=function(){
+				var str=oTxt.value;
+				var reg = /^\w+@[0-9a-z-]+\.[a-z]+$/i;
+				/*这个正则就是一个对象，在这个对象上有一个test的方法*/
+				if(reg.test(str)){
+					
+					oSpan.innerHTML='正确';
+					oSpan.style.color='green';
+					// alert("邮箱合法")
+				}else{
+					// alert("邮箱不合法")
+					oSpan.innerHTML='不正确';
+					oSpan.style.color='red';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="校验">
+</body>
+</html>

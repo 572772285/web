@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>月历</title>
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+		#box{
+			width: 380px;
+			height: 600px;
+			border:1px solid black;
+			background-color: #ccc;
+			margin:0 auto;
+		}
+		.clearfix:after{
+			content: '';
+			clear: both;
+			display: block;
+			visibility: hidden;
+			height: 0;
+		}
+		div li{
+			width: 100px;
+			height: 100px;
+			background-color: black;
+			color: #fff;
+			margin-right: 10px;
+			margin-top: 10px;
+			list-style: none;
+			float: left;
+		}
+		.active{
+			background-color: #fff;
+			color: black;
+		}
+	</style>
+<script>
+	window.onload=function(){
+		var aLi=document.getElementsByTagName('li');
+		var oDesc=document.getElementById('desc');
+		var arr=['旅游','踏青','拍照','吃饭','跑步'];
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].liu=i+1
+			aLi[i].onmouseover=function(){
+				for(var j=0;j<aLi.length;j++){
+					aLi[j].className=''
+				}
+				this.className='active';
+				oDesc.innerHTML='<h2>'+(this.liu)+'月'+'</h2>'+'<p>'+arr[this.liu]+'</p>';
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="box">
+		<ul class="clearfix">
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+		</ul>
+		<div id="desc">
+			<h2>1月</h2>
+			<p>去旅游</p>
+		</div>
+	</div>
+</body>
+</html>

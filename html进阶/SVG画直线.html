@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SVG初体验</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		svg{
+			border:1px solid black;
+		}
+		line{
+			stroke:rgb(88,88,78);
+			stroke-width:10;
+			fill:red;
+		}
+		rect{
+			stroke:rgb(88,88,78);
+			stroke-width:10;
+			fill:red;
+		}
+	</style>
+</head>
+<body>
+	<!-- 视区盒子是viewBox指的是先把盒子等比例拉伸至画布的尺寸，然后把视区盒子的元素等比例拉伸 -->
+	<svg width="600" height="400">
+		<rect width="100" height="50" />
+		<!-- 直线  stroke 为描边属性-->
+		<!-- <line x1="0" y1="0" x2="300" y2="300" />  -->
+	</svg>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单次定时器</title>
+	<script>
+		window.onload=function(){
+			var timer=null;
+			var oBtn=document.getElementById('btn');
+			var oBtn2=document.getElementById('btn2');
+			oBtn.onclick=function(){
+				clearTimeout(timer)
+				console.log(timer)	
+			}
+			oBtn2.onclick=function(){
+				timer=setTimeout(function(){
+				alert(1)
+			},2000)
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="关闭" id="btn">
+	<input type="button" value="开始" id="btn2">
+</body>
+</html>

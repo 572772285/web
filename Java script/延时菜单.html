@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>延时菜单</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#leftbox{
+			width: 100px;
+			height: 60px;
+			background-color: red;
+		}
+		#rightbox{
+			width: 500px;
+			height: 600px;
+			background-color: blue;
+			margin-left: 30px;
+			display: none;
+		}
+		div{
+			float: left;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oLeftbox=document.getElementById('leftbox');
+			var oRightbox=document.getElementById('rightbox');
+			var timer=null;
+			oLeftbox.onmouseover=function(){
+				clearTimeout(timer);
+				oRightbox.style.display='block';
+			}
+			oLeftbox.onmouseout=function(){
+				clearTimeout(timer);
+				timer=setTimeout(function(){
+					oRightbox.style.display='none';
+				},500);
+			}
+			oRightbox.onmouseout=function(){
+				timer=setTimeout(function(){
+					oRightbox.style.display='none';
+				},500);
+			}
+			oRightbox.onmouseover=function(){
+				clearTimeout(timer);
+				oRightbox.style.display='block';
+			}
+			// oRightbox.onmouseover=function(){
+			// 	oRightbox.style.display='block';
+			// }
+			// oRightbox.onmouseout=function(){
+			// 	oRightbox.style.display='none';
+			// }
+
+		}
+	</script>
+</head>
+<body>
+	<div id="leftbox"></div>
+	<div id="rightbox"></div>
+</body>
+</html>

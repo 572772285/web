@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery电子书插件</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.contain{
+			overflow: hidden;
+		}
+		.book{
+			width: 900px;
+			height: 600px;
+			/*background-color: red;*/
+			position: absolute;
+			top:50%;
+			left: 50%;
+			margin-left: -350px;
+			/*margin-top: -100px;*/
+		}
+	</style>
+	<script src="jquery-1.12.4.js"></script>
+	<script src="../turnjs4/lib/turn.min.js"></script>
+	<script>
+		$(function(){
+			$('.book').turn();
+		})
+	</script>
+</head>
+<body>
+	<div class="contain">
+		<div class="book">
+			<div style="background: url(../turnjs4/samples/basic/pages/1.jpg);"></div>
+			<div style="background: url(../turnjs4/samples/basic/pages/2.jpg);"></div>
+			<div style="background: url(../turnjs4/samples/basic/pages/3.jpg);"></div>
+			<div style="background: url(../turnjs4/samples/basic/pages/4.jpg);"></div>
+			<div style="background: url(../turnjs4/samples/basic/pages/6.jpg);"></div>
+			<div style="background: url(../turnjs4/samples/basic/pages/7.jpg);"></div>
+			<div style="background: url(../turnjs4/samples/basic/pages/8.jpg);"></div>
+			<div style="background: url(../turnjs4/samples/basic/pages/9.jpg);"></div>
+		</div>
+	</div>
+</body>
+</html>

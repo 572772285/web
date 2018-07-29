@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>扩展运算</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	var arr=[11,22,33]
+	console.log(arr)
+	console.log(...arr)
+	*/
+	function show(n1,n2,n3){
+		console.log(n1,n2,n3)
+	}
+	var arr1=[11,22,33]
+	show(...arr1)
+
+	//数组的深拷贝1
+	// var arr1=[22,33,44,55]
+	// var arr2=[...arr1]
+	// arr2.push(111)
+	// console.log(arr1,arr2)
+	//数组的深拷贝2
+	// var arr1=[11,22,33,44]
+	// var arr2=[]
+	// for(var i=0;i<arr1.length;i++){
+	// 	arr2.push(arr1[i])
+	// }
+	// arr2.push(111)
+	// console.log(arr1,arr2)
+	//数组的深拷贝3
+	var arr1=[11,22,33,44]
+	var arr2=arr1.concat()
+	arr2.push(111)
+	console.log(arr1,arr2)
+
+	//数组的深拷贝4
+	var arr1=[11,22,33,44]
+	var arr2=arr1.slice()
+	arr2.push(111)
+	console.log(arr1,arr2)
+
+	//对象的深拷贝
+	// obj1={name:'a',age:1}
+	// obj2={...obj1}
+	// obj2.name='b';
+	// console.log(obj1,obj2)
+
+	obj1={name:'aa',age:12,friend:{name:'aas',age:10}}
+	obj2={...obj1}
+	obj2.name='cc';
+	obj2.friend.name='qq'
+	console.log(obj1,obj2)
+</script>
+</html>

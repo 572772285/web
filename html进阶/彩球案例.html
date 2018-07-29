@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas画布</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		canvas{
+			background:#ccc;
+			margin-left: 200px;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="600" height="300" id="canvas">
+		你的浏览器不支持，请更换高版本浏览器
+	</canvas>
+</body>
+<script src="js/echarts.common.min.js"></script>
+<script>
+
+	//要想改变canvas画布的大小要用JS控制它的大小
+	var oCanvas=document.getElementById('canvas')
+	oCanvas.width="1000";
+	oCanvas.height="600";
+		//获取上下文环境
+	var ctx=oCanvas.getContext('2d');
+	ctx.beginPath();
+
+
+	echarts.registerMap('USA', usaJson, {
+  // 把阿拉斯加移到美国主大陆左下方
+  Alaska: {
+      // 左上角经度
+      left: -131,
+      // 左上角纬度
+      top: 25,
+      // 经度横跨的范围
+      width: 15
+  },
+  // 夏威夷
+  Hawaii: {
+      left: -110,
+      top: 28,
+      width: 5
+  },
+  // 波多黎各
+  'Puerto Rico': {
+      left: -76,
+      top: 26,
+      width: 2
+  }
+});
+	var  ECharts=new ECharts()；
+</script>

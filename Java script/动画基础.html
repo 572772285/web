@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画基础</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			position: absolute;
+			top:50px;
+			left: 600px;
+		}
+		input{
+			width: 100px;
+		}
+	</style>
+	<script>
+		var timer=null;
+			function animation(obj,attr,value){
+				/*obj表示对象，attr表示什么属性，value表示目标值*/
+				var Speed=0;
+				/*定义一个速度*/
+				clearInterval(obj.timer);
+				/*先清除定时器*/
+				obj.timer=setInterval(function(){
+					var curr=parseFloat(getComputedStyle(obj,false)[attr]);
+					console.log(curr)
+					/*定义一个curr的变量表示当前对象的属性值*/
+					if(attr=='opacity'){
+						curr=curr*100;
+					}
+					if(curr<value){
+						sPeed=10;
+					}else{
+						sPeed=-10;
+					}
+					if(Math.abs(value-curr)<Math.abs(sPeed)){
+						
+						clearInterval(obj.timer);
+						if(attr=='opacity'){
+							obj.style[attr]=value/100;
+						}
+							obj.style[attr]=value+'px';
+					}else{
+						if(attr=='opacity'){
+							obj.style[attr]=(curr+sPeed)/100;
+						}
+							obj.style[attr]=curr+sPeed+'px';
+						
+					}
+					console.log(obj.style[attr])	
+				},30)
+			}
+		window.onload=function(){
+			var oBtn=document.getElementById('btn')
+			var oBox=document.getElementById('box');
+			var timer=null;
+			oBtn.onclick=function(){
+				animation(oBox,'left','0')
+				// var speed
+				// clearInterval(timer);				
+				// timer=setInterval(function(){
+				// 	if(oBox.offsetLeft>=300){
+				// 	clearInterval(timer);
+				// }else{
+				// 	oBox.style.left=oBox.offsetLeft+10+'px'
+				// }	
+				// },30)
+				
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="开始" id="btn">
+	<div id="box"></div>
+</body>
+</html>

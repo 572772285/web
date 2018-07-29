@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>菜单防止冒泡案例</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		input{
+			width: 100px;
+			height: 30px;
+		}
+		div{
+			width: 200px;
+			height: 500px;
+			background-color: #ccc;
+			display: none;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oBtn=document.getElementById('btn');
+			var oDiv1=document.getElementById('div1');
+			oBtn.onclick=function(ev){
+				oDiv1.style.display='block';
+				var oEvent=ev||event;
+				oEvent.stopPropagation();
+			}
+			document.onclick=function(){
+				oDiv1.style.display='none';
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="菜单" id="btn">
+	<div id="div1"></div>
+</body>
+</html>

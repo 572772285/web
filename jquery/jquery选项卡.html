@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery选项卡</title>
+	<style>
+		.btn{
+			overflow: hidden;
+		}
+		.btn li{
+			width: 50px;
+			height: 25px;
+			border:1px solid black;
+			float: left;
+			list-style: none;
+			text-align: center;
+		}
+		.content li{
+			width: 300px;
+			height: 300px;
+			border:2px solid black;
+			list-style: none;
+			line-height: 300px;
+			display: none;
+		}
+		.content .chulai{
+			display: block;
+		}
+		.mouseenter{
+			background-color: red;
+			color: #fff;
+		}
+	</style>
+	<script src="../js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$('.btn>li').on('mouseenter',function(){
+				var $this=$(this);
+				$this.addClass('mouseenter');
+				var qita=$this.siblings();
+				qita.removeClass('mouseenter');
+				var xiabiao=$this.index();
+				// console.log($('.content>li').eq(xiabiao))
+				var dangqian=$('.content>li').eq(xiabiao)
+				dangqian.stop().show();
+				dangqian.siblings().hide();
+
+				// dangqian.addClass('chulai');
+				// dangqian.siblings().removeClass('chulai');
+			})
+		})
+	</script>
+</head>
+<body>
+	<ul class="btn">
+		<li class="mouseenter">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	<ul class="content">
+		<li class="chulai">内容1</li>
+		<li>内容2</li>
+		<li>内容2</li>
+		<li>内容4</li>
+	</ul>
+</body>
+</html>

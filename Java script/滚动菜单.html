@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滚动菜单</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#div1{
+			width: 30px;
+			height: 500px;
+			background-color: #ccc;
+			position: relative;
+			top:5px;
+			left: 580px;
+			float: left;
+
+		}
+		#div2{
+			width: 30px;
+			height: 50px;
+			background-color: #fa6700;
+			position: absolute;
+			top:0;
+			left: 0;
+		}
+		#box1{
+			width: 500px;
+			height: 500px;
+			margin-left: 5px;
+			position: relative;
+			top:5px;
+			border:1px solid black;
+			overflow: hidden;
+		}
+		#box1son{
+			position: absolute;
+			top: 0;
+			width: 500px;
+			/*background-color: gold;*/
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oBtn=document.getElementById('div2');
+			var oDiv1=document.getElementById('div1');
+			var oBox1=document.getElementById('box1');
+			var oBox1son=document.getElementById('box1son');
+			oBtn.onmousedown=function(ev){
+				var oEvent=ev||event;
+				var disY=oEvent.clientY-oBtn.offsetLeft;
+					document.onmousemove=function(ev){
+					var oEvent=ev||event;
+					var shang =oEvent.clientY-disY;	
+					oBtn.style.top=shang+'px';	
+					if(shang<0){
+						oBtn.style.top=0;
+					}
+					if(shang>oDiv1.offsetHeight-oBtn.offsetHeight){
+						oBtn.style.top=oDiv1.offsetHeight-oBtn.offsetHeight+'px';
+					}
+					var bili=shang/(oDiv1.offsetHeight-oBtn.offsetHeight);
+					if(bili<0){
+						bili=0
+					}
+					if(bili>1){
+						bili=1
+					}
+					oBox1son.style.top=(-oBox1son.offsetHeight+oBox1.offsetHeight)*bili+'px';
+					console.log(bili)
+				}
+					document.onmouseup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="div1">
+		<div id="div2"></div>
+	</div>
+	<div id="box1"><div id="box1son">盼望着，盼望着，东风来了，春天的脚步近了。 
+  一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。 
+  小草偷偷地从土地里钻出来，嫩嫩的，绿绿的。园子里，田野里，瞧去，一大片一大片满是的。坐着，躺着，打两个滚，踢几脚球，赛几趟跑，捉几回迷藏。风轻悄悄的，草软绵绵的。 
+  桃树，杏树，梨树，你不让我，我不让你，都开满了花赶趟儿。红的像火，粉的像霞，白的像雪。花里带着甜味；闭了眼，树上仿佛已经满是桃儿，杏儿，梨儿。花下成千成百的蜜蜂嗡嗡的闹着，大小的蝴蝶飞来飞去。野花遍地是：杂样儿，有名字的，没名字的，散在草丛里像眼睛像星星，还眨呀眨的。 
+  “吹面不寒杨柳风”，不错的，像母亲的手抚摸着你，风里带着些新翻的泥土的气息，混着青草味儿，还有各种花的香，都在微微润湿的空气里酝酿。鸟儿将巢安在繁花嫩叶当中，高兴起来了，呼朋引伴的卖弄清脆的歌喉，唱出婉转的曲子，跟清风流水应和着。牛背上牧童的短笛，这时候也成天嘹亮的响着。 
+  雨是最寻常的，一下就是三两天。可别恼。看，像牛毛，像花针，像细丝，密密地斜织着，人家屋顶上全笼着一层薄烟。树叶却绿得发亮，小草也青得逼你的眼。傍晚时候，上灯了，一点点黄晕的光，烘托出一片安静而和平的夜。在乡下，小路上，石桥边，有撑着伞慢慢走着的人，地里还有工作的农民，披着蓑戴着笠。他们的房屋稀稀疏疏的，在雨里静默着。 
+  天上的风筝渐渐多了，地上的孩子也多了。城里乡下，家家户户，老老小小，也赶趟似的，一个个都出来了。舒活舒活筋骨，抖擞抖擞精神，各做各的一份事儿去。“一年之计在于春”，刚起头儿，有的是功夫，有的是希望。
+  春天像刚落地的娃娃，从头到脚都是新的，它生长着。 
+  春天像小姑娘，花枝招展的，笑着走着。 
+  春天像健壮的青年，有铁一般的胳膊和腰脚，领着我们向前去。头涔涔、泪潸潸
+好句：1.层层的叶子中间，零星地点缀着些白花，有袅娜(niǎo,nuó)地开着旳，有羞涩地打着朵儿旳；正如一粒粒的明珠，又如碧天里的星星，又如刚出浴的美人。微风过处，送来缕缕清香，仿佛远处高楼上渺茫的歌声似的。
+2.薄薄的青雾浮起在荷塘里。叶子和花仿佛在牛乳中洗过一样；又像笼着轻纱的梦。
+3.
+？
+《歌声》： 好词：神迷心醉 霏霏 滑腻 甜软 倦怠 浮艳
+默然
+好句：看啊，那都是歌中所有的。我用耳，也用眼，鼻，舌，身，听着；也用心唱着。我终于被一种健康的麻痹袭取了，于是为歌所有。此后只由歌独自唱着，听着，世界上便只有歌声了
+那微雨偷偷洗去她们的尘垢，她们的甜软的光泽便自焕发了。在那被洗去的浮艳下，我能看到她们在有日光时所深藏着的恬静的红，冷落的紫，和苦笑的白与绿
+《桨声灯影里的秦淮河》：好词：清隽 六朝金粉 明漪 颇悦人目 柔腻 袅娜 宏阔 灯月交辉，笙歌彻夜 豁然开朗 热蓬蓬 渺渺茫茫 缠绵
+好句：一眼望去，疏疏的林，淡淡的月，衬着蓝蔚的天，颇像荒江野渡光景；那边呢，郁丛丛的，阴森森的，又似乎藏着无边的黑暗：令人几乎不信那是繁华的秦淮河了。但是河中眩晕着的灯光，纵横着的画舫，悠扬着的笛韵，夹着那吱吱的胡琴声，终于使我们认识绿如茵陈酒的秦淮水了。
+等到灯火明时，阴阴的变为沉沉了：黯淡的水光，像梦一般；那偶然闪烁着的光芒，就是梦的眼睛了
+那电灯 下的人物，只觉像蚂蚁一般，更不去萦念。这是最后的梦；可惜是最短的梦！黑暗重复落在 我们面前，我们看见傍岸的空船上一星两星的，枯燥无力又摇摇不定的灯光。我们的梦醒了，我们知道就要上岸了；我们心里充满了幻灭的情思
+《白种人——上帝的骄子》：好词 ：蓦生 两次三番 张皇失措 侮蔑 赤子之心 一针见血，一刀两断
+好段： 我向来总觉得孩子应该是世界的，不应该是一种，一国，一乡，一家的。我因此不能容忍中国的孩子叫西洋人为“洋鬼子”。但这个十来岁的白种的孩子，竟已被揿入人种与国家的两种定型里了。他已懂得凭着人种的优势和国家的强力，伸着脸袭击我了。这一次袭击实是许多次袭击的小影，他的脸上便缩印着一部中国的外交史。他之来上海，或无多日，或已长久，耳濡目染，他的父亲，亲长，先生，父执，乃至同国，同种，都以骄傲践踏对付中国人；而他的读物也推波助澜，将中国编排得一无是处，以长他自己的威风
+他的从容，他的沉默，他的独断独行，他的一去不回头，都是力的表现，都是强者适者的表现。决不婆婆妈妈的，决不粘粘搭搭的，一针见血，一刀两断，这正是白种人之所以为白种人。我真是一个矛盾的人。无论如何，我们最要紧的还是看看自己，看看自己的孩子！谁也是上帝之骄子；这和昔日的王侯将相一样，是没有种的！</div>
+</div>
+</body>
+</html>

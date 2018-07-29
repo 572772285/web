@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>面向对象选项卡3</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		.btn{
+			overflow: hidden;
+		}
+		.btn li{
+			width: 100px;
+			height: 20px;
+			background-color: #ccc;
+			border:1px solid black;
+			margin-right: 1px;
+			float: left;
+		}
+		.btn .active{
+			background-color: #000;
+			color: pink;
+		}
+		.content li{
+			width: 500px;
+			height: 500px;
+			background-color: red;
+			border:1px solid black;
+			display: none;
+		}
+	</style>
+	<script>
+
+		/*
+		1，定义把函数抽取出来
+		*/
+		window.onload=function(){
+			new gouzaohanshu('btn','content');
+			new gouzaohanshu('btn1','content1');
+		}
+		function gouzaohanshu(btnId,contentId){
+			this.oBtn=document.getElementById(btnId).children;
+			this.oDiv=document.getElementById(contentId).children;
+			for(var i=0;i<this.oBtn.length;i++){
+				this.oBtn[i].index=i;
+				this.oBtn[i].onclick=this.dianji.bind(this,this.oBtn[i]);
+				/*在这里this.oBtn[i]传到下面就行了，因为传到下面刚好组成
+				this.oBtn[i].index=i
+				*/
+				// console.log(this)
+			}
+		}
+		gouzaohanshu.prototype.dianji=function(xx){
+			for(var j=0;j<this.oBtn.length;j++){
+				this.oBtn[j].className='';
+				this.oDiv[j].style.display='none';
+			}
+			
+			this.oBtn[xx.index].className='active';
+			this.oDiv[xx.index].style.display='block';
+			// console.log(this.index);
+			/*this.index指的是i*/
+		}
+	</script>
+</head>
+<body>
+	<ul id="btn" class="btn">
+		<li class="active">选项一</li>
+		<li>选项二</li>
+		<li>选项三</li>
+		<li>选项四</li>
+		<li>选项五</li>
+	</ul>
+	<ul id="content" class="content">
+		<li style="display: block;">内容1</li>
+		<li>内容2</li>
+		<li>内容3</li>
+		<li>内容4</li>
+		<li>内容5</li>
+	</ul>
+	<ul id="btn1" class="btn">
+		<li class="active">选项一</li>
+		<li>选项二</li>
+		<li>选项三</li>
+		<li>选项四</li>
+		<li>选项五</li>
+	</ul>
+	<ul id="content1" class="content">
+		<li style="display: block;">内容1</li>
+		<li>内容2</li>
+		<li>内容3</li>
+		<li>内容4</li>
+		<li>内容5</li>
+	</ul>
+</body>
+</html>

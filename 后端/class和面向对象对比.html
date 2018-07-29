@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>class和面向对象对比</title>
+</head>
+<body>
+	
+</body>
+<script>
+
+	//calss 没有括号接收属性有constructor
+	class person{
+		constructor(a,b){
+			this.a=a;
+			this.b=b;
+		}
+		showName(a){
+			console.log('I am'+this.a)
+		}
+		showAge(b){
+			console.log('I am'+this.b+'years old')
+		}
+		//添加静态方法
+		static sayhi(){
+			console.log('hi...')
+		}
+	}
+	let p=new person('yang',23)
+	// console.log(p)
+	p.showName();
+	p.showAge();
+	person.sayhi()
+	//class 的继承
+	class student extends person{
+		constructor(name,age,major){
+			//调用父类的this.name=name......
+			super(name,age)
+			this.major=major;
+		}
+		showMajor(){
+			console.log('I am from'+this.major)
+		}
+	}
+	console.log(student.prototype)
+	let s=new student('jing',22,'Computer')
+	s.showName()
+	s.showAge()
+	s.showMajor()
+	student.sayhi()
+
+
+/*
+	function person(name,age){
+		this.name=name;
+		this.age=age;
+	}
+	person.prototype={
+		constructor:person,
+		showName(){
+			console.log('I am'+this.name)
+		},
+		showAge(){
+			console.log('I am'+this.age+'years old')
+		}
+	}
+	var p=new person('tom',22)
+	p.showName()
+	p.showAge()
+*/
+</script>
+</html>

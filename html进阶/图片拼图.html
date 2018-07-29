@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片拼图</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.contianer{
+			width: 500px;
+			height: 300px;
+			/*background: red;*/
+			margin:100px auto;
+		}
+		#img{
+			float: left;
+			width: 100px;
+			height: 150px;
+		}
+		#img img{
+			width: 100px;
+			height: 150px;			
+		}
+	</style>
+</head>
+<body>
+	<div class="contianer" id="contianer">
+		<li id="img" draggable="true"><img src="image/01.png" alt=""></li>
+		<li id="img" draggable="true"><img src="image/02.png" alt=""></li>
+		<li id="img" draggable="true"><img src="image/03.png" alt=""></li>
+		<li id="img" draggable="true"><img src="image/04.png" alt=""></li>
+		<li id="img" draggable="true"><img src="image/05.png" alt=""></li>
+		<li id="img" draggable="true"><img src="image/06.png" alt=""></li>
+		<li id="img" draggable="true"><img src="image/07.png" alt=""></li>
+		<li id="img" draggable="true"><img src="image/08.png" alt=""></li>
+		<li id="img" draggable="true"><img src="image/09.png" alt=""></li>
+		<li id="img" draggable="true"><img src="image/10.png" alt=""></li>
+	</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		var shuxing1=null;
+
+		$('#contianer')
+		.on('dragstart','#img',function(ev){
+			resault=this;
+			console.log(shuxing1)
+			// alert('aaa')
+		})
+		.on('drop','#img',function(ev){
+
+			if(shuxing1!=this){
+				// var ziji=this.innerHTML;
+				var shuxing2=resault.innerHTML
+				// $(this).append($(resault).clone());
+				resault.innerHTML=this.innerHTML;
+				this.innerHTML=shuxing2
+				// ziji=shuxing1.innerHTML
+
+
+			}
+			
+		})
+		.on('dragover','#img',function(ev){
+			ev.preventDefault()
+		})
+	})
+</script>
+</html>

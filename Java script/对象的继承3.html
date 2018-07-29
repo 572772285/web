@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象的继承2</title>
+	<script>
+		function person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		person.prototype.showName=function(){
+			console.log('I am'+this.name)
+		}
+		person.prototype.showAge=function(){
+			console.log('I am'+this.age+' years old')
+		}
+		var p1=new person('lry',23)
+		
+		function students(name,age,classname){
+			person.call(this,name,age)
+			this.classname=classname;
+		}
+		console.log("1::",students.prototype)
+		students.prototype=new person();
+		/*只用父类的对象*/
+		students.prototype=new person
+		console.log("2::",students.prototype)
+		/*constructor消失*/
+		students.prototype.showClassname=function(){
+			console.log('I am from '+this.classname);
+		}
+		var p2=new students('lry',23,'computer');
+		p2.showName();
+		p2.showAge();
+		p2.showClassname();
+		p1.showName();
+		p1.showAge();
+		p1.showClassname();
+		console.log(p2)
+	</script>
+</head>	
+<body>
+	
+</body>
+</html>

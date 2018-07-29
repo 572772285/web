@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数的设置和获取</title>
+	<style>
+		#box{
+			width: 100px;
+			height: 100px;
+			border:1px solid black;
+		}
+	</style>
+	<script>
+		function css(obj,attr,value){
+			if(arguments.length==2){
+				 return getComputedStyle(obj,false)[attr];
+			}else{
+				// obj.style[attr]=value;
+				arguments[0].style[arguments[1]]=arguments[2]
+			}
+		}
+		window.onload=function(){
+			var oBtn1=document.getElementById('btn1');
+			var oBtn2=document.getElementById('btn2');
+			var oBox=document.getElementById('box');
+			oBtn1.onclick=function(){
+				// oBox.style.width='500px';
+				css(oBox,'width','500px');
+			}
+			oBtn2.onclick=function(){
+				// alert(getComputedStyle(oBox,false)['width'])
+				alert(css(oBox,'width'));
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="变宽" id="btn1">
+	<input type="button" value="获取属性" id="btn2">
+	<div id="box"></div>
+</body>
+</html>

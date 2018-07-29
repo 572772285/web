@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery插入节点</title>
+	<script src="../js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$('button').on('click',function(){
+				var oLi=$('<li>我是新建的li</li>');
+				$('ul').append(oLi);
+				/*在ul内部底部插入*/
+				$('ul').prepend(oLi)
+				/*在ul内部顶部插入*/
+				$('ul').after(oLi)
+				/*在ul外部顶部插入*/
+				$('ul').before(oLi)
+				/*在ul底部顶部插入*/
+
+			})
+		})
+	</script>
+</head>
+<body>
+	<button>插入</button>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+</html>

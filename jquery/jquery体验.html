@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery体验</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			border:1px solid black;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script>
+		window.jQuery || document.write('<script src="js/jquery.js"><\/script>');
+	</script>
+	<script>
+		$(function(){
+			var div=$('div');
+			var btn=$('#btn');
+			console.log(btn)
+			console.log(div)
+			div.css({
+				background:'red'
+			})
+
+		})
+	</script>
+</head>
+<body>
+	<button id="btn">点我</button>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

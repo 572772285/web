@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大镜效果</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		#box{
+			width: 500px;
+			
+		}
+		#tupian{
+			width: 500px;
+			height: 500px;
+			position: relative;
+			top:0;
+			left: 0;
+		}
+		#tupian img{
+			width: 500px;
+			height: 500px;
+		}
+		#li{
+			width: 500px;
+			height: 60px;
+		}
+		#li li{
+			float: left;
+			cursor: pointer;
+		}
+		#li li img{
+			height: 60px;
+			width: 99px;
+
+		}
+		.a1{
+			width: 500px;
+			height: 500px;
+			overflow: hidden;
+			display: none;
+			position: absolute;
+			left: 500px;
+			top:0;
+		}
+		.a1 img{
+			position: absolute;
+			top:0;
+			left: 0;
+		}
+		#mb{
+			width: 363px;
+			height: 363px;
+			background-color: rgba(255,255,0,0.5);
+			position: absolute;
+			top:0;
+			left:0;
+			display: none;
+			cursor: move;
+		}
+		.active{
+			border:1px solid #fa6700;
+		}
+	</style>
+	<script>
+		function $(id){
+			return document.getElementById(id);
+		}
+		window.onload=function(){
+			var oBox=$('box');
+			var oLi1=document.getElementById('li');
+			var oLi=oLi1.children;
+			var oTupian=$('tupian');
+			var oMb=$('mb');
+			var oBig=$('big');
+			var oBigimg=oBig.children[0];
+			console.log(tupian);
+			for(var i=0;i<oLi.length;i++){
+				oLi[i].index=i;
+				oLi[i].onmouseover=function(){
+					for(var j=0;j<oLi.length;j++){
+						oLi[j].className='';
+					}
+					this.className='active'
+					oTupian.children[0].src="../jdsrc/m"+(this.index+1)+".png"
+					oBig.children[0].src="../jdsrc/bg"+(this.index+1)+".jpg"
+					console.log(this.index)
+				}
+				oTupian.onmouseover=function(ev){
+					var oEvent=ev||event;
+					oMb.style.display='block';
+					oBig.style.display='block'
+					oTupian.onmousemove=function(ev){
+					var oEvent=ev||event;
+					var l=oEvent.clientX- oMb.offsetWidth*0.5
+					var t=oEvent.clientY- oMb.offsetHeight*0.5
+					if(l<0){
+						l=0
+					}
+					if(l>oTupian.offsetWidth- oMb.offsetWidth){
+						l=oTupian.offsetWidth- oMb.offsetWidth
+					}
+					if(t<0){
+						t=0
+					}
+					if(t>oTupian.offsetHeight- oMb.offsetHeight){
+						t=oTupian.offsetHeight- oMb.offsetHeight
+					}
+					oMb.style.left=l+'px';
+					oMb.style.top=t+'px';
+					
+					oBigimg.style.left=-(l/(oMb.offsetWidth/oBigimg.offsetWidth))+'px'
+					oBigimg.style.top=-(t/(oMb.offsetHeight/oBigimg.offsetHeight))+'px'
+					}
+				}
+				document.onmouseout=function(ev){
+					var oEvent=ev||event;
+					oMb.style.display='none';
+					oBig.style.display='none';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<div id="tupian">
+			<img src="../jdsrc/m1.png" alt="">
+			<div id="mb"></div>
+		</div>
+		<ul id="li">
+			<li class="active"><img src="../jdsrc/sm1.jpg" alt=""></li>
+			<li><img src="../jdsrc/sm2.jpg" alt=""></li>
+			<li><img src="../jdsrc/sm3.jpg" alt=""></li>
+			<li><img src="../jdsrc/sm4.jpg" alt=""></li>
+			<li><img src="../jdsrc/sm5.jpg" alt=""></li>
+		</ul>
+	</div>
+	<div class="a1" id="big"><img src="../jdsrc/bg1.jpg" alt=""></div>
+</body>
+</html>

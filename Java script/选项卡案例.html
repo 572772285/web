@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡案例</title>
+	<style>
+		div{
+			width: 300px;
+			height: 300px;
+			background-color: red;
+			display: none;
+		}
+		input{
+			width: 100px;
+			height: 30px;
+		}
+		.active{
+			background-color: yellow;
+		}
+	</style>
+	<script>
+			window.onload=function(){
+				var aBtn=document.getElementsByTagName('input')
+				var aUl=document.getElementById('div1')
+				var aDiv=aUl.getElementsByTagName('div')
+				for(var i=0;i<aBtn.length;i++){
+					aBtn[i].index=i;
+					aBtn[i].onclick=function(){
+						for(var j=0;j<aBtn.length;j++){
+							aBtn[j].className=''
+							aDiv[j].style.display='none'
+						}
+						this.className='active';
+						console.log(this)
+						aDiv[this.index].style.display='block'
+					}
+				}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="选项一" id="btn1" class="active">
+	<input type="button" value="选项二" id="btn2">
+	<input type="button" value="选项三" id="btn3">
+	<ul id="div1">
+	<div style="display: block">1</div>
+		<div>2</div>
+		<div>3</div>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>隐藏父元素</title>
+	<script>
+		window.onload=function(){
+			var aA=document.getElementsByTagName('a')
+			var aDiv=document.getElementsByTagName('div')
+			for(var i=0;i<aA.length;i++){
+				aA[i].onclick=function(){
+					this.parentNode.style.display='none'
+				}
+			}
+}
+	</script>
+</head>
+<body>
+	<div>12<a href="#">隐藏</a></div>
+	<div>2<a href="#">隐藏</a></div>
+	<div>3<a href="#">隐藏</a></div>
+	<div>4<a href="#">隐藏</a></div>
+</body>
+</html>

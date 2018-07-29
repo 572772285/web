@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象的继承</title>
+	<script>
+		function person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		person.prototype.showName=function(){
+			console.log('I am'+this.name)
+		}
+		person.prototype.showAge=function(){
+			console.log('I am'+this.age+' years old')
+		}
+		var p1=new person('lry',23)
+		p1.showName();
+		p1.showAge();
+		function students(name,age,classname){
+			person.call(this,name,age);
+			/*在这里变了this的指向为person*/
+			this.classname=classname;
+		}
+		students.prototype=person.prototype;
+		/*把student的父类给了student，这类继承一般不用，因为给父类添加了多余方法*/
+		students.prototype.showClassname=function(){
+			console.log('I am from '+this.classname);
+		}
+		var p2=new students('lry',23,'computer');
+		p2.showName();
+		p2.showAge();
+		p2.showClassname();
+		p1.showClassname();
+		console.log(p2)
+	</script>
+</head>	
+<body>
+	
+</body>
+</html>

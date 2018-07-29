@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标移动跟随2</title>
+	<style>
+	body{
+		height: 2115px;
+	}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			top:0;
+			left:0;
+		}
+	</style>
+	<script>
+		function fengzhuang(ev){
+			var iTop=document.body.scrollTop||document.documentElement.scrollTop;
+			var iLeft=document.body.scrollLeft||document.documentElement.scrollLeft;
+			var Left=ev.clientX+iLeft;
+			var itop=ev.clientY+iTop;
+			return {x:Left,y:itop};
+		}
+		window.onload=function(){
+			var oDiv=document.getElementById('div1');
+			document.onmousemove=function(ev){
+				var oEvent=ev||event;
+				var fengzhuang1=fengzhuang(oEvent);
+				oDiv.style.left=fengzhuang1.x+'px';
+				oDiv.style.top=fengzhuang1.y+'px';
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图标跳动</title>
+	<link rel="stylesheet" href="../src/web-fonts-with-css/css/fontawesome-all.min.css">
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		li{
+			list-style: none;
+			float: left;
+			font-size: 35px;
+			/*border-right: 1px solid black;*/
+			width: 100px;
+			height: 45px;
+			text-align: center;
+			line-height: 50px;
+			position: relative;
+			border:1px solid black;		}
+		li i{
+			position: absolute;
+			top:10px;
+			left: 30px;
+			color: red;
+			opacity: 0.5;
+		}
+		ul{
+			width: 600px;
+			height: 50px;
+			margin:0 auto;
+			margin-top: 50px;
+			/*background-color: pink;*/
+		}
+	</style>
+	<script src="animation.js"></script>
+	<script>
+		window.onload=function(){
+			var oUl1=document.getElementById('ul1');
+			var oLi=oUl1.children
+			for(var i=0;i<oLi.length;i++){
+				oLi[i].onmouseover=function(){
+					// this.style.height='0px'
+					var oI=this.firstElementChild
+					animation(oI,{'top':'2'},false,function(){
+						animation(oI,{'opacity':'100'},false,)
+						console.log('aaa:::');
+					})
+				}
+				oLi[i].onmouseout=function(){
+					var oI=this.firstElementChild
+					animation(oI,{'top':'10'},false,function(){
+						animation(oI,{'opacity':'50'},false)
+						console.log('aaa:::');
+					})
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul id="ul1">
+		<li><i class="fas fa-address-card"></i></li>
+		<li><i class="fab fa-android"></i></li>
+		<li><i class="fas fa-arrow-alt-circle-down"></i></li>
+		<li><i class="fab fa-apple"></i></li>
+		<li><i class="fab fa-apple"></i></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>传参数</title>
+	<style>
+		div{
+			width: 300px;
+			height: 300px;
+			border:1px solid black;
+		}
+	</style>
+	<script>
+		function css(obj,attr,value){
+				obj.style[attr] = value;
+			}
+		window.onload=function(){
+			
+			var oBtn1=document.getElementById('btn1');
+			var oBtn2=document.getElementById('btn2');
+			var oBtn3=document.getElementById('btn3');
+			var oBox=document.getElementById('box');
+			oBtn1.onclick=function(){
+				// oBox.style.width='500px'
+				css(oBox,'width','500px');
+			}
+			oBtn2.onclick=function(){
+				css(oBox,'height','500px');
+			}
+			oBtn3.onclick=function(){
+				css(oBox,'background','red');
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="变宽" id="btn1">
+	<input type="button" value="变高" id="btn2">
+	<input type="button" value="变色" id="btn3">
+	<div id="box"></div>
+</body>
+</html>

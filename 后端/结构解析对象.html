@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>结构解析对象</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	// let {username:username,age:age}={username:'asd',age:12}
+	let {username,age}={username:'asd',age:12}
+	console.log(username,age)
+	*/
+	/*
+	let {age,username}={username:'asd',age:544}
+	console.log(username,age)
+
+	let {person,dog}={person:{
+		name:'fg',
+		age:32
+	},dog:{
+		name:'wangwang',
+		age:3
+	}}
+	console.log(person,dog)
+	*/
+	let {person={name:'asd',age:22},dog}={person:null,dog:{
+		name:'wangwang',
+		age:3
+	}}
+	console.log(person,dog)
+</script>
+</html>

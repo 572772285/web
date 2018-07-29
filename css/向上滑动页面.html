@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>向上滑动页面</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html{
+			width: 100%;
+			height: 100%;
+		}
+		body{
+			width: 100%;
+			height: 100%;
+		}
+		ul{
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+
+		}
+		.box1{
+			width: 100%;
+			height: 100%;
+			transition: all 1s;
+		}
+		.nav1 input{
+			z-index: 99;
+			opacity: 0;
+		}
+		.nav1 a{
+			color:white;
+			z-index: 2;
+		}
+		.nav1 input,.nav1 a{
+			position: fixed;
+			width: 300px;
+			height: 34px;
+			line-height: 34px;
+			background-color: #2f2f2f;
+			text-align: center;
+			text-decoration: none;
+		}
+		.input2,.input2+a{
+			left: 20%;
+		}
+		.input3,.input3+a{
+			left: 40%;
+		}
+		.input4,.input4+a{
+			left: 60%;
+		}
+		.input5,.input5+a{
+			left: 80%;
+		}
+		.nav1 input:checked +a,.nav1 input:checked:hover +a{
+		background-color: #ff4c4c;
+		}
+		input:hover+a{
+			background-color: gray;
+		}
+		.box1{
+			width: 100%;
+			position: relative;
+			top: 34px;
+			height: 100%;
+		}
+		.box2{
+			background-image: url(../src/风景3.jpg);
+			width: 100%;
+			height: 100%;
+		}
+		.box3{
+			background-image: url(../src/241f95cad1c8a78679da7f256d09c93d70cf502c.jpg);
+			width: 100%;
+			height: 100%;
+		}
+		.box4{
+			background-image: url(../src/nba10.jpg);
+			width: 100%;
+			height: 100%;
+		}
+		.box5{
+			background-image: url(../src/nba11.jpg);
+			width: 100%;
+			height: 100%;
+		}
+		.box6{
+			background-image: url(../src/风景4.jpg);
+			width: 100%;
+			height: 100%;
+		}
+		.box2,.box3,.box4,.box5,.box6{
+			background-repeat: no-repeat;
+		}
+		.nav1 .input1:checked~.box1{
+			transform: translateY(0%);
+		}
+		.nav1 .input2:checked~.box1{
+			transform: translateY(-100%);
+		}
+		.nav1 .input3:checked~.box1{
+			transform: translateY(-200%);
+		}
+		.nav1 .input4:checked~.box1{
+			transform: translateY(-300%);
+		}
+		.nav1 .input5:checked~.box1{
+			transform: translateY(-400%);
+		}
+	</style>
+</head>
+<body>
+	<ul class="nav1">
+		<input type="radio" name="radio" class="input1" checked>
+		<a href="#"><i class="fas fa-home"></i>首页</a>
+		<input type="radio" name="radio" class="input2">
+		<a href="#"><i class="fas fa-coffee"></i>服务</a>
+		<input type="radio" name="radio" class="input3">
+		<a href="#"><i class="fas fa-hand-holding"></i>介绍</a>
+		<input type="radio" name="radio" class="input4">
+		<a href="#"><i class="fas fa-window-maximize"></i>业务</a>
+		<input type="radio" name="radio" class="input5">
+		<a href="#"><i class="fas fa-handshake"></i>关于我们</a>
+		<div class="box1">
+			<div class="box2">1</div>
+			<div class="box3">2</div>
+			<div class="box4">3</div>
+			<div class="box5">4</div>
+			<div class="box6">5</div>
+		</div>
+	</ul>
+</body>
+</html>

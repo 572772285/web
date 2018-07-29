@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery操作CSS2</title>
+	<style>
+		.class1{
+			width: 100px;
+			height: 200px;
+			border:1px solid black;
+		}
+		.class2{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<button>点我</button>
+	<div></div>
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		var oBtn=document.getElementsByTagName('button')[0];
+		oBtn.onclick=function(){
+			$('div').attr('class','class1 class2');
+		}
+		
+	})
+</script>
+</html>

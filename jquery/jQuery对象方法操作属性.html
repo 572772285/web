@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery对象方法操作属性</title>
+</head>
+<body>
+	<input type="text" value="aa">
+	<input type="text" value="bb">
+	<input type="text" value="cc">
+	<input type="checkbox">
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		console.log($('input').attr('value'));
+		console.log($('input').prop('value'));
+		/*attr和prop获取选中元素第一个元素的值*/
+		console.log($('input:eq(1)').attr('value','liu'));
+		console.log($('input:eq(1)').prop('value','liu'));
+		/*attr和prop设置属性*/
+		console.log($('input').attr('name','asd'));
+		/*attr和prop给所有input设置属性*/
+		console.log($('input').removeAttr('name'))
+		console.log($('input').removeProp('name'))
+		/*用removeprop删除属性会造成undefined*/
+		console.log($('input:eq(3)').attr('checked'));
+		console.log($('input:eq(3)').prop('checked'));
+		/*用prop获取不存在的并且结果为真假的属性，会返回true或者false，attr则是undefined*/
+	})
+</script>
+</html>

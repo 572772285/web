@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位流中的覆盖关系</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			position: relative;
+			top: 20px;
+			left: 20px;
+		}
+		.s1{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			position:absolute;
+			top: 200px;
+			left: 200px;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			background-color: gray;
+			position: relative;
+			z-index: 2;
+		}
+		.s2{
+			width: 100px;
+			height: 100px;
+			background-color: purple;
+			position: fixed;
+			left: 150px;
+			top: 200px;
+			z-index: 10;
+		}
+		.box3{
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+			position: relative;
+			top: -20px;
+			z-index: 3;
+		}
+		.s3{
+			width: 100px;
+			height: 100px;
+			background-color:#069;
+			position: fixed;
+			top: 200px;
+			left: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<div class="s1"></div>
+	</div>
+	<div class="box2">
+		<div class="s2"></div>
+	</div>
+	<div class="box3">
+		<div class="s3"></div>
+	</div>
+</body>
+</html>

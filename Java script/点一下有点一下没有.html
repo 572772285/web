@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点一下有点一下没有</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			border:1px solid black;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oBtn=document.getElementById('btn1');
+			var oDiv=document.getElementById('box')
+			oBtn.onclick=function(){
+				if(oDiv.style.display=='none'){
+					oDiv.style.display='block'
+				}else{
+					oDiv.style.display='none'
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="点击" id="btn1">
+	<div id="box" style="display: none">
+		你还没有新的消息
+	</div>
+</body>
+</html>

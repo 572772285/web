@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery的HTML方法和text方法</title>
+</head>
+<body>
+	<div>
+		asdqw
+		<p>213asd</p>
+	</div>
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		console.log($('div').html());
+		console.log($('div').text());
+		console.log($('div').html('猜猜我要写什么'));
+		console.log($('div').text('我要写什么'));
+	})
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas画布</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		canvas{
+			border:1px solid black;
+		}
+		#canvas1{
+			width:300px;
+			height:100px;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="600" height="300" id="canvas">
+		你的浏览器不支持，请更换高版本浏览器
+	</canvas>
+</body>
+<script>
+
+	//要想改变canvas画布的大小要用JS控制它的大小
+	var oCanvas=document.getElementById('canvas')
+	oCanvas.width="600"
+	oCanvas.height="600"
+	//获取上下文环境
+	var ctx=oCanvas.getContext('2d');
+	//绘制矩形
+	ctx.beginPath();
+	// ctx.strokeRect(10,10,100,50);
+	
+
+
+	var linearGradient=ctx.createLinearGradient(500,400,300,300);
+	linearGradient.addColorStop(0.1,'rgb(255,0,0)')
+	linearGradient.addColorStop(1,'rgb(0,255,0)')
+	// ctx.strokeStyle='#fa6700';
+	ctx.fillStyle=linearGradient;
+	ctx.fillRect(300,100,300,100);
+	// ctx.fill();
+	// ctx.stroke()
+
+
+</script>
+</html>

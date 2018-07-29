@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>在函数中改变this指向</title>
+	<script>
+		function person(n1,n2){
+			console.log(this,n1+'years old','like XMJ'+n2+' years old');
+		}
+		person.call({name:"liuruoyang"},23,2);
+		person.apply({name:"liuruoyang"},[15,30]);
+		person.bind({name:"liuruoyang"},500,600)()
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

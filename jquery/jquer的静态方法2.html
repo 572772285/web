@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery静态方法2</title>
+	<script src="../js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			var arr=[11,22,33,44,55,66,77,88,99];
+			// var weishuzu=[0:'niu']
+			var oLi=document.getElementsByTagName('li');
+			var $map=$.map(oLi,function(value,index){
+				console.log(value,'::::',index)
+				return value
+			})
+			console.log($map)
+		})
+		
+	</script>
+</head>
+<body>
+	<ul>
+		<li>l1</li>
+		<li>l2</li>
+		<li>l3</li>
+		<li>l4</li>
+		<li>l5</li>
+		<li>l6</li>
+		<li>l7</li>
+	</ul>
+</body>
+</html>

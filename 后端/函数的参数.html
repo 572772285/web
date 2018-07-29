@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数的参数</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function show(msg){
+		if(typeof msg=='undefined'){
+			msg='hello'
+		}
+		console.log(msg)
+	}
+	show()
+	//在es6中可以在括号写默认值
+	function show(name,msg='hello'){//一般把默认参数写最后，方便调用函数时传参
+		console.log(name,msg)
+	}
+	show('liuruoyang')
+	function show(name,{age=18,sex='女'}={}){
+		console.log(name,age,sex)
+	}
+	show('arym',{age:8,sex:'女'})
+	function show(name,...arr){
+		console.log(name,arr[0],arr[1])
+	}
+	show('leo',...[1,2,3,4])
+</script>
+</html>

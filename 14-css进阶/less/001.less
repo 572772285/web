@@ -1,0 +1,117 @@
+@color:#ff0;
+@w:200px;
+@h:200px;
+@color1:#fa6700;
+*{
+	margin: 0;
+	padding: 0;
+}
+div{
+	margin-bottom: 5px;
+}
+body{
+	background:#fff;
+}
+h1{
+	color:@color;
+}
+.border-radius{
+	border-radius: 15px;
+}
+.div1{
+	background-color: @color;
+	width: @w;
+	height: @h;
+	.border-radius
+}
+//画三角形
+// .triangle{
+// 	width: 0;
+// 	height: 0;
+// 	overflow: hidden;
+// 	border-width: 10px;
+// 	border-color:red transparent transparent transparent; 
+// 	border-style: solid;
+// }
+.triangle(top,@w:10px,@c:red){
+	border-width: @w;
+	border-color:@c transparent transparent transparent; 
+}
+.triangle(bottom,@w:10px,@c:red){
+	border-width: @w;
+	border-color:transparent transparent @c transparent; 
+
+}
+.triangle(right,@w:10px,@c:red){
+	border-width: @w;
+	border-color: transparent @c transparent transparent; 
+}
+.triangle(left,@w:10px,@c:red){
+	border-width: @w;
+	border-color: transparent transparent transparent @c; 
+}
+//triangle简化代码
+.triangle(@_,@w:10px,@c:red){
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	border-style: solid;
+
+}
+.div2{
+	.div1
+}
+.div3{
+	.triangle(left,50px,blue)
+}
+.div4{
+	.triangle(bottom)
+}
+.list{
+	width:100%;
+	height: 50px;
+	margin-bottom: 5px;
+	span{
+		color:@color;
+		float: left;
+		a{
+			color:blue;
+		}
+	}
+	div{
+		float: right;
+	}
+	&:hover{
+		background-color: red;
+	}
+}
+
+
+
+//避免编译
+.div5{
+	font-size: ~'calc(50px - 10px)';
+}
+.div6{
+	.div1 !important;
+}
+//设置样式混合
+.setStyle(@attr,@value){
+	@{attr}:unit(@value,%);
+}
+.div7{
+	.setStyle(width,100);
+	.setStyle(height,200);
+}
+//运算
+.fs(@s){
+	//注意:符合的左右各必须有一个以上的空格;
+	// font-size: @s * 10px;
+	// font-size: @s + 10px;
+	// font-size: @s / 10px;
+	font-size: @s - 10px;
+}
+.div8{
+	.fs(100px);
+	background: @color1;
+}

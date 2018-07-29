@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>转换</title>
+	<script>
+		window.onload=function(){
+			var oText1=document.getElementById('text1');
+			var oText2=document.getElementById('text2');
+			var oBtn=document.getElementById('btn');
+			oBtn.onclick=function(){
+				var aa=parseInt(oText1.value);
+				var bb=parseInt(oText2.value);
+				if(isNaN(aa)){
+					alert('第一个不是数字')
+				}else if(isNaN(bb)){
+					alert('第二个不是数字')
+				}else{
+					alert(aa+bb);
+				}
+var a =1;
+alert(++a)
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="text1">
+	<input type="text" id="text2">
+	<input type="button" value="求和" id="btn">
+</body>
+</html>

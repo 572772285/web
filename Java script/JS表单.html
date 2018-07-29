@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS表单</title>
+	<script>
+		window.onload=function(){
+			var oForm=document.forms[0];
+			console.log("1::",oForm);
+			var oFormEle=oForm.elements;
+			console.log("2",oFormEle)	
+			console.log("3",oForm['username']);
+			oForm.username.focus();
+			console.log("4",oForm.check[2]);
+
+			var oBtn2=oForm.btn2;
+			console.log("5",oBtn2)
+			oBtn2.onclick=function(){
+				console.log('xxxxxx')
+				// return false;				
+				oForm.submit();
+			}
+			oForm.onsubmit=function(){
+				return false;
+				console.log('liuruoyang11111');
+			}
+			oForm.onreset=function(){
+				// return false
+				console.log('liuruoyang')
+			}
+		}
+	</script>
+</head>
+<body>
+	<form action="https://www.baidu.com">
+	<div>账号：<input type="text" name="username"></div>
+	<div>密码：<input type="text" name="age"></div>
+	<div>
+		爱好：游泳<input type="checkbox" name="check">
+		篮球<input type="checkbox" name="check">
+		足球<input type="checkbox" name="check">
+		羽毛球<input type="checkbox" name="check">
+	</div>	
+	<div><input type="submit" name="sub" value="提交"></div>
+	<input type="button" id="btn" name="btn2" value="提交2">
+	<input type="reset" name="reset" value="重置1">
+	<input type="reset" name="reset" value="重置2">
+	</form>
+</body>
+</html>

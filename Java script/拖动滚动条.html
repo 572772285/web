@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖动滚动条</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		#box1{
+			width: 300px;
+			height: 50px;
+			background-color: red;
+			position: relative;
+			left: 50px;
+		}
+		#box1 div{
+			height: 50px;
+			width: 50px;
+			background-color: gold;
+			position: absolute;
+			top:0;
+			left: 0;
+		}
+		#box2{
+			width: 0;
+			height: 0;
+			background-color: yellow;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oBox1=document.getElementById('box1');
+			var oBox2=document.getElementById('box2');
+			var oBtn=document.getElementById('btn');
+			oBtn.onmousedown=function(ev){
+				var oEvent=ev||event;
+				var disX=oEvent.clientX - oBtn.offsetLeft;
+				document.onmousemove=function(ev){
+					var oEvent=ev||event;
+					var zuo=oEvent.clientX-disX;
+					oBtn.style.left=zuo+'px';
+					if(zuo<0){
+						oBtn.style.left='0px';	
+					}
+					if(zuo>oBox1.offsetWidth-oBtn.offsetWidth){
+						oBtn.style.left=oBox1.offsetWidth-oBtn.offsetWidth+'px';
+					}
+					var bili=zuo/(oBox1.offsetWidth-oBtn.offsetWidth);
+					if(bili<0){
+						bili=0
+					}
+					if(bili>=1){
+						bili=1
+					}
+					/*左的距离除以容器的宽度，这个比例最大为1最小为0*/
+					oBox2.style.width=500*bili+'px'
+					oBox2.style.height=500*bili+'px'
+				}
+				document.onmouseup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box1">
+		<div id="btn"></div>
+	</div>
+	<div id="box2"></div>
+</body>
+</html>

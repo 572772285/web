@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>旋转轴像</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 200px;
+			height: 200px;
+			perspective: 500px;
+		}
+		li{
+			width: 200px;
+			height: 200px;
+			list-style: none;
+		}
+		ul li:nth-child(1){
+			transform: rotateX(45deg);
+			background-color: red;
+		}
+		ul li:nth-child(2){
+			transform: rotateY(45deg);
+			background-color: red;
+		}
+		ul li:nth-child(3){
+			transform: rotateZ(45deg);
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

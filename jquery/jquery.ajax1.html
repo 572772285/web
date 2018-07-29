@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery.ajax1全局配置</title>
+	
+</head>
+<body>
+	<button class="button">获取</button>
+	<button class="button1">获取1</button>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$(document).ajaxStart(function(){
+			console.log('ajaxStart')
+		})
+		//请求开始,未完成其它请求时执行回调函数
+		$(document).ajaxStop(function(){
+			console.log('ajaxStop')
+		})
+		//请求结束,所有请求结束时执行回调函数
+		$(document).ajaxSuccess(function(){
+			console.log('ajaxSuccess')
+		})
+		//当有请求成功时执行回调函数
+		$(document).ajaxComplete(function(){
+			console.log('ajaxComplete')
+		})
+		//当有请求完成时执行回调函数
+		$(document).ajaxError(function(){
+			console.log('ajaxError')
+		})
+		//当有请求失败时执行回调函数
+		$(document).ajaxSend(function(){
+			console.log('ajaxSend')
+		})
+		//当有请求发送请求时执行回调函数
+		//全局回调一般写在ajax请求前面,如果某个ajax不想触发全局事件,可以设置 global:false来取消
+		$.ajaxSetup({
+				url:'http://127.0.0.1:3000/json.json',
+				type:'GET',
+				dataType:'json',
+			})
+		$('.button').on('click',function(){
+			$.ajax({
+				success:function(data){
+					console.log(data)
+				}
+			})
+		})
+		$('.button1').on('click',function(){
+			$.ajax({
+				type:'POST',
+				success:function(data){
+					console.log(data)
+				}
+			})
+		})
+	})
+</script>
+</html>
+1321231

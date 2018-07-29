@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽自定义鼠标图案</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		.contain{
+			width: 500px;
+			height: 500px;
+			background-color: blue;
+		}
+		.target{
+			width: 150px;
+			height: 150px;
+			background-color: red;
+		}
+		.none{
+			display: none;
+		}
+		.class1{
+			background: pink;
+		}
+		.class2{
+			background: purple;
+		}
+	</style>
+</head>
+<body>
+	<div class="contain" id="contain"></div>
+	<div class="target" id="target" draggable="true"></div>
+	<img src="../src/0.png" id="img" class="none" alt="">
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	(function($){
+		//拖拽开始把target的ID存起来
+		$('#target').on('dragstart',function(ev){
+			ev.originalEvent.dataTransfer.setData('targetId',ev.target.id)
+			ev.originalEvent.dataTransfer.setDragImage($('#img').clone()[0],0,0)
+		})
+		.on('drag',function(){
+			// $(this).addClass('class1');
+		})
+
+		//容器
+		$('#contain')
+		.on('drop',function(ev){
+			//用上面的GETDATA方法获取ID
+			var id=ev.originalEvent.dataTransfer.getData('targetId')
+			console.log(id)
+			//字符串拼接ID
+			$('#contain').append($('#'+id))
+			
+
+		})
+		.on('dragover',function(ev){
+			ev.preventDefault()
+			
+		})
+		.on('dragenter',function(ev){
+			$('#contain').addClass('class2')
+		})
+		.on('dragleave',function(ev){
+			$('#contain').removeClass('class2')
+		})
+	})(jQuery);	
+</script>
+</html>

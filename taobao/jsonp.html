@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jsonp</title>
+	<!-- <script src="nodeserver.js"></script> -->
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$('button').on('click',function(){
+				$.ajax({
+					url:'http://127.0.0.1:3000/getData',
+					dataType:'jsonp',//eval
+					jsonp:'callback'//和服务器端约定
+				})
+				.done(function(data){
+					console.log(data)
+				})
+			})
+		})
+	</script>
+</head>
+<body>
+	<button>获取</button>
+</body>
+</html>

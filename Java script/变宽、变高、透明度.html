@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>变宽、变高、透明度</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			margin-top: 20px;
+			opacity: 0.3;
+		}
+	</style>
+	<script>
+		var timer=null;
+			function animation(obj,attr,value){
+				/*obj表示对象，attr表示什么属性，value表示目标值*/
+				var Speed=0;
+				/*定义一个速度*/
+				clearInterval(obj.timer);
+				/*先清除定时器*/
+				obj.timer=setInterval(function(){
+					var curr=parseFloat(getComputedStyle(obj,false)[attr]);
+					console.log(curr)
+					/*定义一个curr的变量表示当前对象的属性值*/
+					if(attr=='opacity'){
+						curr=curr*100;
+					}
+					if(curr<value){
+						sPeed=10;
+					}else{
+						sPeed=-10;
+					}
+					if(Math.abs(value-curr)<Math.abs(sPeed)){
+						
+						clearInterval(obj.timer);
+						if(attr=='opacity'){
+							obj.style[attr]=value/100;
+						}
+							obj.style[attr]=value+'px';
+					}else{
+						if(attr=='opacity'){
+							obj.style[attr]=(curr+sPeed)/100;
+						}
+							obj.style[attr]=curr+sPeed+'px';
+						
+					}
+					console.log(obj.style[attr])	
+				},30)
+			}
+			/*创建一个定时器，这是第一个步，所有的东西都要写在定时器里*/		
+		window.onload=function(){
+			var oBox1=document.getElementById('box1')
+			var oBox2=document.getElementById('box2')
+			var oBox3=document.getElementById('box3')
+			oBox1.onmouseover=function(){
+				animation(oBox1,'width','600')
+			}
+			oBox1.onmouseout=function(){
+				animation(oBox1,'width','100')
+			}
+			oBox2.onmouseover=function(){
+				animation(oBox2,'height','600')
+			}
+			oBox2.onmouseout=function(){
+				animation(oBox2,'height','100')
+			}
+			oBox3.onmouseover=function(){
+				animation(oBox3,'opacity',100)
+			}
+			oBox3.onmouseout=function(){
+				animation(oBox3,'opacity',30)
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box1">变宽</div>
+	<div id="box2">变高</div>
+	<div id="box3">变透明度</div>
+</body>
+</html>

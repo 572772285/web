@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery滚动距离</title>
+	<style>
+		.father{
+			width: 150px;
+			height: 150px;
+			border:1px solid black;
+			overflow: auto;
+		}
+		.son{
+			width: 3000px;
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+	<button>dian</button>
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('button').on('click',function(){
+			console.log($('.father').scrollTop());
+		})
+		
+	})
+</script>
+</html>

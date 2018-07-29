@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery事件委托</title>
+	<script src="../js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			// $('li').on('click',function(){
+			// 	console.log($(this).html());
+			// })
+			$('ul').delegate('li','click',function(){
+				console.log($(this).html());
+			})
+			$('button').on('click',function(){
+				var $li=$('<li>我是创建的</li>');
+				$('ul').append($li);
+			})
+		})
+	</script>
+</head>
+<body>
+	<button>dian</button>
+	<ul>
+		<li>我是1</li>
+		<li>我是2</li>
+		<li>我是3</li>
+		<li>我是4</li>
+		<li>我是5</li>
+	</ul>
+</body>
+</html>

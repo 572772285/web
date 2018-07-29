@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单网页插件</title>
+	<style>
+		#menu{
+			width: 300px;
+			height: 30px;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 5;
+		}
+		#menu li{
+			float: left;
+			list-style: none;
+			margin-right: 10px;
+		}
+		.move{
+			transform: rotateY(180deg);
+			transition: all 0.3s
+		}
+	</style>
+	<link rel="stylesheet" href="../chajian/fullPage.js-master/dist/jquery.fullpage.css">
+	<script src="jquery-1.12.4.js"></script>
+	<script src="../chajian/fullPage.js-master/dist/jquery.fullpage.min.js"></script>
+	<script>
+		$(function(){
+			$('#fullpage').fullpage({
+				sectionsColor:['#ff6700','#fb0','#e0e0e0','#baf122','#fdff12'],
+				/*设置背景色*/
+				controlArrows:true,/*轮播图是否有箭头false没有箭头*/
+				verticalCentered:true,/*每一页的内容是否垂直居中*/
+				resize:true,/*字体随着缩放而变化*/
+				scrollingSpeed:1000,/*页面滚动速度为1秒*/
+				anchors:['page1','page2','page3','page4','page5'],/*添加锚点用来收藏页面链接然后跳转用*/
+				// lockAnchors:true,锁定锚点，不让在地址栏中显示
+				css3:true,/*css的动画比较流畅*/
+				menu:'#menu',/*菜单栏*/
+				navigation:true,/*侧边导航栏*/
+				// navigationPosition:'left', /*默认是right*/
+				navigationTooltips:['第一页','第二页','第三页','第四页','第五页'],/*侧边导航栏hover信息*/
+				showActiveTooltip:true,/*侧边栏默认信息显示或不显示*/
+				slidesNavigation:true,/*是否显示幻灯片导航*/
+				slidesNavPosition:'bottom',/*幻灯片小圆点位置*/
+				afterLoad: function(anchorLink, index){//当前页面加载完成后的回调
+	                console.log("afterLoad",anchorLink, index)
+	                if(index == 3){
+	                    $('img').addClass('move')
+	                    /*这里做的是网页滚动过做一个动画，move就是class*/
+	                }
+            	},
+	            onLeave: function(index, nextIndex, direction){//离开页面的回调
+	                console.log("onLeave",index, nextIndex, direction)
+	            }	
+			})
+		})
+	</script>
+</head>
+<body>
+	<ul id="menu">
+		<li data-menuanchor='page1'><a href="#page1">第一页</a></li>
+		<li data-menuanchor='page2'><a href="#page2">第二页</a></li>
+		<li data-menuanchor='page3'><a href="#page3">第三页</a></li>
+		<li data-menuanchor='page4'><a href="#page4">第四页</a></li>
+		<li data-menuanchor='page5'><a href="#page5">第五页</a></li>
+	</ul>
+	<div class="fullpage" id="fullpage">
+		<div class="section">第一页</div>
+		<div class="section">
+			<!-- 设置轮播图 -->
+			<div class="slide"><img src="../src/001.jpg" alt=""></div>
+			<div class="slide"><img src="../src/002.jpg" alt=""></div>
+			<div class="slide"><img src="../src/003.jpg" alt=""></div>
+		</div>
+		<div class="section">
+			<img src="../src/nba10.jpg" alt="">
+		</div>
+		<div class="section">第四页</div>
+		<div class="section">第五页</div>
+	</div>
+</body>
+</html>

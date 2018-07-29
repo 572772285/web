@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>symbol</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	//symbol存在的场景
+	let s1=Symbol();
+	let s2=Symbol();
+	console.log(typeof s1)
+	console.log(s1==s2)
+	//s1!=s2说明每生成一个symbol都是独一无二的
+	*/
+	let s1=Symbol('name')
+	console.log(s1)
+	let obj={[s1]:'tom'}
+	let s2=Symbol('name')
+	obj[s2]='leo'
+	console.log(obj)
+
+
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>loading线条</title>
+	<style>
+		.loading{
+			width: 4px;
+			height: 20px;
+			background-color: #fa6700;
+			position: relative;
+			margin:0 auto;
+			transform: scale(1,1);
+			animation: animation 0.5s linear infinite alternate-reverse;
+		}
+		.loading:after{
+			content: '';
+			width: 4px;
+			height: 20px;
+			background-color: #fa6700;
+			position: absolute;
+			transform: scale(1,0.5);
+			margin-left: 10px;
+			animation: animation 0.3s linear 0.5s infinite normal;
+		}
+		.loading:before{
+			content: '';
+			width: 4px;
+			height: 20px;
+			background-color: #fa6700;
+			position: absolute;
+			transform: scale(1,0.3);
+			margin-left: -10px;
+			animation: animation 0.3s linear 0.3s infinite normal;
+		}
+
+		@keyframes animation{
+			from{
+				opacity: 0.2;
+				transform: scale(1,0.5);
+			}
+			to{
+				opacity: 1;
+				transform: scale(1,1);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="loading"></div>
+	<!-- <div class="s1">123</div> -->
+</body>
+</html>

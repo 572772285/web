@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加高亮案例</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		li{
+			list-style: none;
+			width:100%;
+			height: 80px;
+			border-top: 1px solid black;
+			background-color: #ccc;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oLi=document.getElementById('ul1').children;
+			var oldcolor=''
+			for(var i=0;i<oLi.length;i++){
+				if(i%2==0){
+					oLi[i].style.background='rgba(0,0,0,0.5)'
+				}
+				oLi[i].onmouseover=function(){
+					oldcolor=this.style.background
+					this.style.background='yellow'
+				}
+				oLi[i].onmouseout=function(){
+					this.style.background=oldcolor
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul id="ul1">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

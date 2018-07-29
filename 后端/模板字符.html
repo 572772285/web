@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模板字符</title>
+</head>
+<body>
+</body>
+<script>
+	// var html='<ul>';
+	// 	html+='<li>'+1+'</li>'
+	// 	html+='<li>'+2+'</li>'
+	// 	html+='<li>'+3+'</li>'
+	// 	html+='<li>'+4+'</li>'
+	// 	html+='</ul>';
+	var str=3;
+	let html=`
+			<ul>
+				<li>${str}</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+			</ul>
+	`
+	document.body.innerHTML=html;
+
+</script>
+</html>

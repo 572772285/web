@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则体验</title>
+	<script>
+		window.onload=function(){
+			var oTxt=document.getElementById('text');
+			var oTxt1=document.getElementById('text1');
+			var oBtn=document.getElementById('btn');
+			var str='324 345asd isas is das4 Is 35dasIsd354dasd asd4asd45'
+			var reg=/\d+/g;
+			console.log('1:::',str.match(reg));
+			var reg1=/is/gi;
+			console.log('2:::',str.replace(reg1,'**'));
+			var reg = /\bis\b/gi;
+			// \b为单次分隔符，正则一般只匹配一项，如果想要匹配多项在最后面加上g。在后面加一个i会不区分大小写
+			console.log('3:::',str.replace(reg,"***"));
+			oBtn.onclick=function(){
+					
+				var reg=/\d+/g;
+				var reg2=/我草你妈|傻逼/g;
+				// var str1=oTxt.value;
+				var reg3 = /<[^<>]+>/g;
+				var reg4=/\bis\b/gi;
+				oTxt1.value=oTxt.value;	
+				oTxt1.value=oTxt1.value.replace(reg2,'**');
+				oTxt1.value=oTxt1.value.replace(reg,'**');
+				oTxt1.value=oTxt1.value.replace(reg3,'**');
+				oTxt1.value=oTxt1.value.replace(reg4,'**');
+			}
+			/*过滤关键字*/
+			
+			// console.log(replace(reg2),xxx);
+		}
+	</script>
+</head>
+<body>
+	<textarea name="" id="text" cols="30" rows="10"></textarea>
+	<input type="button" id="btn" value="点击">
+	<textarea name="" id="text1" cols="30" rows="10"></textarea>
+</body>
+</html>

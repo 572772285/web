@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>淘宝案例</title>
+	<link rel="stylesheet" href="css/重置代码.css">
+	<link rel="stylesheet" href="../src/web-fonts-with-css/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/index.css">
+	<style>
+		button{
+			width: 100px;
+			height: 50px;
+			font-size: 25px;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			/*top:100px;*/
+			/*left: 0;*/
+		}
+	</style>
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<div class="box transition"></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/search.js"></script>
+<script src="js/transition.js"></script>
+<script src="js/showhide.js"></script>
+<script src="js/dropdown.js"></script>	
+<script>
+
+	(function($){
+		function init($elem){
+			console.log(this)
+			var self=this;
+			this.$elem=$elem;	
+			//如果没有给top和left，下面两步是自动获取当前的X,Y
+			this.currentX = parseFloat(this.$elem.css('left'));
+			this.currentY = parseFloat(this.$elem.css('top'));
+		}
+
+
+		function Slient($elem){
+
+			init($elem)
+			self.$elem.removeClass('transition');
+		}
+		Slient.prototype={
+
+			constructor:Slient,
+			to:function(x,y){
+				//如果传进来X是数字的话就让传进来的X直接用，否则就用当前X的值，这个用在下面X方法和Y方法上
+				x=(typeof x == 'number') ? x : this.currentX;
+				y=(typeof y == 'number') ? y : this.currentY;
+				if(this.currentX==x && this.currentY == y) return	
+				console.log('move..');
+				self.$elem.trigger('move');
+				self.$elem.css({
+					top:y,
+					left:x
+				})
+				self.$elem.trigger('moved');
+				self.currentX=x;
+				self.currentY=y;
+			},
+			x:function(x){
+				this.to(x)
+			},
+			y:function(y){
+				this.to(null,y)
+			}
+		}
+		//css3
+		function Css3($elem){
+			this.$elem=$elem;
+			this.$elem.addClass('transition');
+			//如果没有给top和left，下面两步是自动获取当前的X,Y
+			this.currentX = parseFloat(this.$elem.css('left'));//获取当前left值
+			this.currentY = parseFloat(this.$elem.css('top'));//获取当前top值
+			this.$elem.css({
+				left:this.currentX,
+				top:this.currentY
+			})
+		}
+		Css3.prototype={
+
+			constructor:Css3,
+			to:function(x,y){
+				//如果传进来X是数字的话就让传进来的X直接用，否则就用当前X的值，这个用在下面X方法和Y方法上
+				x=(typeof x == 'number') ? x : this.currentX;
+				y=(typeof y == 'number') ? y : this.currentY;
+				if(this.currentX==x && this.currentY == y) return	
+				// console.log('move..');
+				this.$elem.trigger('move');
+				this.$elem.css({
+					top:y,
+					left:x
+				});
+				//过渡完成后触发trigger
+				var  self=this;
+				this.$elem
+				.off(kuazhu.transition.end)
+				.one(kuazhu.transition.end,function(){
+					self.$elem.trigger('moved');
+			});
+				
+				this.currentX=x;
+				this.currentY=y;
+			},
+			x:function(x){
+				this.to(x)
+			},
+			y:function(y){
+				this.to(null,y)
+			}
+		}
+
+		//js移动
+		function Js($elem){
+			this.$elem=$elem;
+			this.$elem.removeClass('transition');
+			//如果没有给top和left，下面两步是自动获取当前的X,Y
+			this.currentX = parseFloat(this.$elem.css('left'));//获取当前left值
+			this.currentY = parseFloat(this.$elem.css('top'));//获取当前top值
+			// this.$elem.css({
+			// 	left:this.currentX,
+			// 	top:this.currentY
+			// })
+		}
+		Js.prototype={
+
+			constructor:Js,
+			to:function(x,y){
+				//如果传进来X是数字的话就让传进来的X直接用，否则就用当前X的值，这个用在下面X方法和Y方法上
+				x=(typeof x == 'number') ? x : this.currentX;
+				y=(typeof y == 'number') ? y : this.currentY;
+				if(this.currentX==x && this.currentY == y) return	
+				// console.log('move..');
+				var  self=this;	
+				this.$elem.trigger('move');
+				this.$elem.stop()
+				.animate({
+					left:x,
+					top:y
+				},function(){
+					self.$elem.trigger('moved');
+				})			
+				this.currentX=x;
+				this.currentY=y;
+			},
+			x:function(x){
+				this.to(x)
+			},	
+			y:function(y){
+				this.to(null,y)
+			}
+		}
+		var move=new Css3($('.box'));
+		$('.box').on('move moved',function(ev){
+			console.log(ev.type)
+		})
+		$('button').eq(0).on('click',function(){
+			// obj.move(100)
+			move.y(150)
+			// move.to(200,150)
+		})
+		$('button').eq(1).on('click',function(){
+			// obj.move(0)
+			move.y(50)
+			// move.to(50,50)
+		})
+	})(jQuery);
+</script>
+</html>

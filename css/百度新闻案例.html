@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度新闻</title>
+	<style>
+		*{
+		padding: 0px;
+		margin: 0px;
+		}
+		a:link{
+		text-decoration: none;
+		color: #222;
+		}
+		a:visited{
+			color:#222; 
+		}
+		a:hover{
+			text-decoration: underline;
+			color: pink;
+		}
+		a:active{
+			color: black;
+		}
+		li{
+			list-style: none;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		li:before{
+			content: "";
+			border:1px solid #999;
+			width: 2px;
+			height:2px;
+			display: inline-block;
+			margin-bottom: 5px;
+			background-color: blue;
+			margin-right: 2px;
+		}
+		div{
+			margin:20px 100px;
+		}
+		body{
+						background-color: white;
+			background-size: contain;
+		}
+		.daohang{
+			background-color:#00008b;
+			height: 40px;
+			line-height: 40px;
+			font-weight: bold;
+			margin: 0px;
+			padding-left: 90px;
+		}
+		.daohang a{
+			color: white;
+			padding: 10px;
+		}
+		.div0{
+			border-top: 2px solid gray;
+			width: 450px;
+			display: inline-block;
+		}
+		h2{
+			border-top:2px solid blue;
+			margin-top:-1.7px;
+			margin-bottom: 8px;
+			padding-top: 12px;
+			width: 120px;
+			color: blue;
+		}
+		.div1{
+			margin:0px;
+			line-height: 40px;
+			font-size: 18px;
+		}
+		.div2{
+			display: inline-block;
+			margin-left: 10px;
+
+		}
+		.input1{
+			width: 135px;
+			height: 45px;
+			margin-bottom: -10px;
+			margin-top: 5px;
+		}
+		.input2{
+			width: 520px;
+   			height: 35px;
+   			font-size: 30px;
+		}
+		.input3{
+			width: 130px;
+			height: 40px;
+			padding: 13px;
+		}
+		li:nth-child(1){
+			font:normal bold 20px STSongti;
+		}
+	</style>
+</head>
+<body>
+	<form action="http://news.baidu.com/">
+	<div>
+		<input type="image"  class="input1" src="https://box.bdimg.com/static/fisp_static/common/img/searchbox/logo_news_276_88_1f9876a.png">	
+		<input type="text" name="text" class="input2">
+		<input type="button" value="百度一下" class="input3">
+		<a href="#">帮助</a>
+		<a href="#">高级搜索</a>
+		<a href="#">设置</a>
+		<p>新闻全文：<input type="radio" name="radio" checked>
+		新闻标题：<input type="radio" name="radio">	
+		</p>
+	</div>
+	</form>
+	<div class="daohang">
+		<a href="#">首页</a>
+		<a href="#">百家号</a>
+		<a href="#">国内</a>
+		<a href="#">国际</a>
+		<a href="#">军事</a>
+		<a href="#">财经</a>
+		<a href="#">体育</a>
+		<a href="#">互联网</a>
+		<a href="#">科技</a>
+		<a href="#">游戏</a>
+		<a href="#">女人</a>
+		<a href="#">汽车</a>
+		<a href="#">房产</a>
+		<a href="#">个性推荐</a>
+	</div>
+	<div class="div0">
+		<h2>热点要闻</h2>
+		<span>NEWS</span>
+		<div class="div1">
+		<ul>
+		<li><a href="#">央视原创时政微视频丨窑洞里的读书人</a></li>	
+		<li><a href="#">习近平向中国与葡语国家最高法院院长会议致贺信</a></li>	
+		<li><a href="#">习近平向中国与葡语国家最高法院院长会议致贺</a></li>	
+		<li><a href="#">最高人民法院工作报告  最高人民检察院工作报告</a></li>	
+		<li><a href="#">“美国优先”伤害全球利益 2018全国两会</a> </li>	
+		<li><a href="#">原油期货上市 构建金融开放新格局  清明节专题</a></li>
+		</ul>	
+		</div>
+	</div>
+	<div class="div2">
+		<a href="#">
+			<img src="https://imgsa.baidu.com/news/q%3D100/sign=81c09a3247fbfbedda59327f48f1f78e/03087bf40ad162d929bc69111ddfa9ec8a13cd69.jpg" alt="" title="国宝熊猫" width="561">
+		</a>	
+	</div>
+</body>
+</html>

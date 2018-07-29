@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位流天猫素材</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			width: 920px;
+			height: 707px;
+		}
+		nav{
+			width: 920px;
+			height: 40px;
+			background-color: gray;
+			position: absolute;
+			left: 50%;
+			margin-left: -460px;
+			top:18px;
+			z-index: 1;
+			text-align: center;
+		}
+		nav div{
+			float: left;
+			line-height: 40px;
+			width: 184px;
+		}
+		nav a{
+			color: black;
+			text-decoration: none;
+		}
+		.box3 a img{
+			position: absolute;
+			top: -18px;
+    		left: 367px;
+		}
+		.box1:hover{
+			background-color: red;
+		}
+		.box2:hover{
+			background-color: red;
+		}
+		.box4:hover{
+			background-color: red;
+		}
+		.box5:hover{
+			background-color: red;
+		}
+		.box3{
+			background-color: red;
+		}
+		.background{
+			background-image: url(../src/定位流素材背景.png);
+			width: 763px;
+			height: 406px;
+			background-repeat: no-repeat;
+			position: absolute;
+			left:50%;
+			margin-left: -382px;
+			top: 90px;
+		}
+		.background ul li{
+			list-style: none;
+			float: left;
+			border:1px solid black;
+			width: 26px;
+			height: 25px;
+			line-height: 26px;
+			text-align: center;
+			border-radius: 50%;
+			margin-left: 8.5px;
+			color: white;
+		}
+		.background ul{
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+		}
+		.bg1{
+			width: 37px;
+			height: 56px;
+			position:absolute;
+			top: 50%;
+			left: 0px;
+		}
+		.bg2{
+			width: 37px;
+			height: 56px;
+			position:absolute;
+			top: 50%;
+			right: 0px;	
+		}
+		.leftfixed{
+			width: 90px;
+			height: 184px;
+			background-color: red;
+			position: fixed;
+			left: 0px;
+			top: 50%;
+			margin-top: -92px;
+		}
+		.rightfixed{
+			width: 90px;
+			height: 184px;
+			background-color: red;
+			position: fixed;
+			right: 0px;
+			top: 50%;
+			margin-top: -92px;
+		}
+		section{
+			width: 920px;
+			height: 150px;
+			background-color: blue;
+			position:absolute;
+			top: 1000px;
+			left: 50%;
+			margin-left: -460px;
+			margin-bottom: 20px;
+			margin-top: 100px;
+		}
+		.foot{
+			width: 50px;
+			height: 50px;
+			background-color: gray;
+			position: fixed;
+			bottom: 0px;
+			right: 0px;
+		}
+		.foot a{
+			color: black;
+		}
+		.rb{
+			width: 1000px;
+			height: 300px;
+			border:1px solid black;
+			margin:100px auto;
+			position: absolute;
+			top: 420px;
+			left: 50%;
+			margin-left: -500px;
+		}
+		.rb ul li{
+			list-style: none;
+			width: 200px;
+			height: 300px;
+			float: left;
+			overflow: hidden;
+			transition:width 0.5s;
+		}
+		.rb ul li img{
+			width: 400px;
+			height: 300px;
+		}
+		.rb ul:hover li{
+			width: 150px;
+		}
+		
+		.rb ul li:hover{
+			width:400px;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+			<div class="box1"><a href="">天猫会员</a></div>
+			<div class="box2"><a href="">品牌街</a></div>
+			<div class="box3">
+				<a href="">电器城<img src="../src/耳朵.gif" alt=""></a>
+			</div>
+			<div class="box4"><a href="">营业厅</a></div>
+			<div class="box5"><a href="">魅力惠</a></div>
+	</nav id=top>
+	<div class="background">
+			<a href="#" class="bg1"><img src="../src/bg1.png" alt=""></a>
+			<a href="#" class="bg2"><img src="../src/bg2.png" alt=""></a>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+	</div>
+	<div class="rb">
+		<ul>
+			<li><img src="../src/热巴1.jpg" alt=""></li>
+			<li><img src="../src/林允儿1.jpg" alt=""></li>
+			<li><img src="../src/热巴3.jpg" alt=""></li>
+			<li><img src="../src/热巴2.jpg" alt=""></li>
+			<li><img src="../src/热巴4.jpg" alt=""></li>
+		</ul>
+	</div>
+	<div class="leftfixed"></div>
+	<div class="rightfixed"></div>
+	<section></section>
+	<div class="foot">
+		<a href="#top">回到顶部</a>
+	</div>
+</body>
+</html>

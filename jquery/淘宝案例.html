@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>030-jQuery-动画案例.html</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: gray;
+		}
+		.box1{
+			width: 200px;
+			height: 50px;
+			background: #fff;
+			margin: 0 auto;
+		}
+		.father{
+			width: 100px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			color: gray;
+			/*border: 1px solid #000;*/
+			float: left;
+			cursor: pointer;
+		}
+		.box2{
+			width: 200px;
+			height: 100px;
+			margin: 0 auto;
+		}
+		.box2 ul{
+			/*float: left;*/
+			display: none;
+		}
+		.box2 .ul1{
+			float: left;
+		}
+		.box2 .ul2{
+			float: right;
+		}
+		ul li{
+			width: 100px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			background: #fff;
+			list-style: none;
+			margin: 0 auto;
+			/*margin-left: -50px;*/
+			
+			color: gray;
+			cursor: pointer;
+		}
+		.active{
+			color: #ff6700;
+		}
+
+		.father .son{
+			transition-property: all;
+			transition-duration: 300ms;
+		}
+		.box1 .father:hover .son{
+			transform: rotateZ(180deg);
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<div class="father">
+			我的淘宝
+			<span class="son" style="display: inline-block;">&or;</span>
+		</div>
+		<div class="father">
+			收藏夹
+			<span class="son" style="display: inline-block;">&or;</span>
+		</div>
+	</div>
+	<div class="box2">
+		<ul class="ul1">
+			<li>已买到的宝贝</li>
+			<li>我的足迹</li>
+		</ul>
+		<ul class="ul2">
+			<li>收藏的宝贝</li>
+			<li>收藏的店铺</li>
+		</ul>
+	</div>
+	
+</body>
+<script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	// console.log($('.father'));
+	$('.father').eq(0).hover(function(){
+		$('.ul1').stop();
+		$('.ul1').slideToggle(300);
+		$(this).toggleClass('active');
+		var oSpan1=$('.son')[0];
+		/*
+		oSpan1.css({
+			transition-property: 'all';
+			transition-duration: 300;
+			transform: rotateZ(180);
+		})
+		*/
+	});
+	$('.father').eq(1).hover(function(){
+		$('.ul2').stop()
+		$('.ul2').slideToggle(300);
+		$(this).toggleClass('active')
+	});
+	$('.box2 ul').hover(function(){
+		$(this).stop()
+	})
+</script>
+</html>

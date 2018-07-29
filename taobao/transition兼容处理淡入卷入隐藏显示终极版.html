@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>静态方法，css，js混合方法</title>
+	<link rel="stylesheet" href="css/重置代码.css">
+	<link rel="stylesheet" href="../src/web-fonts-with-css/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="css/common.css">
+	<style>
+		#box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			display: none;
+			/*opacity: 0;*/
+			overflow: hidden;
+			padding-top: 30px;
+			padding-bottom: 30px;
+			/*padding-left: 30px;*/
+			/*padding-right: 30px;*/
+		}
+		.fadeout{
+			opacity: 0;
+			visibility: hidden;
+		}
+		.slideDown{
+			height: 0 !important;
+			padding: 0 !important;
+		}
+		.slideLeftRight{
+			width: 0 !important;
+			/*padding: 0 !important;*/
+
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}
+	</style>
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/jquery-1.12.4.js"></script>
+
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<div id="box" class="transition">
+		asd
+	</div>
+	<p>我在这里啊</p>
+</body>
+	<script src="transition.js"></script>
+	<script>
+		console.log(kuazhu.transition)
+			//共通的样式
+			function init($elem,yincanghuidiao){
+				if($elem.is(':hidden')){
+					$elem.data('status','hidden');
+					if(typeof yincanghuidiao=='function') yincanghuidiao();
+				}else{
+					$elem.data('status','showhou')
+				}
+			}
+
+			function show($elem,callback){
+				if($elem.data('status')=='showhou') return;
+				if($elem.data('status')=='showqian') return;
+				$elem.data('status','showqian').trigger('showqian'); 
+				callback();
+			
+			}
+			function hide($elem,callback){
+				if($elem.data('status')=='hidden') return;
+				if($elem.data('status')=='hide') return;
+				$elem.data('status','hide').trigger('hide');
+				callback();
+			}
+			var $box=$('#box');
+			/*静态方法基本*/
+			var slient={
+			init:function($elem){
+				init($elem);
+			},
+			show:function($elem){
+				show($elem,function(){
+					$elem.show()
+					$elem.trigger('showhou').data('status','showhou')
+				})
+				
+			},
+			hide:function($elem){
+				hide($elem,function(){
+					$elem.hide();
+					$elem.trigger('hidden').data('status','hidden')
+				});
+				
+			}
+		};
+			var css3={
+				//淡入淡出
+				fade:{
+					
+					init:function($elem){
+						css3._init($elem,'fadeout')
+					},
+					show:function($elem){
+						css3.show($elem,'fadeout');	
+					},
+					hide:function($elem){
+						css3.hide($elem,'fadeout');	
+					}
+				},
+				//上下卷入卷出
+				slideUpDown:{
+					init:function($elem){
+						$elem.css({
+							height:$elem.height()
+						}),
+						// $elem.height($elem.height());
+						css3._init($elem,'slideDown')
+					},
+					show:function($elem){
+						css3.show($elem,'slideDown');
+					},
+					hide:function($elem){
+						css3.hide($elem,'slideDown');	
+					}
+				},
+				//左右卷入卷出
+				slideLeftRight:{
+					init:function($elem){
+						$elem.css({
+							width:$elem.width()
+						}),
+						// $elem.height($elem.height());
+						css3._init($elem,'slideLeftRight')
+					},
+					show:function($elem){
+						css3.show($elem,'slideLeftRight');
+					},
+					hide:function($elem){
+						css3.hide($elem,'slideLeftRight');	
+					}
+				},
+				//淡入淡出上下卷入卷出
+				fadeSlideUpDown:{
+					init:function($elem){
+						$elem.css({
+							height:$elem.height()
+						}),
+						// $elem.height($elem.height());
+						css3._init($elem,'fadeout slideDown')
+					},
+					show:function($elem){
+						css3.show($elem,'fadeout slideDown');
+					},
+					hide:function($elem){
+						css3.hide($elem,'fadeout slideDown');	
+					}
+				},
+				//淡入淡出左右卷入卷出
+				fadeSlideLeftRight:{
+					init:function($elem){
+						$elem.css({
+							width:$elem.width()
+						}),
+						// $elem.height($elem.height());
+						css3._init($elem,'fadeout slideLeftRight')
+					},
+					show:function($elem){
+						css3.show($elem,'fadeout slideLeftRight');
+					},
+					hide:function($elem){
+						css3.hide($elem,'fadeout slideLeftRight');	
+					}
+				}
+			}
+			//简化css3的相同代码，在css3上添加方法
+			css3._init=function($elem,className){
+				$elem.addClass('transition');
+				init($elem,function(){
+					$elem.addClass(className);
+				})
+			};
+			css3.show=function($elem,className){
+					$elem.show();//因为remove和show方法执行速度过快，造成removeclass的时候show方法的display还没有变成block。所以加一个定时器就可以解决这个问题
+					$elem.off(kuazhu.transition.end);
+					$elem.one(kuazhu.transition.end,function(){
+					$elem.trigger('showhou').data('status','showhou')
+				})
+					setTimeout(function(){
+					$elem.removeClass(className);//通过添加一个class
+				},20)
+			};
+			css3.hide=function($elem,className){
+				hide($elem,function(){
+					$elem.off(kuazhu.transition.end);
+					$elem.one(kuazhu.transition.end,function(){
+						$box.hide()
+						$elem.trigger('hidden').data('status','hidden')
+					})//这个事件是只要触发transition就会执行这个事件
+					$elem.addClass(className);//通过添加一个class
+				})
+			}
+			$box.on('showqian showhou hide hidden',function(ev){
+				if(ev.type=='showqian'){
+					console.log('show前...')
+				}else if(ev.type=='showhou'){
+					console.log('show后...')
+				}else if(ev.type=='hide'){
+					console.log('hide前...')
+				}else if(ev.type=='hidden'){
+					console.log('hidden后...')
+				}
+			})
+			var js={
+				//JS淡入淡出方法
+				fade:{
+					init:function($elem){
+						//为了避免用户自己加上transition先给remove掉。
+						js._init($elem);
+					},
+					show:function($elem){
+						js.show($elem,'fadeIn');
+					},
+					hide:function($elem){
+						js.hide($elem,'fadeOut');
+					}
+				},
+				//js上下卷入卷出
+				slideUpDown:{
+					init:function($elem){
+						js._init($elem);
+					},
+					show:function($elem){
+						js.show($elem,'slideDown');
+					},
+					hide:function($elem){
+						js.hide($elem,'slideUp');
+					}
+				},
+				//js左右卷入卷出
+				slideLeftRight:{
+					init:function($elem){
+						js.fadeInit($elem,{
+							width:0,
+							paddingLeft:0,
+							paddingRight:0
+						})
+					},
+					show:function($elem){
+						js.fadeShow($elem);
+					},
+					hide:function($elem){
+						js.fadeHide($elem,{
+							width:0,
+							paddingLeft:0,
+							paddingRight:0
+						})
+					}
+				},
+					//js淡入淡出上下卷入卷出
+				fadeSlideUpDown:{
+					init:function($elem){
+						js.fadeInit($elem,{
+							height:0,
+							paddingTop:0,
+							paddingBottom:0,
+							opacity:0
+						})
+					},
+					show:function($elem){
+						js.fadeShow($elem)
+					},
+					hide:function($elem){
+						js.fadeHide($elem,{
+							height:0,
+							paddingTop:0,
+							paddingBottom:0,
+							opacity:0
+						})
+					}
+				},
+				//淡入淡出上左右的卷入卷出
+				fadeSlideLeftRight:{
+					init:function($elem){
+						js.fadeInit($elem,{
+							width:0,
+							paddingLeft:0,
+							paddingRight:0,
+							opacity:0
+						})
+					},
+					show:function($elem){
+						js.fadeShow($elem)
+					},
+					hide:function($elem){
+						js.fadeHide($elem,{
+							width:0,
+							paddingLeft:0,
+							paddingRight:0,
+							opacity:0
+						})
+					}
+				}
+			}
+			
+
+			//简化JS代码
+			js._init=function($elem){
+				$elem.removeClass('transition');
+				init($elem);
+			}
+			js.show=function($elem,name){
+				show($elem,function(){
+					$elem.stop()[name](function(){
+						$elem.trigger('showhou').data('status','showhou');
+					})
+				})	
+			}
+			js.hide=function($elem,name){
+				hide($elem,function(){
+					$elem.stop()[name](function(){
+						$elem.trigger('hidden').data('status','hidden');
+					})
+				})				
+			}
+			//简化JS淡入淡出代码
+			js.fadeInit=function($elem,options){
+				$elem.removeClass('transition');
+					// var styles={
+					// 	width:$elem.css('width'),
+					// 	paddingLeft:$elem.css('paddingLeft'),
+					// 	paddingRight:$elem.css('paddingRight')
+					// };
+					var styles={};
+					for(key in options){
+						styles[key]=$elem.css(key)
+					}
+					$elem.data('styles',styles)
+				init($elem,function(){
+					$elem.css(options);
+				});	
+			}
+			js.fadeShow=function($elem){
+				show($elem,function(){
+					$elem.show();
+					$elem
+					.stop()
+					.animate($elem.data('styles'),function(){
+						$elem.trigger('showhou').data('status','showhou');
+					})
+				})
+			}
+			js.fadeHide=function($elem,option){
+				hide($elem,function(){
+					$elem
+					.stop()
+					.animate(option,function(){
+						$elem.trigger('hidden').data('status','hidden');
+						$elem.hide()
+					})
+				})
+			}
+			//css方法
+			//淡入淡出初始化
+			// css3.fade.init($box);
+			//上下卷入卷出初始化
+			// css3.slideUpDown.init($box);
+			//左右卷入卷出初始化
+			// css3.slideLeftRight.init($box);
+			//淡入淡出上下卷入卷出初始化
+			// css3.fadeSlideUpDown.init($box);
+			//淡入淡出左右卷入卷出初始化
+			// css3.fadeSlideLeftRight.init($box);
+			//静态方法display
+			// slient.init($box);
+			//JS淡入淡出初始化、
+			// js.fade.init($box);
+			//JS上下卷入卷出初始化
+			// js.slideUpDown.init($box);
+			//JS左右卷入卷出
+			// js.slideLeftRight.init($box);
+			//JS淡入淡出上下卷入卷出
+			// js.fadeSlideUpDown.init($box);
+			//JS淡入淡出左右卷入卷出
+			js.fadeSlideLeftRight.init($box);
+		/*显示*/
+		$('button').eq(0).on('click',function(){
+			// slient.show($box);
+			// css3.fade.show($box);
+			// css3.slideUpDown.show($box);
+			// css3.slideLeftRight.show($box);
+			// css3.fadeSlideUpDown.show($box);
+			// css3.fadeSlideLeftRight.show($box);
+			// js.fade.show($box);
+			// js.slideUpDown.show($box);
+			// js.slideLeftRight.show($box);
+			// js.fadeSlideUpDown.show($box);
+			js.fadeSlideLeftRight.show($box);
+		})
+		
+		$('button').eq(1).on('click',function(){
+			// css3.fade.hide($box);
+			// slient.hide($box);
+			// css3.slideUpDown.hide($box);
+			// css3.slideLeftRight.hide($box);
+			// css3.fadeSlideUpDown.hide($box);
+			// css3.fadeSlideLeftRight.hide($box);
+			// js.fade.hide($box);
+			// js.slideUpDown.hide($box);
+			// js.slideLeftRight.hide($box);
+			// js.fadeSlideUpDown.hide($box);
+			js.fadeSlideLeftRight.hide($box);
+		})
+	</script>
+
+</html>

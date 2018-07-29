@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>求和扩展运算</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// function sum(){
+	// 	var result=0;
+	// 	for(var i=0;i<arr.length;i++){
+	// 		result +=arr[i]
+	// 	}
+	// 	return result;
+	// }
+	// var bbb=[1,2,3,4,5,6,7]
+	// console.log(sum(...bbb))
+	// console.log(sum(11,2,3,4))
+   	function sum(){
+   		var result=0;
+   		for(var i=0;i<arr.length;i++){
+   			result+=arr[i]
+   		}
+   		return result;
+   	}
+   	var arr=[1,2,3,4,5,6,7]
+   	console.log(sum(...arr))
+
+
+	//求最大值
+	var arr=[11,22,33,44,55,66,88]
+	console.log(Math.max.apply(null,arr))
+	console.log(Math.max(...arr))
+
+
+	//数组的深拷贝1
+	// var arr1=[22,33,44,55]
+	// var arr2=[...arr1]
+	// arr2.push(111)
+	// console.log(arr1,arr2)
+	//数组的深拷贝2
+	var arr1=[11,22,33,44]
+	var arr2=[]
+	for(var i=0;i<arr1.length;i++){
+		arr2.push(arr1[i])
+	}
+	arr2.push(111)
+	console.log(arr1,arr2)
+	//数组的深拷贝3
+	var arr1=[11,22,33,44]
+	// var arr2=
+</script>
+</html>

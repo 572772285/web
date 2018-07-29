@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>001-ajax</title>
+</head>
+<body>
+	<input type="button" value="获取" id="btn">
+</body>
+<script>
+	var oBtn=document.getElementById('btn');
+	oBtn.onclick=function(){
+		/*1.创建ajax对象*/
+		var oAjax=new XMLHttpRequest();
+		/*2.和服务器建立链接,里面有get方法*/
+		oAjax.open('GET','http://127.0.0.1:3000/json.html',true);
+		console.log('1:::',oAjax.readyState);
+		/*3发送请求调用ajax的send方法*/
+		oAjax.send();
+		console.log('2:::',oAjax.readyState);
+		/*4监听方法获取数据*/
+		oAjax.onreadystatechange=function(){
+			console.log('3:::',oAjax.readyState);
+			if(oAjax.readyState==4){
+				console.log(oAjax.responseText)
+				/*获取数据返回文本*/
+			}
+		}
+	}
+</script>
+</html>

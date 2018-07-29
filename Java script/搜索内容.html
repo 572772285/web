@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>搜索内容</title>
+	<script>
+		window.onload=function(){
+			var oTxt=document.getElementById('txt')
+			var oBtn=document.getElementById('btn')
+			var oUl1=document.getElementById('ul1');
+			var oLi=document.getElementsByTagName('li')
+			oBtn.onclick=function(){	
+				for(var i=0;i<oLi.length;i++){
+					var sTxt=(oTxt.value).toLowerCase();
+					var sLi=(oLi[i].innerHTML).toLowerCase();
+					if(sLi.search(sTxt) !=-1){
+						oLi[i].style.background='red'
+					}else{
+						oLi[i].style.background=''
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" value="搜索" id="btn">
+	<ul id="ul1">
+		<li>Tom</li>
+		<li>Bsw</li>
+		<li>Gsdq</li>
+		<li>Hokc</li>
+		<li>Gbs</li>
+		<li>王一</li>
+		<li>赵四</li>
+		<li>刘五</li>
+		<li>张三</li>
+		<li>许五</li>
+	</ul>
+</body>
+</html>

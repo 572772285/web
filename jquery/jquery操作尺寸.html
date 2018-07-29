@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery操作尺寸</title>
+	<style>
+		.div1{
+			width: 100px;
+			height: 100px;
+			border:5px solid black;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="div1"></div>
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		console.log($('div').innerWidth());
+		console.log($('div').innerWidth(140));
+		console.log($('div').outerWidth());
+	})
+</script>
+</html>

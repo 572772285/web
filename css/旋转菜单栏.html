@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>旋转菜单栏</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			width: 500px;
+			height: 50px;
+			background-color: skyblue;
+			margin:50px auto;
+		}
+		.nav>li{
+			width: 100px;
+			height: 50px;
+			text-align: center;
+			list-style: none;
+			float: left;
+			line-height: 50px;
+			margin-left: 20px;
+			background-color: yellow;
+		}
+		.navson>li{
+			list-style: none;
+			background-color: pink;
+			transform: rotateY(180deg);
+			transition: all 1s;
+			opacity: 0;
+		}
+		.nav:hover li{
+			transform: rotateY(0deg);
+			opacity: 1;
+		}
+		.nav:hover .navson>li:nth-child(1){
+			transition-delay: 200ms;
+		}
+		.nav:hover .navson>li:nth-child(2){
+			transition-delay: 400ms;
+		}
+		.nav:hover .navson>li:nth-child(3){
+			transition-delay: 600ms;
+		}
+		.nav:hover .navson>li:nth-child(4){
+			transition-delay: 800ms;
+		}
+		.navson>li:nth-child(4){
+			transition-delay: 200ms;
+		}
+		.navson>li:nth-child(3){
+			transition-delay: 400ms;
+		}
+		.navson>li:nth-child(2){
+			transition-delay: 600ms;
+		}
+		.navson>li:nth-child(1){
+			transition-delay: 800ms;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<ul class="nav">
+			<li>
+			菜单栏1
+				<ul class="navson">
+					<li>篮球</li>
+					<li>足球</li>
+					<li>羽毛球</li>
+					<li>乒乓球</li>
+				</ul>
+			</li>
+			<li>
+				
+			菜单栏2
+			</li>
+			<li>
+
+			菜单栏3
+			</li>
+			<li>
+
+			菜单栏4
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

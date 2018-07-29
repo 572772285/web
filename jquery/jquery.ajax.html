@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery的ajax</title>
+</head>
+<body>
+	<button>点击</button>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('button').on('click',function(){
+			$.ajax({
+				url:'http://127.0.0.1:3000/json.json',
+				type:'GET',
+				dataType:'json',
+				// data:{name:'leo',age:18},
+				success:function(data,statusMsg,jqXHR){
+					console.log(data,statusMsg,jqXHR)
+				},
+				error:function(jqXHR,statusMsg){
+					console.log(jqXHR,statusMsg)
+				},
+				complete:function(jqXHR,statusMsg){
+					console.log(jqXHR,statusMsg)
+				},
+				/*完成后返回值，不管失败还是成功都会走这一步*/
+				timeout:2000,
+				/*根据服务器端返回的状态码不同做相应的处理*/
+				statusCode:{
+					404:function(){
+						alert('not found')
+					}
+				},
+				headers:{
+					'test':'liuruoyang'
+				}
+			})
+		})
+	})
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>less在浏览器中的使用</title>
+	<link rel="stylesheet" href="css/001.css">
+</head>
+<body>
+	<h1>我是标题</h1>
+	<div class="div1"></div>
+	<div class="div2"></div>
+	<div class="div3"></div>
+	<div class="div4"></div>
+	<div class="div5">div55555555555</div>
+	<div class="div6">div55555555555</div>
+	<div class="div7">777777777</div>
+	<div class="div8">我是DIV8</div>
+	<ul class="list">
+		<span>Im span<a href="#">Im a</a></span>
+		<div>我是H2</div>
+	</ul>
+	<ul class="list">
+		<span>Im span<a href="#">Im a</a></span>
+		<div>我是H2</div>
+
+	</ul>
+	<ul class="list">
+		<span>Im span<a href="#">Im a</a></span>
+		<div>我是H2</div>
+
+	</ul>
+</body>
+</html>

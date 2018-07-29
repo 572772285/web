@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>实现动画的混合</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box1{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			top: 30px;
+			left: 1000px;
+			opacity: 0.3;
+		}
+		#liner{
+			height: 500px;
+			border-left: 1px solid black;
+			position: absolute;
+			left: 600px;
+			top: 0px;
+		}
+		#box2,#box3,#box4{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			margin-top: 30px;
+		}
+	</style>
+	<script>
+		var timer=null;
+		function animation(obj,attr,value,isLinear,fn){
+			var isPeed=0;
+			var isStop=false;
+			clearInterval(obj.timer);
+			obj.timer=setInterval(function(){
+					var curr=parseFloat(getComputedStyle(obj,false)[attr]);	
+					console.log(curr)				
+					if(attr=='opacity'){
+						curr=Math.round(curr*100)
+						/*四舍五入*/
+					}
+					if(isLinear){
+						if(curr<value){
+							isPeed=10;
+						}else{
+							isPeed=-10;
+						}
+						if(Math.abs(value-curr)<Math.abs(isPeed)){
+							isStop=true;
+						}
+					}else{
+						isPeed=(value-curr)/10;
+						isPeed=isPeed>0?Math.ceil(isPeed):Math.floor(isPeed);
+						if(!isPeed){
+							isStop=true;
+						}
+					}
+					/*向上取整和向下取整*/
+					
+					if(isStop){
+						clearInterval(obj.timer);
+						if(isLinear){
+							if(attr=='opacity'){
+								obj.style[attr]=value/100;
+							}else{
+								obj.style[attr]=value+'px';
+							}
+						}
+						/*线性动画或者减速动画都执行完了之后才会调用函数参数*/
+						if(fn){
+							fn();
+						}
+						
+					}else{
+						if(attr=='opacity'){
+							obj.style[attr]=(curr+isPeed)/100;
+						}else{
+							obj.style[attr]=curr+isPeed+'px'
+						}
+						console.log(isPeed)
+					}
+				},30)
+		}
+			window.onload=function(){
+			var oBox1=document.getElementById('box1');
+			var oBox2=document.getElementById('box2');
+			var oBox3=document.getElementById('box3');
+			var oBox4=document.getElementById('box4');
+			var oBtn=document.getElementById('btn');
+			var oBtn1=document.getElementById('btn1');
+			oBtn1.onclick=function(){
+				animation(oBox1,'top','500',false,function(){
+					animation(oBox1,'left','100',false,function(){
+						animation(oBox1,'top','30',false,function(){
+							animation(oBox1,'left','1000')
+						})
+					})
+				})
+			}
+			oBtn.onclick=function(){
+				animation(oBox1,'opacity','100',true)
+			}
+			oBox2.onmouseover=function(){
+				animation(oBox2,'width','500',true)
+			}
+			oBox2.onmouseout=function(){
+				animation(oBox2,'width','100',true)
+			}
+			oBox3.onmouseover=function(){
+				animation(oBox3,'height','500',true)
+			}
+			oBox3.onmouseout=function(){
+				animation(oBox3,'height','100',true)
+			}
+			oBox4.onmouseover=function(){
+				animation(oBox4,'opacity','10',true)
+			}
+			oBox4.onmouseout=function(){
+				animation(oBox4,'opacity','100',true)
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="开始" id="btn">
+	<input type="button" value="开始" id="btn1">
+	<div id="box1"></div>
+	<div id="liner"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+	<div id="box4"></div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画发布效果</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#txt{
+			width: 200px;
+			height: 30px;
+			font-size: 16px;
+		}
+		#btn{
+			width: 80px;
+			height: 30px;
+		}
+		#ul1 {
+			width: 500px;
+			height: 500px;
+			background-color: pink;
+			border:3px solid black;
+			overflow: hidden;
+		}
+		#ul1 li{
+			height: 50px;
+			background-color: red;
+			border-top:1px solid black;
+			line-height: 50px;
+		}
+	</style>
+	<script src="animation.js"></script>
+	<script>
+		window.onload=function(){
+			var oTxt=document.getElementById('txt');
+			var oBtn=document.getElementById('btn');
+			var oUl1=document.getElementById('ul1');
+			// var oLi=oUl1.children
+			oBtn.onclick=function(){
+				var oLi1=document.createElement('li');
+				oUl1.insertBefore(oLi1,oUl1.firstChild);
+				oLi1.innerHTML=oTxt.value;
+				oTxt.value=''
+				oLi1.style.height='0px'
+				animation(oLi1,{'height':'50'},false);
+				var A=document.createElement('a');
+				A.href='javascript:;';
+				A.innerHTML='删除';
+				oLi1.appendChild(A);
+				A.onclick=function(){
+					oUl1.removeChild(this.parentNode);
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" value="发布" id="btn">
+	<ul id="ul1">
+		
+	</ul>
+</body>
+</html>

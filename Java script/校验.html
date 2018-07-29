@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>校验</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oInput=document.getElementById('input1');
+			var oTxt=document.getElementById('txt'); 
+			var oBtn=document.getElementById('btn'); 
+			var oLi1=document.getElementById('li1'); 
+			var panduan=false;
+			var isone=false;
+			var date=['Tossssm','Ardsdme','Cssossco','Jamesasds'];
+			oInput.onfocus=function(){
+				oTxt.innerHTML='请输入6位数';
+				oTxt.style.color='black';
+				oInput.onkeydown=function(ev){
+				var oEvent=ev||event;
+				// console.log(oEvent.keyCode);
+				oTxt.innerHTML='请输入6位数';
+				oTxt.style.color='red';
+				}
+			}
+			oInput.onblur=function(){
+				if(oInput.value.length>=3&&oInput.value.length<=9){
+					oTxt.innerHTML='正确';
+					oTxt.style.color='green';
+					panduan=true;
+				}else{
+					oTxt.innerHTML='请输入6位数';
+					oTxt.style.color='red';
+					panduan=false;
+				}
+			}
+			oBtn.onclick=function(){
+				if(panduan==false){
+					console.log(panduan)
+					return false
+				}else{
+					oTxt.innerHTML='正确';
+					oTxt.style.color='green';
+				}
+			}
+			oInput.oninput=function(){
+				if(isone==false){
+					for(i in date){
+					var oLi=document.createElement('li');
+					oLi.innerHTML=date[i];
+					oLi1.appendChild(oLi);
+					}
+					isone=true;
+				}				
+			}
+			oLi1.onclick=function(ev){
+				var oEvent=ev||event;
+				console.log(ev.target)
+				oInput.value=ev.target.innerHTML;
+				oTxt.style.color='green';
+				oTxt.innerHTML='正确';
+				panduan=true;
+			}
+			oInput.onkeydown=function(ev){
+				var oEvent=ev||event;
+
+				if(oEvent.keyCode==13){
+						
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<form action="https://www.taobao.com">
+		<input type="text" name="username" id="input1">
+		<span id="li1">
+		</span>
+		<span id="txt"></span>
+		<p><input type="submit" value="登陆" id="btn"></p>
+	</form>
+
+</body>
+</html>

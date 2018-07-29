@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建对象</title>
+	<script>
+		var person=new Array(1,3,5,0,1,2);
+		person.name="tom",
+		person.age=18,
+		person.hanshu=function(){
+			console.log("hello")
+		}
+		person.hanshu();
+		person.sort=function(){
+			var result=0;
+			console.log(this);
+			for(var i=0;i<this.length;i++){
+				result+=this[i]
+			}
+			return result;
+		}
+		person.sort()
+		console.log(person.sort())
+		console.log(person)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

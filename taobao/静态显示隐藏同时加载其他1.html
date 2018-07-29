@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>淘宝案例</title>
+	<link rel="stylesheet" href="css/重置代码.css">
+	<link rel="stylesheet" href="../src/web-fonts-with-css/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="css/common.css">
+	<style>
+		#box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			display: none;
+		}
+	</style>
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<div id="box"></div>
+</body>
+	<script>
+		
+		var slient={
+			/*
+			show:function($elem,showqian,showhou){
+				showqian()
+				$elem.show()
+				showhou()
+			},
+			hide:function($elem){
+
+				$elem.hide()
+			}
+			*/
+			/*通过回调函数实现显示同时加载其他时间，但是这种方法比较单一。不同添加多个事件*/
+			/*通过事件自动触发可以写多个事件，同时让多个事件实现显示前触发,不会影响后面事件触发*/
+			init:function($elem){
+				if($elem.is(':hidden')==true){
+					$elem.data('status','hidden')
+				}else{
+					$elem.data('status','showhou')
+				}
+				console.log($elem.data('status'))
+			},
+			show:function($elem){
+				/*判断是否已经显示了，：为必须加的*/
+				// console.log($elem.is(':hidden'))
+				if($elem.data('status')=='showhou') return;
+				if($elem.data('status')=='showqian') return;
+				$elem.data('status','showqian').trigger('showqian')
+				$elem.show()
+				$elem.trigger('showhou').data('status','showhou')
+			},
+			hide:function($elem){
+				if($elem.data('status')=='hidden') return;
+				if($elem.data('status')=='hide') return;
+
+				$elem.data('status','hide').trigger('hide');
+				$elem.hide();
+				$elem.trigger('hidden').data('status','hidden')
+			}
+		};
+			var $box=$('#box');
+			$box.on('showqian showhou hide hidden',function(ev){
+				// console.log(ev.type)
+				/*用ev事件中的ev.type来判断是showqian还是showhou*/
+				if(ev.type=='showqian'){
+					console.log('show前...')
+				}else if(ev.type=='showhou'){
+					console.log('show后...')
+				}else if(ev.type=='hide'){
+					console.log('hide前...')
+				}else if(ev.type=='hidden'){
+					console.log('hidden后...')
+				}
+			})
+			/*不管怎么先调初始化方法*/
+			slient.init($box);
+		/*显示*/
+		$('button').eq(0).on('click',function(){
+			/*
+			slient.show($box,function(){
+				$box.html('<p>我要加载lodding</p>')
+			},function(){
+				$box.html($box.html()+'<p>我已经加载lodding</p>')
+			});
+			*/
+			slient.show($box);
+		})
+		
+		$('button').eq(1).on('click',function(){
+			slient.hide($box)
+		})
+	</script>
+</html>

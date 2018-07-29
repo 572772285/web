@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取样式</title>
+	<style>
+		#box{
+			width: 100px;
+			height: 100px;
+			border:1px solid black;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oBtn1=document.getElementById('btn1');
+			var oBtn2=document.getElementById('btn2');
+			var oBox=document.getElementById('box');
+			oBtn1.onclick=function(){
+				oBox.style.width='500px'
+				
+			}
+			oBtn2.onclick=function(){
+				alert(getComputedStyle(oBox,false)['width'])
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="btn1" value="变宽">
+	<input type="button" id="btn2" value="获取样式">
+	<div id="box"></div>
+</body>
+</html>

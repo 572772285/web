@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字面量创建对象</title>
+	<script>
+		window.onload=function(){
+			var shuzu={
+				name:'tom',
+				name:'army',
+				age:18,
+				hello:function(){
+					console.log(this.name+'hello')
+				}
+			}
+			console.log(typeof shuzu)
+			console.log(shuzu.name)
+			shuzu.hello();
+
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

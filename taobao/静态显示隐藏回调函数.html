@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>淘宝案例</title>
+	<link rel="stylesheet" href="css/重置代码.css">
+	<link rel="stylesheet" href="../src/web-fonts-with-css/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="css/common.css">
+	<style>
+		#box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<div id="box"></div>
+</body>
+	<script>
+		
+		var slient={
+			/*
+			show:function($elem,showqian,showhou){
+				showqian()
+				$elem.show()
+				showhou()
+			},
+			hide:function($elem){
+
+				$elem.hide()
+			}
+			*/
+			/*通过回调函数实现显示同时加载其他时间，但是这种方法比较单一。不同添加多个事件*/
+			/*通过事件自动触发可以写多个事件，同时让多个事件实现显示前触发,不会影响后面事件触发*/
+			slideDown:function($elem,showone,showtwo){
+				showone();
+				// $box.trigger('showqian')
+				$elem.slideDown();
+				// $box.trigger('showhou')
+				showtwo();
+			},
+			slideUp:function($elem){
+
+				$elem.slideUp()
+			}
+		};
+			var $box=$('#box');
+			// $box.on('showqian',function(){
+			// 	$box.html('<p>我要加载lodding</p>')
+			// })
+			// $box.on('showhou',function(){
+			// 	setTimeout(function(){
+			// 		$box.html($box.html()+'<p>我已经加载lodding</p>')
+			// 	},2000)
+				
+			// })
+			// $box.on('showhou',function(){
+			// 	$box.css('color','blue')
+			// })
+		/*显示*/
+		$('button').eq(0).on('click',function(){
+			
+			slient.slideDown($box,function(){
+				$box.html('<p>我要加载lodding</p>')
+			},function(){
+				$box.html($box.html()+'<p>我已经加载lodding</p>')
+			});
+			
+			// slient.slideDown($box)
+		})
+		
+		$('button').eq(1).on('click',function(){
+			slient.slideUp($box)
+		})
+	</script>
+</html>

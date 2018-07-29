@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas画布</title>
+	<style>
+		canvas{
+			border:1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="600" height="300" id="canvas">
+		你的浏览器不支持，请更换高版本浏览器
+	</canvas>
+</body>
+<script>
+	var oCanvas=document.getElementById('canvas')
+
+	//获取上下文环境
+	var ctx=oCanvas.getContext('2d');
+	ctx.moveTo(0,0);
+	ctx.lineTo(200,200)
+	ctx.stroke()
+</script>
+</html>

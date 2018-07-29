@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>箭头函数和其他函数的区别</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//箭头函数里面用扩展运算代替arguments
+	let show=(...arr)=>{
+		console.log(arr)
+	}
+	show(1,2,3)
+	//函数的阶乘
+	function fact(n){
+		if(n<=1){
+			return 1;
+		}else{
+			return n * arguments.callee(n-1)
+		}
+	}
+	let fact1=fact;
+	fact=null;
+	console.log(typeof fact1)
+	console.log(fact1(5))
+</script>
+</html>

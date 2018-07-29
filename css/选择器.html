@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择器</title>
+	<style>
+		p{
+			width: 100px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: clip;
+		}
+		p.pp1{
+			color: red;
+		}
+		header ul{
+			color: blue;
+		}
+		header>ul{
+			color: yellow;
+		}
+		.li1,.li2{
+			color:green;
+		}
+		h2~p{
+			color:gray;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<ul>
+		<h2>woshih2</h2>	
+		<p class="li1">我是开头</p>
+		<p class="li2">我是头1</p>
+		<p class="li1">我是头2</p>
+		<p>我是头3</p>
+		<p>我是头4</p>
+	</ul>
+	</header>
+	<p class="pp1" id="p2">段落1</p>
+	<p class="pp1">段落2</p>
+	<p class="pp1" id="aa">段落3</p>
+	<p>段落4</p>
+	<h2 class="pp1">我是标题</h2>
+</body>
+</html>

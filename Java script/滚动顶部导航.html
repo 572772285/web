@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滚动顶部导航</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#nav,#nav1{
+			width: 100%;
+			height: 100px;
+			text-align: center;
+			line-height: 100px;
+			font-size: 38px;			
+		}
+		#nav{
+			background-color: red;
+
+		}
+		#nav1{
+			background-color: pink;
+			height: 0;
+			position: fixed;
+			top: 0;
+		}
+		#section{
+			width: 100%;
+			height: 3000px;
+			background-color: yellow;
+		}
+	</style>
+	<script src="animation.js"></script>
+	<script>
+			var isShow=false;
+			window.onscroll=function(){
+			var oNav=document.getElementById('nav');
+			var oNav1=document.getElementById('nav1');
+			var oSe=document.getElementById('section');
+			var iTop=document.body.scrollTop||document.documentElement.scrollTop;
+			var iHeight=window.innerHeight;
+				if(iTop>=100){
+					if(!isShow){
+						animation(oNav1,{'height':'100'});
+						isShow=true;
+						oSe.style.marginTop='100px'
+						console.log(2)
+					}
+				}else{
+					if(isShow){
+						animation(oNav1,{'height':'0'});
+						isShow=false;
+						oSe.style.marginTop='0px'
+					}
+					console.log(1)
+				}
+			}
+	</script>
+</head>
+<body>
+	<div id="nav">导航1</div>
+	<div id="nav1">导航1</div>
+	<div id="section">2454532132dsasadasdasdsad<br>asda5s4d4a4s65d4a54</div>
+</body>
+</html>

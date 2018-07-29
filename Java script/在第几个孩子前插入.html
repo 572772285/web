@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>在第几个孩子前插入</title>
+	<script>
+		window.onload=function(){
+			var oTxt=document.getElementById('txt');
+			var oBtn=document.getElementById('btn');
+			var oUl=document.getElementById('ul1');
+			oBtn.onclick=function(){
+				var li=document.createElement('li');
+				oUl.insertBefore(li,oUl.children[2]);
+				li.innerHTML=oTxt.value;
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" value="插入" id="btn">
+	<ul id="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+</html>

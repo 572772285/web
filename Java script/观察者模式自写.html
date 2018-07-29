@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>观察者模式自写</title>
+	<script>
+		(function(w){
+			function Teacher(name){
+				this.name=name;
+				this.studens=[];
+			}
+			Teacher.prototype={
+				constructor:Teacher,
+				__proto__:Object.prototype,
+				register:function(xuesheng){
+					this.studens.push(xuesheng)
+				},
+				publish:function(msg){
+					for(var i=0;i<this.studens.length;i++){
+						this.studens[i].jieshou(msg);
+					}
+				}
+			}
+			w.Teacher=Teacher;
+		})(window);
+		(function(w){
+			function Student(name,laoshi){
+				this.name=name;
+				laoshi.register(this);
+				this.dd='';
+			}
+			Student.prototype={
+				constructor:Student,
+				__proto__:Object.prototype,
+				jieshou:function(dd){
+					this.dd=dd;
+				}
+			}
+			w.Student=Student;
+		})(window);
+		var jiaoshi=new Teacher('刘若阳');
+		var xuesheng1=new Student('asd',jiaoshi);
+		var xuesheng2=new Student('qwe',jiaoshi);
+		var xuesheng3=new Student('zxc',jiaoshi);
+		jiaoshi.publish('教师：'+jiaoshi.name+'的学生们：把卷子抄100遍')
+		console.log(xuesheng1.dd)
+		console.log(xuesheng2.dd)
+		console.log(xuesheng3.dd)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

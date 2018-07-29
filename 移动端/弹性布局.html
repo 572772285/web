@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹性布局</title>
+	<style>
+		.father{
+			width: 1000px;
+			height: 600px;
+			border: 1px solid #000;
+			margin:10 auto;
+			display: flex;
+			/*justify-content: space-around;*/
+
+		}
+		.son1{
+			width: 100px;
+			height: 50px;
+			background-color: red;
+			order:3;
+			flex-grow: 1;	
+			/*flex-shrink: 1;*/
+			flex-basis: 50px;		
+		}
+		.son2{
+			width: 200px;
+			height: 50px;
+			background-color:blue;
+			order:2;
+			flex-grow: 1;	
+		}
+		.son3{
+			width: 400px;
+			height: 50px;
+			background-color: orange;
+			order:1;
+			flex-grow: 1;	
+
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son1">son1</div>
+		<div class="son2">son2</div>
+		<div class="son3">son3</div>
+	</div>
+</body>
+</html>

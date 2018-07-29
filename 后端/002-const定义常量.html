@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>002-const定义常量.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//定义常量(常量不可更改)
+	// var PI=3.1415926;
+	// PI=PI+1//不可以
+	// console.log(PI);
+	//const定义常量，一旦定义不可更改
+
+
+	//const对于简单数据类型来说，不可以更改已经定义的数据如数字，，，对于复杂类型可以更改和var一样，如对象
+	const duixiang={
+		asd:'ad',
+		kqw:12
+	}
+	duixiang.asd='abc'
+	console.log(duixiang)
+	const PI=3.1415026;
+	// PI=PI+1;
+	console.log(PI)
+	//const定义的作用域也是块级，和let一样也不可以声明的提升
+
+</script>
+</html>

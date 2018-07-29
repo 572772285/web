@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery和DOM的转换</title>
+	<script src="../js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			var $div=$('div');
+			console.log($div);
+			console.log($div[0]);
+			// var div=$div[1];
+			// console.log(div);
+			/*jquery转DOM*/
+			var div=$div.get(1);
+			console.log('jquery-dom',div)
+			div.style.color='red';
+			/*DOM--jquery*/
+			var oBtn4=document.getElementById('btn4');
+			/*jquery还可以传DOM节点*/
+			var box=$(oBtn4);
+			console.log(box)
+			box.css({
+				color:'red'
+			})
+
+		})
+		
+	</script>
+</head>
+<body>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div id="btn4">4</div>
+	<div>5</div>
+	<div>6</div>
+	<div>7</div>
+</body>
+</html>

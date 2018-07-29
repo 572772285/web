@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery事件自动触发</title>
+	<style>
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+	<script src="../js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$('div').on('click',function(){
+				alert('你成功的点进去了');
+				$('div').addClass('box')
+			})
+			$('div').trigger('click');
+		})
+	</script>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

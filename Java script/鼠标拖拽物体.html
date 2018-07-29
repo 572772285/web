@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标拖拽物体</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oDiv1=document.getElementById('div1');
+			oDiv1.onmousedown=function(ev){
+				var oEvent=ev||event;
+				var disX=oEvent.clientX- oDiv1.offsetLeft;
+				var disY=oEvent.clientY - oDiv1.offsetTop;
+				/*存一个变量和盒子的距离*/
+					document.onmousemove=function(ev){
+						var oEvent=ev||event;
+						var zuo=oEvent.clientX-disX;
+						var shang=oEvent.clientY-disY;
+						/*盒子与浏览左右的距离*/
+						
+						if(zuo<30){
+							zuo=0;
+						}
+						if(shang<30){
+							shang=0;
+						}
+						if(zuo>window.innerWidth-oDiv1.offsetWidth){
+							zuo=window.innerWidth-oDiv1.offsetWidth;
+						}
+						if(shang>window.innerHeight-oDiv1.offsetHeight){
+							shang=window.innerHeight-oDiv1.offsetHeight;
+						}
+						oDiv1.style.left=zuo+'px';
+						oDiv1.style.top=shang+'px';
+					}
+					document.onmouseup=function(){
+						document.onmousemove=null;
+						document.onmouseup=null;
+					}
+					/*当鼠标松开的时候取消移动*/				
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>

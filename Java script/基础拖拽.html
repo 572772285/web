@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基础拖拽</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		#div1{
+			width: 500px;
+			height: 100px;
+			background-color: blue;
+			position: relative;
+			margin:0 auto;
+			margin-top: 50px;
+		}
+		#div2{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			top:0;
+			left: 0;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oDiv1=document.getElementById('div1');
+			var oDiv2=document.getElementById('div2');
+			oDiv2.onmousedown=function(ev){
+				var oEvent=ev||event;
+				var disX=oEvent.clientX- oDiv2.offsetLeft;
+				var disY=oEvent.clientY - oDiv2.offsetTop;
+				/*存一个变量和盒子的距离*/
+					document.onmousemove=function(ev){
+					var oEvent=ev||event;
+					var zuo=oEvent.clientX-disX;
+					var shang=oEvent.clientY-disY;
+					/*盒子与浏览左上的距离*/
+					oDiv2.style.left=zuo+'px';
+					oDiv2.style.top=shang+'px';
+					if(zuo<30){
+						oDiv2.style.left='0px';
+					}
+					if(shang<30){
+						oDiv2.style.top='0px';
+					}
+					if(zuo>oDiv1.offsetWidth-oDiv2.offsetWidth){
+						oDiv2.style.left=oDiv1.offsetWidth-oDiv2.offsetWidth+'px';
+					}
+					if(shang>oDiv1.offsetHeight-oDiv2.offsetHeight){
+						oDiv2.style.top=oDiv1.offsetHeight-oDiv2.offsetHeight+'px';
+					}
+					console.log(zuo/(oDiv1.offsetWidth-oDiv2.offsetWidth));
+				}
+					document.onmouseup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
+				}
+			}
+			
+		}
+	</script>
+</head>
+<body>
+	<div id="div1">
+		<div id="div2"></div>
+	</div>
+</body>
+</html>

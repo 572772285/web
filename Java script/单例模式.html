@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单例模式</title>
+	<script>
+		(function(w){
+			function king(name){
+				this.name='国王';
+				this.id=Math.random();
+			}
+			king.prototype={
+				constructor:king,
+				__proto__:Object.prototype,
+				say:function(){
+					console.log(this.id+'平身');
+				}
+			}
+			king.weiyi=(function(){
+				var king1=null;
+				return function(){
+					if(king1==null){
+						king1=new king()
+					}
+					return king1
+				}
+			})();
+			w.king=king;
+		})(window);
+		for(var i=1;i<=5;i++){
+			// console.log(i);
+			// new king().say();
+			king.weiyi().say();
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>箭头函数的this</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	function timer(id){
+		this.id=id;
+		setTimeout(function(){
+			console.log(this.id)
+		}.bind({id:'111'}),500)
+	}
+	var time=new timer(100)
+	*/
+	//箭头函数在定义函数中不可以被bind，并且在定义的时候就确定了函数的this。不用更改this的指向
+	function timer(id){
+		this.id=id;
+		setTimeout(()=>{
+			console.log(this,this.id)
+		},500)
+	}
+	let time=new timer(100)
+	let show=(...arr)=>{
+		console.log(arr)
+	}
+	show(1,2,3)
+</script>
+</html>

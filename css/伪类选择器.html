@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>伪类选择器</title>
+	<style>
+		a:link{
+			color:gray;
+		}
+		a:visited{
+			color:pink;
+		}
+		a:hover{
+			color: yellow;
+		}
+		a:active{
+			color: green;
+		}
+		p:hover{
+			color: red;
+		}
+		[type]{
+			outline-color: red;
+		}
+		p:after{
+			content:"132";
+		}
+		p:before{
+			content:"456";
+		}
+	</style>
+</head>
+<body>
+	<a href="#">链接1</a>
+	<a href="#">链接2</a>
+	<a href="#">链接3</a>
+	<p>你放在我身上会有反应的</p>
+	姓名：<input type="text">
+</body>
+</html>

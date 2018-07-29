@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>除去数组中的重复函数</title>
+	<script>
+		var arr=[1,5,8,1,5,6,8];
+		function quchong(name){
+			var arr1=[];
+			for(var i=0;i<arr.length;i++){
+				var jia=false;
+				for(j in arr1){
+					if(arr[i]==arr1[j]){
+						jia=true;
+						break;
+					}
+				}
+				if(!jia){
+					arr1.push(arr[i])
+				}
+			}
+			alert(arr1)
+		}
+		console.log(quchong(arr));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
