@@ -53,6 +53,7 @@ const server = http.createServer((req,res)=>{
 		}
 		
 		if(model[action]){
+			//concat是拼接的意思 前面的数组和后面的拼接
 			model[action].apply(null,[req,res].concat(args));
 		}
 

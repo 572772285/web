@@ -8,8 +8,21 @@ const MongoClient = require('mongodb').MongoClient;
 
 // Connection URL
 const url = 'mongodb://localhost:27017';
-// let getdb=(callback)=>{
+let getdb=(callback)=>{
+// const MongoClient = require('mongodb').MongoClient;
 
+
+// // Connection URL
+// const url = 'mongodb://localhost:27017';
+
+// // Database Name
+// const dbName = 'liu';
+
+//   MongoClient.connect(url, { useNewUrlParser: true },function(err, client) {
+//     console.log("Connected successfully to server");
+
+//     const db = client.db(dbName);
+//   }）
 // }
 
 
@@ -20,7 +33,7 @@ let getRandom = (min,max)=> {
 const colorArr = ['#f10','#ff0','#ff5600','#0f1'];
 
 let add = (options,callback)=>{
-options.id = uuidv1();
+options._id = uuidv1();
 options.color = colorArr[getRandom(0,colorArr.length-1)];
 const dbName = 'liu';
 
