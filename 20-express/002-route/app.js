@@ -1,9 +1,13 @@
 const express = require('express');
-const user=require('./ruter/user.js')
+const user=require('./routes/user.js')
 const app = express();
 app.use(express.static('public'));
-app.use('/user',require('./ruter/user.js'));
-// app.use('/blog',require('./routes/blog.js'));
+app.use('/user',require('./routes/user.js'));
+app.use('/blog',require('./routes/blog.js'));
+
+
+
+
 //不管任何请求都会走到啊这里
 // app.all('/',(req,res,next)=>{
 // 	console.log('all')
