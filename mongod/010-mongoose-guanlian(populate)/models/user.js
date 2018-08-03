@@ -60,14 +60,5 @@ const mongoose = require('mongoose');
 			callback(err,doc)
 		})
 	}
-
-
-
-
-	UserSchema.statics.findBoke=function(title,callback){
-		this.findOne({title:title},(err,doc)=>{
-			callback(err,doc)
-		})
-	}
 	const UserModel = mongoose.model('User', UserSchema);
 	module.exports=UserModel

@@ -5,11 +5,24 @@ const mime = require('./mime.json');
 const url = require('url');
 const querystring = require('querystring');
 const swig = require('swig');
-
+const mongoose=require('mongoose');
+	mongoose.connect('mongodb://localhost:27017/yang',{ useNewUrlParser: true });
+	const db = mongoose.connection;
+	//操作的过程中有`1错误怎么办
+	db.on('error', (err)=>{
+		throw err
+	})
+	//链接成功 所有的操作都在以下回掉函数中操作
+	db.once('open', function() {
+	  	console.log('DB connected success');
+	})
 const server = http.createServer((req,res)=>{
 	
 	
 	let pathname = url.parse(req.url,true).pathname;
+
+
+
 
 	//约定: 
 	//1.请求路径以 /static/开始的都是静态资源
@@ -30,7 +43,6 @@ const server = http.createServer((req,res)=>{
 			}else{
 				res.setHeader('Content-Type', 'text/html;charset=UTF-8');
 				res.statusCode = 404;
-				console.log(err)
 				res.end('<h1>页面走丢了。。。。</h1>')
 			}
 		});
@@ -43,7 +55,6 @@ const server = http.createServer((req,res)=>{
 		try{
 			model = require('./Controller/'+controller);
 		}catch(err){
-			console.log(err)
 			res.setHeader('Content-Type', 'text/html;charset=UTF-8');
 			res.statusCode = 404;
 			res.end('<h1>页面走丢了。。。。</h1>')	

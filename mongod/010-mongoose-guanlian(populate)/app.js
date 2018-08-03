@@ -27,7 +27,6 @@ db.on('error', (err)=>{
 db.once('open', function() {
   	console.log('DB connected success');
 
-
   	/*
   	UserModel.insertMany({name:"Tom",sex:"woman",locked:false,age:23,phone:"18837418915",
   		friends:["pengpeng","yangyang","kunkun","zhezhe","xinxin","xiangxiang"]},(err,doc)=>{
@@ -90,7 +89,6 @@ UserModel.findOne({name:"Tom"},(err,doc)=>{
 })
 */
 
-/*
 //自定义通过电话号码找到作者
 
 UserModel.findByPhone('18837418915',(err,doc)=>{
@@ -100,43 +98,9 @@ UserModel.findByPhone('18837418915',(err,doc)=>{
 		console.log(err)
 	}
 })
-*/	
-	/*
-	通过文章关联作者
-	BokeModel
-	.findOne({title:"im title"})
-	.populate("author")
-	.then((doc)=>{
-		console.log(doc)
-	})
-	*/
-	
-	// BokeModel.findOne({title:"im title"},(err,boke)=>{
-	// 	console.log(boke.author)
-	// 	UserModel.findOne({_id:boke.author},(err,doc)=>{
-	// 		console.log(doc)
-	// 	})
-	// })
 
-	//普通方法的调用
-	/*
-	BokeModel.findBoke({title:"im title"},(err,doc)=>{
-		if(!err){
-			console.log(doc)
-		}else{
-			console.log(err)
-		}
-	})
 
-	//promise方法的调用
-	*/
-	BokeModel.findBoke({title:"im title"})
-	.then((doc)=>{
-		console.log(doc)
-	})
-	.catch((err)=>{
-		console.log(err)
-	})
+
   	/*
 //根据条件查询不重复的种类
 	UserModel.distinct("name",{},(err,result)=>{
