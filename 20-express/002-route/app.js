@@ -1,7 +1,14 @@
 const express = require('express');
 const user=require('./routes/user.js')
 const app = express();
+//托管静态文件
+app.get('/',(req,res)=>{
+	res.send('ok')
+})
+
 app.use(express.static('public'));
+// app.use('/static',express.static('public'));
+
 app.use('/user',require('./routes/user.js'));
 app.use('/blog',require('./routes/blog.js'));
 

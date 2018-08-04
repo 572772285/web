@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock  %}</title>
+    <style>
+    	body{
+    		background-color: pink;
+    	}
+    	nav{
+    		width: 100%;
+    		height: 100px;
+    		background-color: blue;
+    	}
+    	.body{
+    		width: 100%;
+    		height: 800px;
+    		border: 1px solid #000;
+    	}
+    	.left{
+    		width: 500px;
+    		height: 500px;
+    		background-color: #ffa231;
+    		float: left;
+    	}
+    	.right{
+    		width: 200px;
+    		height: 700px;
+    		float: right;
+    		background-color: #fa6700;
+    	}
+    	.bottom{
+    		width: 100%;
+    		height: 200px;
+    		background-color: yellow;
+    	}
+    </style>
+    {% block head %}
+		<nav></nav>
+    {% endblock  %}
+</head>
+<body>
+    {% block content %}
+    	<div class="body">
+    		<div class="left">left</div>
+			<div class="right">right</div>
+    	</div>
+		{% block content1 %}{% endblock  %}
+		{% block boke1 %}{% endblock  %}
+		<div class="bottom">bottom</div>
+    {% endblock  %}
+</body>
+{% include "./footer.html" %}
+</html>

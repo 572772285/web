@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ title }}</title>
+</head>
+<body>
+	hello!!!
+	<div>{{ content }}</div>
+	<div>
+		{% if name == "liuruoyang" %}
+		<h1>是帅哥</h1>
+		{% elseif name == 'tom' %}
+		<h1>hello tom</h1>
+		{% elseif name == 'leo' %}
+		<h1>hello leo</h1>
+		{% else %}
+		<h1>hello guy</h1>
+		{% endif %}
+	</div>
+
+		{% for key,val in arr %}
+		  <p>{{ key }} -- {{ val }}</p>
+		{% endfor %}
+
+</body>
+
+</html>
