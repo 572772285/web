@@ -6,6 +6,7 @@ const url = require('url');
 const querystring = require('querystring');
 const swig = require('swig');
 const mongoose=require('mongoose');
+//1链接数据库
 	mongoose.connect('mongodb://localhost:27017/yang',{ useNewUrlParser: true });
 	const db = mongoose.connection;
 	//操作的过程中有`1错误怎么办

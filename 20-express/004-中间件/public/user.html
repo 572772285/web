@@ -28,7 +28,11 @@
 		$('#post').on('click',function(){
 			$.ajax({
 				url:'/user',
-				type:'post'
+				type:'post',
+				data:{
+					name:"tom",
+					age:18
+				}
 			})
 			.done(function(data){
 				console.log(data)
@@ -51,7 +55,7 @@
 		})
 		$('#delete').on('click',function(){
 			$.ajax({
-				url:'/user',
+				url:'/user/123',
 				type:'delete'
 			})
 			.done(function(data){

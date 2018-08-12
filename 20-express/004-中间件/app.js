@@ -17,7 +17,7 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.post('/add',(req,res)=>{
+app.post('/user',(req,res)=>{
 	console.log('aaa',req.body)
 })
 
