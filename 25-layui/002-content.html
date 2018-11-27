@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="../layui/layui-v2.4.3/layui/css/layui.css"  media="all">
+	<title>Content compilation</title>
+</head>
+<script src="../layui/layui-v2.4.3/layui/layui.js" charset="utf-8"></script>
+<body>
+	<div class="layui-container">  
+  常规布局（以中型屏幕桌面为例）：
+  <div class="layui-row">
+    <div class="layui-col-md9">
+      你的内容 9/12
+    </div>
+    <div class="layui-col-md3">
+      你的内容 3/12
+    </div>
+  </div>
+   
+  移动设备、平板、桌面端的不同表现：
+  <div class="layui-row">
+    <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+      移动：6/12 | 平板：6/12 | 桌面：4/12
+    </div>
+    <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+      移动：6/12 | 平板：6/12 | 桌面：4/12
+    </div>
+    <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+      移动：4/12 | 平板：12/12 | 桌面：4/12
+    </div>
+    <div class="layui-col-xs4 layui-col-sm7 layui-col-md8">
+      移动：4/12 | 平板：7/12 | 桌面：8/12
+    </div>
+    <div class="layui-col-xs4 layui-col-sm5 layui-col-md4">
+      移动：4/12 | 平板：5/12 | 桌面：4/12
+    </div>
+  </div>
+  <table id="demo" lay-filter="test"></table>
+</div>   
+</body>
+<script src="../layui/layui-v2.4.3/layui/layui.js" charset="utf-8"></script>
+<script>
+	var table = layui.table;
+ var tableIns = table.render(options)
+	//执行渲染
+	table.render({
+	  elem: '#demo' //指定原始表格元素选择器（推荐id选择器）
+	  ,height: 315 //容器高度
+	  ,cols: [{}] //设置表头
+	  //,…… //更多参数参考右侧目录：基本参数选项
+	});
+</script>
+</html>

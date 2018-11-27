@@ -2,160 +2,160 @@
 var duogeshuzu=[
 	[
 		{
-			img:'miphone1.png',
+			img:'./images/miphone1.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:'miphone1.png',
+			img:'./images/miphone1.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:"miphone2.png",
+			img:"./images/miphone2.png",
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:'miphone1.png',
+			img:'./images/miphone1.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:'miphone3.png',
+			img:'./images/miphone3.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:'miphone2.png',
+			img:'./images/miphone2.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		}
 	],
 		[
 		{
-			img:'miphone1.png',
+			img:'./images/miphone1.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:'miphone1.png',
+			img:'./images/miphone1.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:"miphone2.png",
+			img:"./images/miphone2.png",
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:'miphone3.png',
+			img:'./images/miphone3.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:'miphone2.png',
+			img:'./images/miphone2.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:'miphone1.png',
+			img:'./images/miphone1.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		}
 	],
 			[
 		{
-			img:'miphone1.png',
+			img:'./images/miphone1.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:'miphone1.png',
+			img:'./images/miphone1.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:"miphone2.png",
+			img:"./images/miphone2.png",
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:'miphone3.png',
+			img:'./images/miphone3.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:'miphone2.png',
+			img:'./images/miphone2.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:'miphone1.png',
+			img:'./images/miphone1.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		}
 	],
 			[
 		{
-			img:'miphone1.png',
+			img:'./images/miphone1.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:'miphone1.png',
+			img:'./images/miphone1.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:"miphone2.png",
+			img:"./images/miphone2.png",
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:'miphone3.png',
+			img:'./images/miphone3.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:'miphone2.png',
+			img:'./images/miphone2.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:'miphone1.png',
+			img:'./images/miphone1.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		}
 	],
 			[
 		{
-			img:'miphone1.png',
+			img:'./images/miphone1.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:'miphone1.png',
+			img:'./images/miphone1.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:"miphone2.png",
+			img:"./images/miphone2.png",
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:'miphone3.png',
+			img:'./images/miphone3.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:'miphone2.png',
+			img:'./images/miphone2.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		},
 		{
-			img:'miphone1.png',
+			img:'./images/miphone1.png',
 			name:'小米MIX2s',
 			price:'3299元起',
 		}
@@ -165,1021 +165,1021 @@ var duogeshuzu=[
 var lists=[
 		[
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
-				name:'小米mix2',
-			},
-		],
-		[
-			{
-				img:'list1.png',
-				name:'小米6x',
-			},
-			{
-				img:'list2.jpg',
-				name:'小米mix2s',
-			},
-			{
-				img:'list3.png',
-				name:'小米6s',
-			},
-			{
-				img:'list4.png',
-				name:'小米6',
-			},
-			{
-				img:'list5.jpg',
-				name:'小米mix2',
-			},
-			{
-				img:'list1.png',
-				name:'小米6x',
-			},
-			{
-				img:'list2.jpg',
-				name:'小米mix2s',
-			},
-			{
-				img:'list3.png',
-				name:'小米6s',
-			},
-			{
-				img:'list4.png',
-				name:'小米6',
-			},
-			{
-				img:'list5.jpg',
-				name:'小米mix2',
-			},
-			{
-				img:'list1.png',
-				name:'小米6x',
-			},
-			{
-				img:'list2.jpg',
-				name:'小米mix2s',
-			},
-			{
-				img:'list3.png',
-				name:'小米6s',
-			},
-			{
-				img:'list4.png',
-				name:'小米6',
-			},
-			{
-				img:'list5.jpg',
-				name:'小米mix2',
-			},
-			{
-				img:'list1.png',
-				name:'小米6x',
-			},
-			{
-				img:'list2.jpg',
-				name:'小米mix2s',
-			},
-			{
-				img:'list3.png',
-				name:'小米6s',
-			},
-			{
-				img:'list4.png',
-				name:'小米6',
-			},
-			{
-				img:'list5.jpg',
-				name:'小米mix2',
-			},
-			{
-				img:'list1.png',
-				name:'小米6x',
-			},
-			{
-				img:'list2.jpg',
-				name:'小米mix2s',
-			},
-			{
-				img:'list3.png',
-				name:'小米6s',
-			},
-			{
-				img:'list4.png',
-				name:'小米6',
-			},
-			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 		],
 		[
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
-				name:'小米mix2',
-			},
-		],
-		[
-			{
-				img:'list1.png',
-				name:'小米6x',
-			},
-			{
-				img:'list2.jpg',
-				name:'小米mix2s',
-			},
-			{
-				img:'list3.png',
-				name:'小米6s',
-			},
-			{
-				img:'list4.png',
-				name:'小米6',
-			},
-			{
-				img:'list5.jpg',
-				name:'小米mix2',
-			},
-			{
-				img:'list1.png',
-				name:'小米6x',
-			},
-			{
-				img:'list2.jpg',
-				name:'小米mix2s',
-			},
-			{
-				img:'list3.png',
-				name:'小米6s',
-			},
-			{
-				img:'list4.png',
-				name:'小米6',
-			},
-			{
-				img:'list5.jpg',
-				name:'小米mix2',
-			},
-			{
-				img:'list1.png',
-				name:'小米6x',
-			},
-			{
-				img:'list2.jpg',
-				name:'小米mix2s',
-			},
-			{
-				img:'list3.png',
-				name:'小米6s',
-			},
-			{
-				img:'list4.png',
-				name:'小米6',
-			},
-			{
-				img:'list5.jpg',
-				name:'小米mix2',
-			},
-			{
-				img:'list1.png',
-				name:'小米6x',
-			},
-			{
-				img:'list2.jpg',
-				name:'小米mix2s',
-			},
-			{
-				img:'list3.png',
-				name:'小米6s',
-			},
-			{
-				img:'list4.png',
-				name:'小米6',
-			},
-			{
-				img:'list5.jpg',
-				name:'小米mix2',
-			},
-			{
-				img:'list1.png',
-				name:'小米6x',
-			},
-			{
-				img:'list2.jpg',
-				name:'小米mix2s',
-			},
-			{
-				img:'list3.png',
-				name:'小米6s',
-			},
-			{
-				img:'list4.png',
-				name:'小米6',
-			},
-			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 		],
 		[
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
-				name:'小米mix2',
-			},
-		],
-		[
-			{
-				img:'list1.png',
-				name:'小米6x',
-			},
-			{
-				img:'list2.jpg',
-				name:'小米mix2s',
-			},
-			{
-				img:'list3.png',
-				name:'小米6s',
-			},
-			{
-				img:'list4.png',
-				name:'小米6',
-			},
-			{
-				img:'list5.jpg',
-				name:'小米mix2',
-			},
-			{
-				img:'list1.png',
-				name:'小米6x',
-			},
-			{
-				img:'list2.jpg',
-				name:'小米mix2s',
-			},
-			{
-				img:'list3.png',
-				name:'小米6s',
-			},
-			{
-				img:'list4.png',
-				name:'小米6',
-			},
-			{
-				img:'list5.jpg',
-				name:'小米mix2',
-			},
-			{
-				img:'list1.png',
-				name:'小米6x',
-			},
-			{
-				img:'list2.jpg',
-				name:'小米mix2s',
-			},
-			{
-				img:'list3.png',
-				name:'小米6s',
-			},
-			{
-				img:'list4.png',
-				name:'小米6',
-			},
-			{
-				img:'list5.jpg',
-				name:'小米mix2',
-			},
-			{
-				img:'list1.png',
-				name:'小米6x',
-			},
-			{
-				img:'list2.jpg',
-				name:'小米mix2s',
-			},
-			{
-				img:'list3.png',
-				name:'小米6s',
-			},
-			{
-				img:'list4.png',
-				name:'小米6',
-			},
-			{
-				img:'list5.jpg',
-				name:'小米mix2',
-			},
-			{
-				img:'list1.png',
-				name:'小米6x',
-			},
-			{
-				img:'list2.jpg',
-				name:'小米mix2s',
-			},
-			{
-				img:'list3.png',
-				name:'小米6s',
-			},
-			{
-				img:'list4.png',
-				name:'小米6',
-			},
-			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 		],
 		[
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
-				name:'小米mix2',
-			},
-		],
-		[
-			{
-				img:'list1.png',
-				name:'小米6x',
-			},
-			{
-				img:'list2.jpg',
-				name:'小米mix2s',
-			},
-			{
-				img:'list3.png',
-				name:'小米6s',
-			},
-			{
-				img:'list4.png',
-				name:'小米6',
-			},
-			{
-				img:'list5.jpg',
-				name:'小米mix2',
-			},
-			{
-				img:'list1.png',
-				name:'小米6x',
-			},
-			{
-				img:'list2.jpg',
-				name:'小米mix2s',
-			},
-			{
-				img:'list3.png',
-				name:'小米6s',
-			},
-			{
-				img:'list4.png',
-				name:'小米6',
-			},
-			{
-				img:'list5.jpg',
-				name:'小米mix2',
-			},
-			{
-				img:'list1.png',
-				name:'小米6x',
-			},
-			{
-				img:'list2.jpg',
-				name:'小米mix2s',
-			},
-			{
-				img:'list3.png',
-				name:'小米6s',
-			},
-			{
-				img:'list4.png',
-				name:'小米6',
-			},
-			{
-				img:'list5.jpg',
-				name:'小米mix2',
-			},
-			{
-				img:'list1.png',
-				name:'小米6x',
-			},
-			{
-				img:'list2.jpg',
-				name:'小米mix2s',
-			},
-			{
-				img:'list3.png',
-				name:'小米6s',
-			},
-			{
-				img:'list4.png',
-				name:'小米6',
-			},
-			{
-				img:'list5.jpg',
-				name:'小米mix2',
-			},
-			{
-				img:'list1.png',
-				name:'小米6x',
-			},
-			{
-				img:'list2.jpg',
-				name:'小米mix2s',
-			},
-			{
-				img:'list3.png',
-				name:'小米6s',
-			},
-			{
-				img:'list4.png',
-				name:'小米6',
-			},
-			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 		],
 		[
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 		],
 		[
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list5.jpg',
+				img:'./images/list5.jpg',
 				name:'小米mix2',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list1.png',
 				name:'小米6x',
 			},
 			{
-				img:'list2.jpg',
+				img:'./images/list2.jpg',
 				name:'小米mix2s',
 			},
 			{
-				img:'list3.png',
+				img:'./images/list3.png',
 				name:'小米6s',
 			},
 			{
-				img:'list4.png',
+				img:'./images/list4.png',
 				name:'小米6',
 			},
 			{
-				img:'list1.png',
+				img:'./images/list5.jpg',
+				name:'小米mix2',
+			},
+		],
+		[
+			{
+				img:'./images/list1.png',
+				name:'小米6x',
+			},
+			{
+				img:'./images/list2.jpg',
+				name:'小米mix2s',
+			},
+			{
+				img:'./images/list3.png',
+				name:'小米6s',
+			},
+			{
+				img:'./images/list4.png',
+				name:'小米6',
+			},
+			{
+				img:'./images/list5.jpg',
+				name:'小米mix2',
+			},
+			{
+				img:'./images/list1.png',
+				name:'小米6x',
+			},
+			{
+				img:'./images/list2.jpg',
+				name:'小米mix2s',
+			},
+			{
+				img:'./images/list3.png',
+				name:'小米6s',
+			},
+			{
+				img:'./images/list4.png',
+				name:'小米6',
+			},
+			{
+				img:'./images/list5.jpg',
+				name:'小米mix2',
+			},
+			{
+				img:'./images/list1.png',
+				name:'小米6x',
+			},
+			{
+				img:'./images/list2.jpg',
+				name:'小米mix2s',
+			},
+			{
+				img:'./images/list3.png',
+				name:'小米6s',
+			},
+			{
+				img:'./images/list4.png',
+				name:'小米6',
+			},
+			{
+				img:'./images/list5.jpg',
+				name:'小米mix2',
+			},
+			{
+				img:'./images/list1.png',
+				name:'小米6x',
+			},
+			{
+				img:'./images/list2.jpg',
+				name:'小米mix2s',
+			},
+			{
+				img:'./images/list3.png',
+				name:'小米6s',
+			},
+			{
+				img:'./images/list4.png',
+				name:'小米6',
+			},
+			{
+				img:'./images/list5.jpg',
+				name:'小米mix2',
+			},
+			{
+				img:'./images/list1.png',
+				name:'小米6x',
+			},
+			{
+				img:'./images/list2.jpg',
+				name:'小米mix2s',
+			},
+			{
+				img:'./images/list3.png',
+				name:'小米6s',
+			},
+			{
+				img:'./images/list4.png',
+				name:'小米6',
+			},
+			{
+				img:'./images/list5.jpg',
+				name:'小米mix2',
+			},
+		],
+		[
+			{
+				img:'./images/list1.png',
+				name:'小米6x',
+			},
+			{
+				img:'./images/list2.jpg',
+				name:'小米mix2s',
+			},
+			{
+				img:'./images/list3.png',
+				name:'小米6s',
+			},
+			{
+				img:'./images/list4.png',
+				name:'小米6',
+			},
+			{
+				img:'./images/list5.jpg',
+				name:'小米mix2',
+			},
+			{
+				img:'./images/list1.png',
+				name:'小米6x',
+			},
+			{
+				img:'./images/list2.jpg',
+				name:'小米mix2s',
+			},
+			{
+				img:'./images/list3.png',
+				name:'小米6s',
+			},
+			{
+				img:'./images/list4.png',
+				name:'小米6',
+			},
+			{
+				img:'./images/list5.jpg',
+				name:'小米mix2',
+			},
+			{
+				img:'./images/list1.png',
+				name:'小米6x',
+			},
+			{
+				img:'./images/list2.jpg',
+				name:'小米mix2s',
+			},
+			{
+				img:'./images/list3.png',
+				name:'小米6s',
+			},
+			{
+				img:'./images/list4.png',
+				name:'小米6',
+			},
+			{
+				img:'./images/list5.jpg',
+				name:'小米mix2',
+			},
+			{
+				img:'./images/list1.png',
+				name:'小米6x',
+			},
+			{
+				img:'./images/list2.jpg',
+				name:'小米mix2s',
+			},
+			{
+				img:'./images/list3.png',
+				name:'小米6s',
+			},
+			{
+				img:'./images/list4.png',
+				name:'小米6',
+			},
+			{
+				img:'./images/list5.jpg',
+				name:'小米mix2',
+			},
+			{
+				img:'./images/list1.png',
+				name:'小米6x',
+			},
+			{
+				img:'./images/list2.jpg',
+				name:'小米mix2s',
+			},
+			{
+				img:'./images/list3.png',
+				name:'小米6s',
+			},
+			{
+				img:'./images/list4.png',
+				name:'小米6',
+			},
+			{
+				img:'./images/list5.jpg',
+				name:'小米mix2',
+			},
+		],
+		[
+			{
+				img:'./images/list1.png',
+				name:'小米6x',
+			},
+			{
+				img:'./images/list2.jpg',
+				name:'小米mix2s',
+			},
+			{
+				img:'./images/list3.png',
+				name:'小米6s',
+			},
+			{
+				img:'./images/list4.png',
+				name:'小米6',
+			},
+			{
+				img:'./images/list5.jpg',
+				name:'小米mix2',
+			},
+			{
+				img:'./images/list1.png',
+				name:'小米6x',
+			},
+			{
+				img:'./images/list2.jpg',
+				name:'小米mix2s',
+			},
+			{
+				img:'./images/list3.png',
+				name:'小米6s',
+			},
+			{
+				img:'./images/list4.png',
+				name:'小米6',
+			},
+			{
+				img:'./images/list5.jpg',
+				name:'小米mix2',
+			},
+			{
+				img:'./images/list1.png',
+				name:'小米6x',
+			},
+			{
+				img:'./images/list2.jpg',
+				name:'小米mix2s',
+			},
+			{
+				img:'./images/list3.png',
+				name:'小米6s',
+			},
+			{
+				img:'./images/list4.png',
+				name:'小米6',
+			},
+			{
+				img:'./images/list5.jpg',
+				name:'小米mix2',
+			},
+			{
+				img:'./images/list1.png',
+				name:'小米6x',
+			},
+			{
+				img:'./images/list2.jpg',
+				name:'小米mix2s',
+			},
+			{
+				img:'./images/list3.png',
+				name:'小米6s',
+			},
+			{
+				img:'./images/list4.png',
+				name:'小米6',
+			},
+			{
+				img:'./images/list5.jpg',
+				name:'小米mix2',
+			},
+			{
+				img:'./images/list1.png',
+				name:'小米6x',
+			},
+			{
+				img:'./images/list2.jpg',
+				name:'小米mix2s',
+			},
+			{
+				img:'./images/list3.png',
+				name:'小米6s',
+			},
+			{
+				img:'./images/list4.png',
+				name:'小米6',
+			},
+			{
+				img:'./images/list5.jpg',
+				name:'小米mix2',
+			},
+		],
+		[
+			{
+				img:'./images/list1.png',
+				name:'小米6x',
+			},
+			{
+				img:'./images/list2.jpg',
+				name:'小米mix2s',
+			},
+			{
+				img:'./images/list3.png',
+				name:'小米6s',
+			},
+			{
+				img:'./images/list4.png',
+				name:'小米6',
+			},
+			{
+				img:'./images/list5.jpg',
+				name:'小米mix2',
+			},
+			{
+				img:'./images/list1.png',
+				name:'小米6x',
+			},
+			{
+				img:'./images/list2.jpg',
+				name:'小米mix2s',
+			},
+			{
+				img:'./images/list3.png',
+				name:'小米6s',
+			},
+			{
+				img:'./images/list4.png',
+				name:'小米6',
+			},
+			{
+				img:'./images/list5.jpg',
+				name:'小米mix2',
+			},
+			{
+				img:'./images/list1.png',
+				name:'小米6x',
+			},
+			{
+				img:'./images/list2.jpg',
+				name:'小米mix2s',
+			},
+			{
+				img:'./images/list3.png',
+				name:'小米6s',
+			},
+			{
+				img:'./images/list4.png',
+				name:'小米6',
+			},
+			{
+				img:'./images/list5.jpg',
+				name:'小米mix2',
+			},
+			{
+				img:'./images/list1.png',
+				name:'小米6x',
+			},
+			{
+				img:'./images/list2.jpg',
+				name:'小米mix2s',
+			},
+			{
+				img:'./images/list3.png',
+				name:'小米6s',
+			},
+			{
+				img:'./images/list4.png',
+				name:'小米6',
+			},
+			{
+				img:'./images/list5.jpg',
+				name:'小米mix2',
+			},
+			{
+				img:'./images/list1.png',
+				name:'小米6x',
+			},
+			{
+				img:'./images/list2.jpg',
+				name:'小米mix2s',
+			},
+			{
+				img:'./images/list3.png',
+				name:'小米6s',
+			},
+			{
+				img:'./images/list4.png',
+				name:'小米6',
+			},
+			{
+				img:'./images/list1.png',
 				name:'小米mix2',
 			},
 		]

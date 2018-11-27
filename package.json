@@ -37,9 +37,11 @@
 	"dependencies": {
 		"jquery": "^1.7 || ^2.0 || ^3.1",
 		"jquery.pep.js": "^0.6.10",
+		"layui-src": "^2.3.0",
 		"mongod": "^2.0.0",
 		"swig": "^1.4.2",
-		"uuid": "^3.3.2"
+		"uuid": "^3.3.2",
+		"vue": "^2.5.17"
 	},
 	"devDependencies": {
 		"commitplease": "2.3.1",

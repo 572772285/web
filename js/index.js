@@ -26,6 +26,7 @@ window.onload=function(){
 /*购物车*/
 	handleCart();
 	function handleCart(){
+		var timer=null
 		var oCat=document.querySelector('.cart');
 		var oCatload=document.querySelectorAll('.loading')[0];
 		var oSpan=oCatload.nextElementSibling;
@@ -45,10 +46,26 @@ window.onload=function(){
 		oCat.onmouseleave=function(){	
 			oCat.style.background='#333';
 			oCatA.style.color='#b0b0b0';
-			animation(oCartbox,{'height':'0'},false,function(){
-				oCatload.style.display='none';
-				oSpan.style.display='block';
-			})
+			clearTimeout(timer)
+			timer=setTimeout(function(){
+				animation(oCartbox,{'height':'0'},false,function(){
+					oCatload.style.display='none';
+					oSpan.style.display='block';
+				})
+			},1000)
+		}
+		oCartbox.onmouseenter=function(){
+			clearTimeout(timer)
+			oCartbox.style.height='100px'
+		}
+		oCartbox.onmouseleave=function(){
+			clearTimeout(timer)
+			timer=setTimeout(function(){
+				animation(oCartbox,{'height':'0'},false,function(){
+					oCatload.style.display='none';
+					oSpan.style.display='block';
+				})
+			},1000)
 		}
 	}
 
@@ -88,7 +105,6 @@ window.onload=function(){
 	}
 	function loadtate(index){
 		var shuzu=duogeshuzu[index];
-		console.log(shuzu)
 		oImgphone.innerHTML='';
 		if(!shuzu){
 			return false;
@@ -244,11 +260,11 @@ window.onload=function(){
 	new Carousel({
 		id:'div1',
 		aImg:[
-			'../小米/hot2.png',
-			'../小米/hot6.jpg',
-			'../小米/hot7.jpg',
-			'../小米/hot8.jpg',
-			'../小米/hot9.jpg',
+			'../小米/images/hot2.png',
+			'../小米/images/hot6.jpg',
+			'../小米/images/hot7.jpg',
+			'../小米/images/hot8.jpg',
+			'../小米/images/hot9.jpg',
 		],
 		width:1100,
 		height:460,
