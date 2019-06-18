@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表格追加</title>
+</head>
+<style>
+	table{
+		width: 500px;
+		
+	}
+</style>
+<body>
+		<table width="500px" cellspacing="2px" cellpadding="1px" bgcolor="black" align="center">
+		<caption><h2>许昌学院财务报表</h2></caption>
+	<thead  bgcolor="gray">
+		<tr>
+			<th>院系</th>
+			<th>院系</th>
+			<th>音乐</th>
+			<th>文传</th>
+			<th>外国语</th>
+			<th>国教</th>
+		</tr>
+	</thead>
+	<tbody bgcolor="white">
+		<tr>
+			<td>1</td>
+			<td>51203RMB</td>
+			<td>24153RMB</td>
+			<td>54453RMB</td>
+			<td>54453RMB11</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>54453RMB</td>
+			<td>54453RMB</td>
+			<td>54453RMB</td>
+			<td>54453RMB</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>65413RMB</td>
+			<td>65413RMB</td>
+			<td>65413RMB</td>
+			<td>65413RMB</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>65413RMB</td>
+			<td>65413RMB</td>
+			<td>65413RMB</td>
+			<td>65413RMB</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>65413RMB</td>
+			<td>65413RMB</td>
+			<td>65413RMB</td>
+			<td>65413RMB</td>
+		</tr>	
+		<tr>
+			<td>6</td>
+			<td>52114RMB</td>
+			<td>52114RMB</td>
+			<td>52114RMB</td>
+			<td>52114RMB</td>
+		</tr>
+	</tbody>
+	<tfoot bgcolor="white">
+		<tr>
+			<td colspan="5">
+				汇总
+			</td>
+		</tr>
+	</tfoot>
+	</table>
+</body>
+<script>
+		window.onload=function(){
+			var oText=document.getElementById('text');
+			var oBtn=document.getElementById('btn');
+			var oUl=document.getElementById('ul1');
+			oBtn.onclick=function(){
+				var oLi=document.createElement('li');
+				oLi.innerHTML=oText.value
+				oUl.insertBefore(oLi,oUl.firstChild);
+			}
+		}
+</script>
+</html>
