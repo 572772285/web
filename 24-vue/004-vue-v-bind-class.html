@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>vue-v-bind:class</title>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.active{
+		background-color: yellow;
+	}
+	.error{
+		color: red;
+	}
+</style>
+<body>
+	<div id="app">
+		<p class="active error">我是段落</p>
+		<p v-bind:class="{active:true}">我是段落一</p>
+		<p :class="{active:true,error:true}">我是段落二</p>
+		<p :class="{active:isActive,error:hasError}">我是段落三</p>
+		<p :class="['active','error']">我是段落四</p>
+		<p :class="[isActive ? 'active' : '',hasError ? 'error' : '']">我是段落五</p>
+	</div>
+	
+</body>
+<script type="text/javascript" src="./vue.js"></script>
+<script type="text/javascript">
+	let vm=new Vue({
+		el:"#app",
+		data:{
+			isActive:false,
+			hasError:true
+		}
+	})
+</script>
+</html>

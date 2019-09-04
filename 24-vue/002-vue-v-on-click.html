@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>vue-v-on:click</title>
+</head>
+<body>
+	<div id="app">
+		<button v-on:click="count++">我被点击了{{count}}次1</button>
+		<button v-on:click="counts">我被点击了{{count}}次2</button>
+		<button v-on:click="counts()">我被点击了{{count}}次3</button>
+		<button @click="say('hello')">say{{msg}}</button>
+	</div>
+	
+</body>
+<script type="text/javascript" src="./vue.js"></script>
+<script type="text/javascript">
+	let vm=new Vue({
+		el:"#app",
+		data:{
+			count:0
+		},
+		methods:{
+			counts(){
+				this.count++
+			},
+			//传参函数
+			say(msg){
+				alert(msg)
+			}
+		}
+	})
+</script>
+</html>

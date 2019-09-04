@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>vue-v-bind:style</title>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.active{
+		background-color: yellow;
+	}
+	.error{
+		color: red;
+	}
+</style>
+<body>
+	<div id="app">
+		<p style="backgroundColor:red;color:blue">style="backgroundColor:red;color:blue"</p>
+		<p v-bind:style="{backgroundColor:'red',color:'blue'}">v-bind:style="{background-color:red,color:blue}"</p>
+		<p v-bind:style="{backgroundColor:bg,color:color}">v-bind:style="{backgroundColor:bg,color:color}"</p>
+		<p v-bind:style="colorObj">v-bind:style="colorObj"</p>
+		<p :style="styleArr">v-bind:style="colorObj"</p>
+	</div>
+	
+</body>
+<script type="text/javascript" src="./vue.js"></script>
+<script type="text/javascript">
+	let vm=new Vue({
+		el:"#app",
+		data:{
+			bg:'blue',
+			color:'red',
+			colorObj:{
+				backgroundColor:'pink',
+				color:'#fa6700'
+			},
+			styleArr:[
+				{
+					backgroundColor:'pink',
+					color:'#fa6700'
+				},
+				{
+					backgroundColor:'yellow',
+					color:'skyblue'
+				}
+			]
+		}
+	})
+</script>
+</html>

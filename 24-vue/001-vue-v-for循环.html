@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>vue-v-for循环</title>
+</head>
+<body>
+	<div id="app">
+		<table>
+			<tr>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>分数</th>
+				<th>是否及格</th>
+			</tr>
+			<tr v-for='ren in persons'>
+				<td>{{ren.name}}</td>
+				<td>{{ren.age}}</td>
+				<td>{{ren.sroll}}</td>
+				<td v-if='ren.sroll>82'>及格</td>
+				<td v-else='ren.sroll<82'>不及格</td>
+			</tr>
+		</table>
+	</div>
+	
+</body>
+<script type="text/javascript" src="./vue.js"></script>
+<script type="text/javascript">
+	let vm=new Vue({
+		el:"#app",
+		data:{
+			persons:[
+				{name:'leo',age:'21',sroll:80},
+				{name:'tom',age:'22',sroll:82},
+				{name:'jike',age:'25',sroll:89}
+			]
+		}
+
+	})
+</script>
+</html>
