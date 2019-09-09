@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>修饰符-once执行一次</title>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.largebox{
+		background-color: yellow;
+		width: 500px;
+		height: 500px;
+	}
+	.middlebox{
+		background-color: gray;
+		width: 300px;
+		height: 300px;
+	}
+	.smallbox{
+		background-color: red;
+		width: 100px;
+		height: 100px;
+	}
+</style>
+<body>
+	<div id="app">
+		<!-- 点击时候只执行一次 -->
+		<div class="largebox" @click.once="largeclick()">
+			<div class="middlebox" @click="middleclick()">
+				<div class="smallbox" @click="smallclick()">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+<script type="text/javascript" src="./vue.js"></script>
+<script type="text/javascript">
+	let vm=new Vue({
+		el:"#app",
+		data:{
+
+		},
+		methods:{
+			largeclick(){
+				console.log('largeclick')
+			},
+			middleclick(){
+				console.log('middleclick')
+			},
+			smallclick(msg,event){
+
+				console.log('smallclick')
+			},
+		}
+	})
+</script>
+</html>

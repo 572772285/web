@@ -1,0 +1,51 @@
+<!-- 摘要：全局注册的好处是每个实例互不干扰，数据独立，互不影响。
+1.用VUE.compoent来创建组件
+2.全局注册的行为必须在创建VUE实例前完成
+3.组件的data必须是一个函数
+4.可以创建多个VUE实例，并且组件可以在多个实例中同时使用
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>全局注册</title>
+</head>
+<body>
+	<div id="app">
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+	</div>
+	<div id="app1">
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+	</div>	
+</body>
+<script type="text/javascript" src="./vue.js"></script>
+<script type="text/javascript">
+	//第一步：定义组件的名字，然后写组件进入模版里。模版的数据data必须为函数，然后数据通过对象return回来。
+	Vue.component('button-counter',{
+		data(){
+			return {
+				count:0
+			}
+		},
+		template:'<button v-on:click="count++">我被点击了{{count}}次</button>'
+	})
+	let vm=new Vue({
+		el:"#app",
+		data:{
+		
+		}
+
+	})
+	let vm1=new Vue({
+		el:"#app1",
+		data:{
+		
+		}
+
+	})	
+</script>
+</html>

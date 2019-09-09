@@ -6,7 +6,7 @@ const router = Router();
 router.get("/",(req,res)=>{
 	res.send('get user data');
 })
-router.post("/",(req,res)=>{
+router.post("/aaa",(req,res)=>{
 	res.send('add user data');
 })
 router.put("/",(req,res)=>{

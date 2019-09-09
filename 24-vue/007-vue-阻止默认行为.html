@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>vue-阻止默认行为</title>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+
+</style>
+<body>
+	<div id="app">
+		<a href="https://www.baidu.com" @click="zuzhi($event)">去百度</a>
+	</div>
+	
+</body>
+<script type="text/javascript" src="./vue.js"></script>
+<script type="text/javascript">
+	let vm=new Vue({
+		el:"#app",
+		data:{
+
+		},
+		methods:{
+			zuzhi(event){
+				event.preventDefault()
+				console.log('组织默认行为。。。。')
+			}	
+		}
+	})
+</script>
+</html>

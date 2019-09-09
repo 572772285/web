@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>计算属性的基本使用</title>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+
+</style>
+<body>
+	<div id="app">
+		<p>我是message::{{message}}</p>
+		<p>我是message::{{message.split('').reverse().join('')}}</p>
+		<p>我是message::{{reverseMessage}}</p>
+		<p>我是message::{{reversedMessage()}}</p>
+	</div>
+	
+</body>
+<script type="text/javascript" src="./vue.js"></script>
+<script type="text/javascript">
+	let vm=new Vue({
+		el:"#app",
+		data:{
+			message:'hello'
+		},
+		methods:{
+			reversedMessage(){
+				return this.message.split('').reverse().join('')
+			}
+		},
+		computed:{
+			reverseMessage(){
+				//在上面调用相当于是一个属性，返回后调用不用加括号
+				// `this` 指向 vm 实例 一定要返回
+				return this.message.split('').reverse().join('')
+			}
+		}
+	})
+</script>
+</html>
