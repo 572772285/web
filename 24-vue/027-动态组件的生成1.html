@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动态组件的生成</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 通过遍历进行数据渲染 -->
+        <button 
+        v-for="item in items"
+        @click="name=item"
+        >
+            {{item}}
+        </button>
+        <!-- 这里是组件展示的地方 :is=组件名称 -->
+        <component :is="namecomponent"></component>
+    </div>
+    <template id="homepage">
+        <div>homepage123</div>
+    </template>
+    <template id="articlespage">
+        <div>articlepage123</div>
+    </template>
+</body>
+<script type="text/javascript" src="./vue.js"></script>
+<script>
+    Vue.component('homepage',{
+        template:'#homepage'
+    })
+    Vue.component('articlespage',{
+        template:'#articlespage'
+    })
+    let vm=new Vue({
+        el:'#app',
+        data:{
+            name:'home',
+            items:['home','articles']
+        },
+        computed:{
+            namecomponent(){
+                return this.name+'page'
+            }
+        }
+    })
+</script>
+</html>

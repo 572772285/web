@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实名插槽</title>
+</head>
+<body>
+    <div id="app">
+        <shimingchacao>
+            <!-- 实名插槽可以指定插槽的名称作为页面模版进行替换 -->
+            <p slot="chacao1">asd</p>
+            <p slot="chacao2">222</p>
+x
+        </shimingchacao>
+    </div>
+    <template id="shimingchacao">
+        <div>
+            <nav>我是导航</nav>
+            <slot name="chacao1">我是匿名插槽，我适用与替换页面组件，只能作为唯一插槽</slot>
+            <slot name="chacao2">我是匿名插槽2，我适用与替换页面组件，只能作为唯一插槽</slot>
+
+            <div class="foter">我是底部导航</div>
+        </div>
+    </template>
+</body>
+<script type="text/javascript" src="./vue.js"></script>
+<script>
+    Vue.component('shimingchacao',{
+        template:'#shimingchacao'
+    })
+    let vm=new Vue({
+        el:'#app',
+        data:{
+
+        },
+    })
+</script>
+</html>

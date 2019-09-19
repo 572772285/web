@@ -1,0 +1,45 @@
+<!-- 组件传值一简单版
+ -->
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset="UTF-8">
+     <title>创建组件模版</title>
+ </head>
+ <style>
+ *{
+     margin: 0;
+     padding: 0;
+ }
+ </style>
+ <body>
+     <div id="app">
+        <h3>睡觉</h3>
+        <item-zujian post-title="吃饭"></item-zujian>
+        <item-zujian post-title="打豆豆"></item-zujian>
+     </div>
+   
+ </body>
+ <script type="text/javascript" src="./vue.js"></script>
+ <script type="text/javascript">
+// 可以直接在props里面定义
+     let vm=new Vue({
+         el:"#app",
+         data:{
+         
+         },
+         components:{
+             'item-zujian':{
+                //  data(){
+                //      return{
+                //          msg:'我是内容'
+                //      }
+                //  },
+                props: ['postTitle'],
+                 template:'<h3>{{ postTitle }}</h3>'				
+             }
+ 
+         }
+     })
+ </script>
+ </html>

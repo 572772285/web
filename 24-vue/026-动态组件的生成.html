@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动态组件的生成</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="name='homepage'">home</button>
+        <button @click="name='articlespage'">artical</button>
+        <!-- 这里是组件展示的地方 :is=组件名称 -->
+        <component :is="name"></component>
+    </div>
+    <template id="homepage">
+        <div>homepage</div>
+    </template>
+    <template id="articlespage">
+        <div>articlepage</div>
+    </template>
+</body>
+<script type="text/javascript" src="./vue.js"></script>
+<script>
+    Vue.component('homepage',{
+        template:'#homepage'
+    })
+    Vue.component('articlespage',{
+        template:'#articlespage'
+    })
+    let vm=new Vue({
+        el:'#app',
+        data:{
+            name:'homepage'
+        },
+    })
+</script>
+</html>

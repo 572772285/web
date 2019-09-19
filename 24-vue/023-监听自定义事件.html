@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>监听$emit自定义事件</title>
+</head>
+<body>
+    <div id="app">
+        <button-item @allcount="allcountadd()"></button-item>
+        <button-item @allcount="allcountadd()"></button-item>
+        <button-item @allcount="allcountadd()"></button-item>
+        <button-item @allcount="allcountadd()"></button-item>
+        <p>总计点击了{{allcount}}次</p>
+    </div>
+    <template id="button">
+        <button v-on:click="addcount()">我被点击了{{count}}次</button>
+    </template>
+</body>
+<script type="text/javascript" src="./vue.js"></script>
+<script>
+    //自定义点击事件利用组件点击的时候调用另一个自定义函数来计算总数，核心事件点击时候调用$emit()
+    //还有就是@click为点击事件，@allcount为自定义点击事件。利用$emit()调用
+    Vue.component('button-item',{
+        data(){
+            return{
+                count:0
+            }
+        },
+        methods:{
+            addcount(){
+                this.count++
+                this.$emit('allcount')
+            }
+        },  
+        template:'#button'
+    })
+    let vm=new Vue({
+        el:'#app',
+        data:{
+            allcount:10
+        },
+        methods:{
+            allcountadd(){
+                this.allcount++
+            }
+        }
+    }) 
+</script>
+</html>

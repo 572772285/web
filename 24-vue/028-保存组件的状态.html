@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>保存组件的状态</title>
+</head>
+<style>
+    .active{
+        color: brown
+    }
+</style>
+<body>
+    <div id="app">
+        <!-- 通过遍历进行数据渲染 -->
+        <button 
+        v-for="item in items"
+        @click="name=item"
+        >
+            {{item}}
+        </button>
+        <!-- 这里是组件展示的地方 :is=组件名称 keep-alive保存组件状态-->
+        <keep-alive>
+            <component :is="namecomponent"></component>
+        </keep-alive>
+    </div>
+    <template id="homepage">
+        <div>homepage</div>
+    </template>
+    <template id="articlespage">
+        <!-- 通过渲染文章数据来展示 -->
+        <div>
+            <!-- 渲染文章列表 注意：：：点击哪个把哪个对象赋给listnum，然后下面直接使用listnum展示！！！
+                这样就相当于选项卡的一一对应关系
+             -->
+            <ul>
+                <li v-for="article in articlesdata"
+                    @click="listnum=article"
+                    :class="{active:listnum==article}"
+                >
+                    {{article.title}}
+                </li>
+            </ul>
+            <div class="content"
+            v-if="listnum"
+            >
+                    {{listnum.content}}
+            </div>
+        </div>
+    </template>
+</body>
+<script type="text/javascript" src="./vue.js"></script>
+<script>
+    Vue.component('homepage',{
+        template:'#homepage'
+    })
+    Vue.component('articlespage',{
+        template:'#articlespage',
+        data(){
+            return {
+                articlesdata:[
+                    {
+                        id:0,
+                        title:'vue是一个是视图层的框架',
+                        content:'所以vue在前端开发中比原生JS要好用的多'
+                    },
+                    {
+                        id:0,
+                        title:'react是一个是视图层的框架',
+                        content:'所以react在前端开发中比原生JS要好用的多'
+                    }
+                ],
+                listnum:null
+            }
+        }
+    })
+    let vm=new Vue({
+        el:'#app',
+        data:{
+            name:'home',
+            items:['home','articles']
+        },
+        computed:{
+            namecomponent(){
+                return this.name+'page'
+            }
+        }
+    })
+</script>
+</html>

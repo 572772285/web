@@ -1,0 +1,107 @@
+
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset="UTF-8">
+     <title>父子组件的定义</title>
+ </head>
+ <style>
+ *{
+     margin: 0;
+     padding: 0;
+ }
+ </style>
+ <body>
+     <div id="app">
+        <fuzujian 
+        v-for="item in items"
+        :key="item.id"
+        :id="item.id"
+        :task="item.task"
+        :dataline="item.dataline"
+        ></fuzujian>
+     </div>
+     <template id="father">
+        <div>
+            {{count}}:<task :task="task":id="id"></task>
+            {{asd}}:<deline :dataline='dataline' :id="id"></deline>
+        </div>
+     </template>
+     <template id="zizujian">
+        <span>{{id}}~{{task}}:{{renwu}}</span>
+     </template>
+     <template id="zizujian1">
+        <span>{{id}}~{{dataline}}:{{renwu}}</span>
+     </template>     
+ </body>
+ <script type="text/javascript" src="./vue.js"></script>
+ <script type="text/javascript">
+ //构造器
+  const task=Vue.extend({
+                props:{
+                    task:String,
+                    id:Number
+                },
+                data(){
+                    return{
+                        renwu:'任务'
+                    }
+                },
+                template:'#zizujian'
+            })
+    const deline=Vue.extend({
+                props:{
+                    dataline:String,
+                    id:Number
+                },
+                data(){
+                    return{
+                        renwu:'日常'
+                    }
+                },
+                template:'#zizujian1'
+            })
+    Vue.component('fuzujian',{
+        data(){
+            return{
+                count:1,
+                asd:2
+            }
+        },
+        props: {
+                    id:Number,
+                    task:String,
+                    dataline:String
+                },
+        template:'#father',
+        components:{
+            'task':task,
+            'deline':deline
+        }
+        
+    })
+     let vm=new Vue({
+         el:"#app",
+         data:{
+             items:[
+                {
+                    id:1,
+                    task:'学vue',
+                    dataline:'每天两个小时'
+                },
+                {
+                    id:2,
+                    task:'react',
+                    dataline:'每天三个小时'
+                },
+                {
+                    id:3,
+                    task:'jquery',
+                    dataline:'每天三个小时'
+                }
+            ]
+         }
+         
+     })
+ </script>
+ </html>

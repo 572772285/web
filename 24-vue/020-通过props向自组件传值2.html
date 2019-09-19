@@ -1,0 +1,69 @@
+<!-- 组件传值二进阶版
+    需要注意的是在传入值的时候需要bind一下。
+ -->
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset="UTF-8">
+     <title>创建组件模版</title>
+ </head>
+ <style>
+ *{
+     margin: 0;
+     padding: 0;
+ }
+ </style>
+ <body>
+     <div id="app">
+        <h3>睡觉</h3>
+        <item-zujian v-for="item in items"
+        :key="item.id"
+        :post-title="item.task"
+        :id="item.id"
+        ></item-zujian>
+     </div>
+
+ </body>
+ <script type="text/javascript" src="./vue.js"></script>
+ <script type="text/javascript">
+// 可以直接在props里面定义
+     let vm=new Vue({
+         el:"#app",
+         data:{
+            items:[
+                {
+                    id:0,
+                    task:'吃饭'
+                },
+                {
+                    id:1,
+                    task:'打豆豆'
+                },
+                {
+                    id:2,
+                    task:'玩游戏'
+                },
+                {
+                    id:3,
+                    task:'做运动'
+                }
+                ]
+         },
+         components:{
+             'item-zujian':{
+                //  data(){
+                //      return{
+                //          msg:'我是内容'
+                //      }
+                //  },
+                props: {
+                    id:Number,
+                    postTitle:String
+                },
+                 template:'<h3>{{id}}-{{ postTitle }}</h3>'				
+             }
+ 
+         }
+     })
+ </script>
+ </html>

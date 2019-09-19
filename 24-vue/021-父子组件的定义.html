@@ -1,0 +1,76 @@
+
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset="UTF-8">
+     <title>父子组件的定义</title>
+ </head>
+ <style>
+ *{
+     margin: 0;
+     padding: 0;
+ }
+ </style>
+ <body>
+     <div id="app">
+        <fuzujian v-bind:herf1="herf1"></fuzujian>
+     </div>
+     <template id="father">
+        <div>
+            {{count}}<task></task>{{herf1}}
+            {{asd}}<deline></deline>{{id}}
+        </div>
+     </template>
+     <template id="zizujian">
+        <span>任务：{{renwu}}</span>
+     </template>
+     <template id="zizujian1">
+        <span>任务：{{renwu2}}</span>
+     </template>     
+ </body>
+ <script type="text/javascript" src="./vue.js"></script>
+ <script type="text/javascript">
+ //使用基础 Vue 构造器，创建一个“子类”。参数是一个包含组件选项的对象。
+  const task=Vue.extend({
+                data(){
+                    return{
+                        renwu:'学vue'
+                    }
+                },
+                template:'#zizujian'
+            })
+    const deline=Vue.extend({
+                data(){
+                    return{
+                        renwu2:'学react'
+                    }
+                },
+                template:'#zizujian1'
+            })
+    Vue.component('fuzujian',{
+        data(){
+            return{
+                count:1,
+                asd:2
+            }
+        },
+        props: {
+                    id:Number,
+                    herf1:String
+                },
+        template:'#father',
+        components:{
+            'task':task,
+            'deline':deline
+        }
+        
+    })
+     let vm=new Vue({
+         el:"#app",
+         data:{
+            herf1:'----',
+			herf2:'https://www.taobao.com'
+         }
+     })
+ </script>
+ </html>

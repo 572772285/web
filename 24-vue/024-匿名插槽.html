@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>匿名插槽</title>
+</head>
+<body>
+    <div id="app">
+        <nimingchacao>
+            <!-- 匿名插槽分不清谁是谁 -->
+            <span>asd</span>
+        </nimingchacao>
+    </div>
+    <template id="nimingchacao">
+        <div>
+            <nav>我是导航</nav>
+            <slot>我是匿名插槽，我适用与替换页面组件，只能作为唯一插槽</slot>
+            <slot>我是匿名插槽，我适用与替换页面组件，只能作为唯一插槽</slot>
+
+            <div class="foter">我是底部导航</div>
+        </div>
+    </template>
+</body>
+<script type="text/javascript" src="./vue.js"></script>
+<script>
+    Vue.component('nimingchacao',{
+        template:'#nimingchacao'
+    })
+    let vm=new Vue({
+        el:'#app',
+        data:{
+
+        },
+    })
+</script>
+</html>
