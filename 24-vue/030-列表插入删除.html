@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>保存组件的状态</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    p{
+        width: 50px;
+        height: 50px;
+        border:1px solid #000;
+        background-color: yellow;
+    }
+    .list-enter-active, .list-leave-active {
+        transition: all 1s;
+    }
+    .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+        opacity: 0;
+        transform: translateY(30px)
+    }
+    .li-item{
+        list-style: none;
+        width: 200px;
+        height: 50px;
+        margin-top: 10px;
+        line-height: 50px;
+        background-color: blanchedalmond;
+    }
+    .del{
+        float: right;
+        margin-top: 20px;
+    }
+</style>
+<body>
+    <!-- 列表插入删除逻辑
+    1.整个过程数据驱动
+    2.遍历items数据展示
+    3.通过输入input值v-model双向绑定赋给一个对象
+    4.点击添加按钮把input框的值push到items里并且把task=“”
+    5.当点击删除时触发删除事件，把items里的this.items.splice(index,1)
+    -->
+    <div id="app">
+       <div class="todo-list-warp">
+           <input type="text" v-model="task">
+           <button @click="add()">增加</button>
+           <transition-group name="list" appear tag="ul">
+               <li :class="['li-item']" v-for="(item,index) in items"
+                    :key="''+index"
+               >
+                   {{item}}
+                   <button class="del" @click="del(index)">删除</button>
+               </li>
+           </ransition-group>
+       </div>
+    </div>
+    
+</body>
+<script type="text/javascript" src="./vue.js"></script>
+<script>
+  
+    let vm=new Vue({
+        el:'#app',
+        data:{
+            items:[
+                '吃饭',
+                '睡觉',
+                '逛街',
+                '写代码'
+            ],
+            task:''
+        },
+        methods:{
+            add(){
+                if(this.task==''){
+                    return false
+                }else{
+                    this.items.push(this.task);
+                    this.task=""
+                }
+
+            },
+            del(index){
+                this.items.splice(index,1)
+            }
+        },
+        //computed是计算属性的
+        computed:{
+            
+        }
+    })
+</script>
+</html>

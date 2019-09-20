@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>保存组件的状态</title>
+</head>
+<style>
+    p{
+        width: 50px;
+        height: 50px;
+        border:1px solid #000;
+        background-color: yellow;
+    }
+    .bounce-enter-active {
+    animation: bounce-in .5s;
+    }
+    .bounce-leave-active {
+    animation: bounce-in .5s reverse;
+    }
+    @keyframes bounce-in {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+    }
+</style>
+<body>
+    <div id="app">
+       <button @click="show=!show">点击切换过渡</button>
+       <transition name="bounce" appear>   
+            <p v-if="show">我是一个box</p>
+       </transition>
+    </div>
+    
+</body>
+<script type="text/javascript" src="./vue.js"></script>
+<script>
+  
+    let vm=new Vue({
+        el:'#app',
+        data:{
+            show:true
+        },
+        //computed是计算属性的
+        computed:{
+            
+        }
+    })
+</script>
+</html>
