@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>列表插入删除</title>
+    <link rel="stylesheet" href="./css/animate.css">
+    <title>保存组件的状态</title>
 </head>
 <style>
     *{
@@ -17,13 +18,7 @@
         border:1px solid #000;
         background-color: yellow;
     }
-    .list-enter-active, .list-leave-active {
-        transition: all 1s;
-    }
-    .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
-        opacity: 0;
-        transform: translateY(30px)
-    }
+
     .li-item{
         list-style: none;
         width: 200px;
@@ -49,7 +44,9 @@
        <div class="todo-list-warp">
            <input type="text" v-model="task">
            <button @click="add()">增加</button>
-           <transition-group name="list" appear tag="ul">
+           <transition-group name="list"     
+           enter-active-class="animated tada"
+           leave-active-class="animated bounceOutRight" appear tag="ul">
                <li :class="['li-item']" v-for="(item,index) in items"
                     :key="''+index"
                >

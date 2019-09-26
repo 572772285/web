@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/animate.css">
+    <title>注册自定义指令</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<body>
+    <div id="app">
+        <input type="text" v-focus>
+    </div>
+    
+</body>
+<script type="text/javascript" src="./vue.js"></script>
+<script>
+    //自定义指令
+    Vue.directive('focus',{
+        // // 当被绑定的元素插入到 DOM 中时……
+        inserted(el){
+            console.log(el)
+            el.focus();
+            el.value='123'
+        }
+    })
+    let vm=new Vue({
+        el:'#app',
+        data:{
+            items:[
+                '吃饭',
+                '睡觉',
+                '逛街',
+                '写代码'
+            ],
+            task:''
+        },
+        methods:{
+            add(){
+                if(this.task==''){
+                    return false
+                }else{
+                    this.items.push(this.task);
+                    this.task=""
+                }
+
+            },
+            del(index){
+                this.items.splice(index,1)
+            }
+        },
+        //computed是计算属性的
+        computed:{
+            
+        }
+    })
+</script>
+</html>
