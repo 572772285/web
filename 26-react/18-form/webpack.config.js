@@ -40,8 +40,7 @@ module.exports = {
             loader: 'url-loader'
           }
         ]
-      },
-      //babel
+    	},
       {
         test:/\.js$/,
         exclude: /(node_modules)/,
